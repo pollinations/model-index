@@ -1,0 +1,31 @@
+name: Test
+
+on: 
+  pull_request: {}
+  push:
+    branches: "*"
+    tags: "*"
+
+jobs:
+  self-update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Fetch images referenced in images.json
+        run: |
+          python .github/workflows/extract_openapi.py
+          
+      - uses: webfactory/ssh-agent@v0.5.4
+        with:
+            ssh-private-key: ${{ secrets.SSH_KEY }}
+      - name: Update model registry
+        env:
+          ECR_REGISTRY: 614871946825.dkr.ecr.us-east-1.amazonaws.com #${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: ${{ github.repository }}
+          IMAGE_TAG: latest
+        run: |
+          git config --global user.email "ci@pollinations.ai"
+          git config --global user.name "pollinations-ci"
+          python .github/workflows/get_openapi.py
+          git add . && (git commit -m "Fetched openapi.json for images referenced in: ${{ github.event.head_commit.message }}" && git push) || echo "model index not updated"
