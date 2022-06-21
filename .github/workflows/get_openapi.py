@@ -8,7 +8,7 @@ with open("images.json", "r") as f:
 
 def system(cmd):
     print(f"Running: {cmd}")
-    print("Exit status: ", os.system(cmd, shell=True))
+    print("Exit status: ", os.system(cmd))
 
 
 def get_openapi(path, image):
