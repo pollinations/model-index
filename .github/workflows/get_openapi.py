@@ -5,9 +5,10 @@ import os
 with open("images.json", "r") as f:
     images = json.load(f)
 
-def system(cmd):
-    print(f"Running: {cmd}")
-    print("Exit status: ", os.system(cmd))
+
+def system(*args, **kwargs):
+    print(f"Running: {args[0]}")
+    print("Exit status: ", os.system(*args, **kwargs))
 
 
 def get_openapi(path, image):
