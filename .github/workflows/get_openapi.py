@@ -3,7 +3,7 @@ import os
 
 
 with open("images.json", "r") as f:
-    images = json.load(f)[0]
+    images = json.load(f)
 
 
 def get_openapi(path, image):
