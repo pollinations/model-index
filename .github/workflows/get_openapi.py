@@ -22,7 +22,10 @@ def get_openapi(path, image):
         data = json.load(f)[0]
     os.makedirs(path)
     with open(f"{path}/openapi.json", "w") as f:
-       f.write(data["ContainerConfig"]["Labels"]["org.cogmodel.openapi_schema"])
+        try:
+            f.write(data["ContainerConfig"]["Labels"]["org.cogmodel.openapi_schema"])
+        except TypeError:
+            f.write(data["Config"]["Labels"]["org.cogmodel.openapi_schema"])
     system("rm inspect.json")
 
 
