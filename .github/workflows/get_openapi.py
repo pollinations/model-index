@@ -7,8 +7,10 @@ with open("images.json", "r") as f:
 
 
 def get_openapi(path, image):
+    if "amazonaws" in image:
+        return #private registry, repo ci is responsible for generting openapi.json
     os.system(f"docker pull {image}")
-    os.system(f"docker inspect {image} > inspect.json")
+    os.system(f"docker inspect {image} > inspect.json", shell=True, )
     with open("inspect.json", "r") as f:
         data = json.load(f)[0]
     os.makedirs(path)
