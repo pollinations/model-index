@@ -11,7 +11,9 @@ def system(cmd):
 
 
 def get_openapi(path, image):
+    print("Get: ", path, image)
     if "amazonaws" in image:
+        print("Skip: ", path, image)
         return #private registry, repo ci is responsible for generting openapi.json
     system(f"docker pull {image}")
     system(f"docker inspect {image} > inspect.json", shell=True, )
