@@ -1,0 +1,1 @@
+{"components": {"schemas": {"Input": {"type": "object", "properties": {"audio_input": {"type": "string", "format": "uri", "description": "Input audio file", "x-order": 0}}}, "Output": {"type": "array", "items": {"type": "object", "properties": {"file": {"type": "string", "format": "uri", "x-order": 0}, "text": {"type": "string", "x-order": 1}}}}}}}
