@@ -6,9 +6,9 @@ with open("images.json", "r") as f:
     images = json.load(f)
 
 
-def system(cmd, **kwargs):
+def system(cmd):
     print(f"Running: {cmd}")
-    print("Exit status: ", os.system(cmd, **kwargs))
+    print("Exit status: ", os.system(cmd, shell=True))
 
 
 def get_openapi(path, image):
@@ -17,7 +17,7 @@ def get_openapi(path, image):
         print("Skip: ", path, image)
         return #private registry, repo ci is responsible for generting openapi.json
     system(f"docker pull {image}")
-    system(f"docker inspect {image} > inspect.json", shell=True)
+    system(f"docker inspect {image} > inspect.json")
     with open("inspect.json", "r") as f:
         data = json.load(f)[0]
     os.makedirs(path)
