@@ -4,5 +4,6 @@
     "pollinations/preset-envisioning": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/preset-envisioning",
     "piano-transcription": "r8.im/bytedance/piano-transcription",
     "voodoohop/dalle-playground": "614871946825.dkr.ecr.us-east-1.amazonaws.com/voodoohop/dalle-playground",
-    "pollinations/latent-diffusion-400m": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/latent-diffusion-400m"
+    "pollinations/latent-diffusion-400m": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/latent-diffusion-400m",
+    "pollinations/min-dalle": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/min-dalle"
 }
