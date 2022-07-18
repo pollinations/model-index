@@ -13,7 +13,8 @@ for path, image in images.items():
             open_api = json.load(f)
 
         all_images_open_api[image] = open_api
-    except: pass
+    except Exception as e:
+        print(path, image, e)
 
 with open("images_openapi.json", "w") as f:
     json.dump(all_images_open_api, f, indent=4)
