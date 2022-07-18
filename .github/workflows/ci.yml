@@ -15,6 +15,7 @@ jobs:
       - name: Fetch images referenced in images.json
         run: |
           python .github/workflows/get_openapi.py
+          python .github/workflows/combine_openapi.py
           
       - uses: webfactory/ssh-agent@v0.5.4
         with:

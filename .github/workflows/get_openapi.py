@@ -30,5 +30,8 @@ def get_openapi(path, image):
 
 
 for path, image in images.items():
+    all_openapi_jsons = {}
     if not os.path.exists(path):
-        get_openapi(path, image)
+        all_openapi_jsons[image] = get_openapi(path, image)
+    with open("all_images_openapi.json", "w") as f:
+        json.dump(all_openapi_jsons, f)
