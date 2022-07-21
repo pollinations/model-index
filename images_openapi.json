@@ -690,6 +690,13 @@
                 },
                 "Input": {
                     "properties": {
+                        "Prompt": {
+                            "default": "Dali painting of WALL\u00b7E",
+                            "description": "For long prompts, only the first 64 tokens will be used to generate the image.",
+                            "title": "Prompt",
+                            "type": "string",
+                            "x-order": 0
+                        },
                         "grid_size": {
                             "default": 1,
                             "description": "Size of the image grid.  4x4 takes about 15 seconds, 8x8 takes about 35 seconds",
@@ -714,13 +721,6 @@
                             "title": "Log2 Supercondition Factor",
                             "type": "integer",
                             "x-order": 3
-                        },
-                        "text": {
-                            "default": "Dali painting of WALL\u00b7E",
-                            "description": "For long prompts, only the first 64 tokens will be used to generate the image.",
-                            "title": "Text",
-                            "type": "string",
-                            "x-order": 0
                         }
                     },
                     "title": "Input",
