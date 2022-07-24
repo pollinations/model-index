@@ -16,6 +16,7 @@ def get_openapi(path, image):
     if "amazonaws" in image:
         print("Skip: ", path, image)
         return #private registry, repo ci is responsible for generting openapi.json
+    system("docker system prune -af")
     system(f"docker pull {image}")
     system(f"docker inspect {image} > inspect.json")
     with open("inspect.json", "r") as f:
@@ -26,6 +27,7 @@ def get_openapi(path, image):
             f.write(data["ContainerConfig"]["Labels"]["org.cogmodel.openapi_schema"])
         except TypeError:
             f.write(data["Config"]["Labels"]["org.cogmodel.openapi_schema"])
+    system("docker system prune -af")
     system("rm inspect.json")
 
 
