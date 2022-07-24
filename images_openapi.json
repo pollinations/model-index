@@ -1483,5 +1483,75 @@
                 }
             }
         }
+    },
+    "r8.im/jingyunliang/swinir@sha256:9d91795e944f3a585fa83f749617fc75821bea8b323348f39cf84f8fd0cbc2f7": {
+        "components": {
+            "schemas": {
+                "Input": {
+                    "type": "object",
+                    "properties": {
+                        "image": {
+                            "type": "string",
+                            "format": "uri",
+                            "description": "input image",
+                            "x-order": 0
+                        },
+                        "task_type": {
+                            "type": "string",
+                            "description": "image restoration task type",
+                            "default": "Real-World Image Super-Resolution-Large",
+                            "enum": [
+                                "Real-World Image Super-Resolution-Large",
+                                "Real-World Image Super-Resolution-Medium",
+                                "Grayscale Image Denoising",
+                                "Color Image Denoising",
+                                "JPEG Compression Artifact Reduction"
+                            ],
+                            "x-order": 1
+                        },
+                        "noise": {
+                            "type": "integer",
+                            "description": "noise level, activated for Grayscale Image Denoising and Color Image Denoising. Leave it as default or arbitrary if other tasks are selected",
+                            "default": 15,
+                            "enum": [
+                                "15",
+                                "25",
+                                "50"
+                            ],
+                            "x-order": 2
+                        },
+                        "jpeg": {
+                            "type": "integer",
+                            "description": "scale factor, activated for JPEG Compression Artifact Reduction. Leave it as default or arbitrary if other tasks are selected",
+                            "default": 40,
+                            "enum": [
+                                "10",
+                                "20",
+                                "30",
+                                "40"
+                            ],
+                            "x-order": 3
+                        }
+                    }
+                },
+                "Output": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "file": {
+                                "type": "string",
+                                "format": "uri",
+                                "x-order": 0
+                            },
+                            "text": {
+                                "type": "string",
+                                "x-order": 1
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
