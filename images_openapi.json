@@ -2036,7 +2036,7 @@
                 "Input": {
                     "properties": {
                         "image": {
-                            "description": "Image to enlarge",
+                            "description": "Image",
                             "format": "uri",
                             "title": "Image",
                             "type": "string",
