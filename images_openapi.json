@@ -1860,9 +1860,16 @@
                 },
                 "Input": {
                     "properties": {
+                        "coarse": {
+                            "default": true,
+                            "description": "generate coarse avatar (super fast)",
+                            "title": "Coarse",
+                            "type": "boolean",
+                            "x-order": 1
+                        },
                         "text": {
                             "default": "overweight sumo wrestler",
-                            "description": "Coarse character prompt",
+                            "description": "prompt",
                             "title": "Text",
                             "type": "string",
                             "x-order": 0
