@@ -1,0 +1,1473 @@
+{
+    "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/preset-envisioning": {
+        "hash": "sha256:9c8595a810b318ea9c6f6682da30e49307036fbc26db8fc34ea06e001c44eb37",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/preset-envisioning@sha256:9c8595a810b318ea9c6f6682da30e49307036fbc26db8fc34ea06e001c44eb37",
+        "openapi": {
+            "components": {
+                "schemas": {
+                    "HTTPValidationError": {
+                        "properties": {
+                            "detail": {
+                                "items": {
+                                    "$ref": "#/components/schemas/ValidationError"
+                                },
+                                "title": "Detail",
+                                "type": "array"
+                            }
+                        },
+                        "title": "HTTPValidationError",
+                        "type": "object"
+                    },
+                    "Input": {
+                        "properties": {
+                            "Diversity_scale": {
+                                "default": 10,
+                                "description": "As a rule of thumb, higher values of scale produce better samples at the cost of a reduced output diversity.",
+                                "title": "Diversity Scale",
+                                "type": "number",
+                                "x-order": 4
+                            },
+                            "ETA": {
+                                "default": 1,
+                                "description": "Can be 0 or 1",
+                                "title": "Eta",
+                                "type": "integer",
+                                "x-order": 2
+                            },
+                            "Height": {
+                                "default": 256,
+                                "description": "Height",
+                                "title": "Height",
+                                "type": "integer",
+                                "x-order": 6
+                            },
+                            "Prompt": {
+                                "default": "",
+                                "description": "Your text prompt.",
+                                "title": "Prompt",
+                                "type": "string",
+                                "x-order": 0
+                            },
+                            "Samples_in_parallel": {
+                                "default": 4,
+                                "description": "Batch size",
+                                "title": "Samples In Parallel",
+                                "type": "integer",
+                                "x-order": 3
+                            },
+                            "Steps": {
+                                "default": 100,
+                                "description": "Number of steps to run the model",
+                                "title": "Steps",
+                                "type": "integer",
+                                "x-order": 1
+                            },
+                            "Width": {
+                                "default": 256,
+                                "description": "Width",
+                                "title": "Width",
+                                "type": "integer",
+                                "x-order": 5
+                            }
+                        },
+                        "title": "Input",
+                        "type": "object"
+                    },
+                    "Output": {
+                        "title": "Output",
+                        "type": "null"
+                    },
+                    "Request": {
+                        "description": "The request body for a prediction",
+                        "properties": {
+                            "input": {
+                                "$ref": "#/components/schemas/Input"
+                            },
+                            "output_file_prefix": {
+                                "title": "Output File Prefix",
+                                "type": "string"
+                            }
+                        },
+                        "title": "Request",
+                        "type": "object"
+                    },
+                    "Response": {
+                        "description": "The response body for a prediction",
+                        "properties": {
+                            "error": {
+                                "title": "Error",
+                                "type": "string"
+                            },
+                            "output": {
+                                "$ref": "#/components/schemas/Output"
+                            },
+                            "status": {
+                                "$ref": "#/components/schemas/Status"
+                            }
+                        },
+                        "required": [
+                            "status"
+                        ],
+                        "title": "Response",
+                        "type": "object"
+                    },
+                    "Status": {
+                        "description": "An enumeration.",
+                        "enum": [
+                            "processing",
+                            "succeeded",
+                            "failed"
+                        ],
+                        "title": "Status",
+                        "type": "string"
+                    },
+                    "ValidationError": {
+                        "properties": {
+                            "loc": {
+                                "items": {
+                                    "anyOf": [
+                                        {
+                                            "type": "string"
+                                        },
+                                        {
+                                            "type": "integer"
+                                        }
+                                    ]
+                                },
+                                "title": "Location",
+                                "type": "array"
+                            },
+                            "msg": {
+                                "title": "Message",
+                                "type": "string"
+                            },
+                            "type": {
+                                "title": "Error Type",
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "loc",
+                            "msg",
+                            "type"
+                        ],
+                        "title": "ValidationError",
+                        "type": "object"
+                    }
+                }
+            },
+            "info": {
+                "title": "Cog",
+                "version": "0.1.0"
+            },
+            "openapi": "3.0.2",
+            "paths": {
+                "/": {
+                    "get": {
+                        "operationId": "root__get",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {}
+                                    }
+                                },
+                                "description": "Successful Response"
+                            }
+                        },
+                        "summary": "Root"
+                    }
+                },
+                "/predictions": {
+                    "post": {
+                        "description": "Run a single prediction on the model",
+                        "operationId": "predict_predictions_post",
+                        "requestBody": {
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "$ref": "#/components/schemas/Request"
+                                    }
+                                }
+                            }
+                        },
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/Response"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            },
+                            "422": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/HTTPValidationError"
+                                        }
+                                    }
+                                },
+                                "description": "Validation Error"
+                            }
+                        },
+                        "summary": "Predict"
+                    }
+                }
+            }
+        },
+        "meta": {}
+    },
+    "614871946825.dkr.ecr.us-east-1.amazonaws.com/voodoohop/dalle-playground": {
+        "hash": "sha256:42059abaa3be2a4c69dda2b672a6ee2564ca26552b4479559e54a90cc59071f7",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/voodoohop/dalle-playground@sha256:42059abaa3be2a4c69dda2b672a6ee2564ca26552b4479559e54a90cc59071f7",
+        "openapi": {
+            "components": {
+                "schemas": {
+                    "HTTPValidationError": {
+                        "properties": {
+                            "detail": {
+                                "items": {
+                                    "$ref": "#/components/schemas/ValidationError"
+                                },
+                                "title": "Detail",
+                                "type": "array"
+                            }
+                        },
+                        "title": "HTTPValidationError",
+                        "type": "object"
+                    },
+                    "Input": {
+                        "properties": {
+                            "model_size": {
+                                "allOf": [
+                                    {
+                                        "$ref": "#/components/schemas/model_size"
+                                    }
+                                ],
+                                "default": "MEGA",
+                                "description": "Size of the model",
+                                "x-order": 2
+                            },
+                            "num": {
+                                "default": 4,
+                                "description": "Number of images to generate",
+                                "maximum": 20,
+                                "minimum": 1,
+                                "title": "Num",
+                                "type": "integer",
+                                "x-order": 1
+                            },
+                            "prompt": {
+                                "description": "Image prompt",
+                                "title": "Prompt",
+                                "type": "string",
+                                "x-order": 0
+                            }
+                        },
+                        "required": [
+                            "prompt"
+                        ],
+                        "title": "Input",
+                        "type": "object"
+                    },
+                    "Output": {
+                        "items": {
+                            "format": "uri",
+                            "type": "string"
+                        },
+                        "title": "Output",
+                        "type": "array"
+                    },
+                    "Request": {
+                        "description": "The request body for a prediction",
+                        "properties": {
+                            "input": {
+                                "$ref": "#/components/schemas/Input"
+                            },
+                            "output_file_prefix": {
+                                "title": "Output File Prefix",
+                                "type": "string"
+                            }
+                        },
+                        "title": "Request",
+                        "type": "object"
+                    },
+                    "Response": {
+                        "description": "The response body for a prediction",
+                        "properties": {
+                            "error": {
+                                "title": "Error",
+                                "type": "string"
+                            },
+                            "output": {
+                                "$ref": "#/components/schemas/Output"
+                            },
+                            "status": {
+                                "$ref": "#/components/schemas/Status"
+                            }
+                        },
+                        "required": [
+                            "status"
+                        ],
+                        "title": "Response",
+                        "type": "object"
+                    },
+                    "Status": {
+                        "description": "An enumeration.",
+                        "enum": [
+                            "processing",
+                            "succeeded",
+                            "failed"
+                        ],
+                        "title": "Status",
+                        "type": "string"
+                    },
+                    "ValidationError": {
+                        "properties": {
+                            "loc": {
+                                "items": {
+                                    "anyOf": [
+                                        {
+                                            "type": "string"
+                                        },
+                                        {
+                                            "type": "integer"
+                                        }
+                                    ]
+                                },
+                                "title": "Location",
+                                "type": "array"
+                            },
+                            "msg": {
+                                "title": "Message",
+                                "type": "string"
+                            },
+                            "type": {
+                                "title": "Error Type",
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "loc",
+                            "msg",
+                            "type"
+                        ],
+                        "title": "ValidationError",
+                        "type": "object"
+                    },
+                    "model_size": {
+                        "description": "An enumeration.",
+                        "enum": [
+                            "MEGA"
+                        ],
+                        "title": "model_size",
+                        "type": "string"
+                    }
+                }
+            },
+            "info": {
+                "title": "Cog",
+                "version": "0.1.0"
+            },
+            "openapi": "3.0.2",
+            "paths": {
+                "/": {
+                    "get": {
+                        "operationId": "root__get",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {}
+                                    }
+                                },
+                                "description": "Successful Response"
+                            }
+                        },
+                        "summary": "Root"
+                    }
+                },
+                "/predictions": {
+                    "post": {
+                        "description": "Run a single prediction on the model",
+                        "operationId": "predict_predictions_post",
+                        "requestBody": {
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "$ref": "#/components/schemas/Request"
+                                    }
+                                }
+                            }
+                        },
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/Response"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            },
+                            "422": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/HTTPValidationError"
+                                        }
+                                    }
+                                },
+                                "description": "Validation Error"
+                            }
+                        },
+                        "summary": "Predict"
+                    }
+                }
+            }
+        },
+        "meta": {}
+    },
+    "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/latent-diffusion-400m": {
+        "hash": "sha256:27233942e8b1a2c3499fdc8bb15ab832306dadd0f21285693898be6c3586d4d4",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/latent-diffusion-400m@sha256:27233942e8b1a2c3499fdc8bb15ab832306dadd0f21285693898be6c3586d4d4",
+        "openapi": {
+            "components": {
+                "schemas": {
+                    "HTTPValidationError": {
+                        "properties": {
+                            "detail": {
+                                "items": {
+                                    "$ref": "#/components/schemas/ValidationError"
+                                },
+                                "title": "Detail",
+                                "type": "array"
+                            }
+                        },
+                        "title": "HTTPValidationError",
+                        "type": "object"
+                    },
+                    "Input": {
+                        "properties": {
+                            "Diversity_scale": {
+                                "default": 10,
+                                "description": "As a rule of thumb, higher values of scale produce better samples at the cost of a reduced output diversity.",
+                                "title": "Diversity Scale",
+                                "type": "number",
+                                "x-order": 4
+                            },
+                            "ETA": {
+                                "default": 1,
+                                "description": "Can be 0 or 1",
+                                "title": "Eta",
+                                "type": "integer",
+                                "x-order": 2
+                            },
+                            "Height": {
+                                "default": 256,
+                                "description": "Height",
+                                "title": "Height",
+                                "type": "integer",
+                                "x-order": 6
+                            },
+                            "Prompt": {
+                                "default": "",
+                                "description": "Your text prompt.",
+                                "title": "Prompt",
+                                "type": "string",
+                                "x-order": 0
+                            },
+                            "Samples_in_parallel": {
+                                "default": 4,
+                                "description": "Batch size",
+                                "title": "Samples In Parallel",
+                                "type": "integer",
+                                "x-order": 3
+                            },
+                            "Steps": {
+                                "default": 100,
+                                "description": "Number of steps to run the model",
+                                "title": "Steps",
+                                "type": "integer",
+                                "x-order": 1
+                            },
+                            "Width": {
+                                "default": 256,
+                                "description": "Width",
+                                "title": "Width",
+                                "type": "integer",
+                                "x-order": 5
+                            }
+                        },
+                        "title": "Input",
+                        "type": "object"
+                    },
+                    "Output": {
+                        "title": "Output",
+                        "type": "null"
+                    },
+                    "Request": {
+                        "description": "The request body for a prediction",
+                        "properties": {
+                            "input": {
+                                "$ref": "#/components/schemas/Input"
+                            },
+                            "output_file_prefix": {
+                                "title": "Output File Prefix",
+                                "type": "string"
+                            }
+                        },
+                        "title": "Request",
+                        "type": "object"
+                    },
+                    "Response": {
+                        "description": "The response body for a prediction",
+                        "properties": {
+                            "error": {
+                                "title": "Error",
+                                "type": "string"
+                            },
+                            "output": {
+                                "$ref": "#/components/schemas/Output"
+                            },
+                            "status": {
+                                "$ref": "#/components/schemas/Status"
+                            }
+                        },
+                        "required": [
+                            "status"
+                        ],
+                        "title": "Response",
+                        "type": "object"
+                    },
+                    "Status": {
+                        "description": "An enumeration.",
+                        "enum": [
+                            "processing",
+                            "succeeded",
+                            "failed"
+                        ],
+                        "title": "Status",
+                        "type": "string"
+                    },
+                    "ValidationError": {
+                        "properties": {
+                            "loc": {
+                                "items": {
+                                    "anyOf": [
+                                        {
+                                            "type": "string"
+                                        },
+                                        {
+                                            "type": "integer"
+                                        }
+                                    ]
+                                },
+                                "title": "Location",
+                                "type": "array"
+                            },
+                            "msg": {
+                                "title": "Message",
+                                "type": "string"
+                            },
+                            "type": {
+                                "title": "Error Type",
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "loc",
+                            "msg",
+                            "type"
+                        ],
+                        "title": "ValidationError",
+                        "type": "object"
+                    }
+                }
+            },
+            "info": {
+                "title": "Cog",
+                "version": "0.1.0"
+            },
+            "openapi": "3.0.2",
+            "paths": {
+                "/": {
+                    "get": {
+                        "operationId": "root__get",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {}
+                                    }
+                                },
+                                "description": "Successful Response"
+                            }
+                        },
+                        "summary": "Root"
+                    }
+                },
+                "/predictions": {
+                    "post": {
+                        "description": "Run a single prediction on the model",
+                        "operationId": "predict_predictions_post",
+                        "requestBody": {
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "$ref": "#/components/schemas/Request"
+                                    }
+                                }
+                            }
+                        },
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/Response"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            },
+                            "422": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/HTTPValidationError"
+                                        }
+                                    }
+                                },
+                                "description": "Validation Error"
+                            }
+                        },
+                        "summary": "Predict"
+                    }
+                }
+            }
+        },
+        "meta": {}
+    },
+    "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/min-dalle": {
+        "hash": "sha256:a4cd81dfb0dece527d829ffa5af4de64e32807ba696a1b638a48e73f8bf54ca3",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/min-dalle@sha256:a4cd81dfb0dece527d829ffa5af4de64e32807ba696a1b638a48e73f8bf54ca3",
+        "openapi": {
+            "components": {
+                "schemas": {
+                    "HTTPValidationError": {
+                        "properties": {
+                            "detail": {
+                                "items": {
+                                    "$ref": "#/components/schemas/ValidationError"
+                                },
+                                "title": "Detail",
+                                "type": "array"
+                            }
+                        },
+                        "title": "HTTPValidationError",
+                        "type": "object"
+                    },
+                    "Input": {
+                        "properties": {
+                            "Prompt": {
+                                "default": "Dali painting of WALL\u00b7E",
+                                "description": "For long prompts, only the first 64 tokens will be used to generate the image.",
+                                "title": "Prompt",
+                                "type": "string",
+                                "x-order": 0
+                            },
+                            "grid_size": {
+                                "default": 1,
+                                "description": "Size of the image grid.  4x4 takes about 15 seconds, 8x8 takes about 35 seconds",
+                                "maximum": 8,
+                                "minimum": 1,
+                                "title": "Grid Size",
+                                "type": "integer",
+                                "x-order": 2
+                            },
+                            "intermediate_outputs": {
+                                "default": true,
+                                "description": "Whether to show intermediate outputs while running.  This adds less than a second to the run time.",
+                                "title": "Intermediate Outputs",
+                                "type": "boolean",
+                                "x-order": 1
+                            },
+                            "log2_supercondition_factor": {
+                                "default": 4,
+                                "description": "Higher values result in better agreement with the text but a narrower variety of generated images",
+                                "maximum": 6,
+                                "minimum": 1,
+                                "title": "Log2 Supercondition Factor",
+                                "type": "integer",
+                                "x-order": 3
+                            }
+                        },
+                        "title": "Input",
+                        "type": "object"
+                    },
+                    "Output": {
+                        "items": {
+                            "format": "uri",
+                            "type": "string"
+                        },
+                        "title": "Output",
+                        "type": "array",
+                        "x-cog-array-type": "iterator"
+                    },
+                    "Request": {
+                        "description": "The request body for a prediction",
+                        "properties": {
+                            "input": {
+                                "$ref": "#/components/schemas/Input"
+                            },
+                            "output_file_prefix": {
+                                "title": "Output File Prefix",
+                                "type": "string"
+                            }
+                        },
+                        "title": "Request",
+                        "type": "object"
+                    },
+                    "Response": {
+                        "description": "The response body for a prediction",
+                        "properties": {
+                            "error": {
+                                "title": "Error",
+                                "type": "string"
+                            },
+                            "output": {
+                                "$ref": "#/components/schemas/Output"
+                            },
+                            "status": {
+                                "$ref": "#/components/schemas/Status"
+                            }
+                        },
+                        "required": [
+                            "status"
+                        ],
+                        "title": "Response",
+                        "type": "object"
+                    },
+                    "Status": {
+                        "description": "An enumeration.",
+                        "enum": [
+                            "processing",
+                            "succeeded",
+                            "failed"
+                        ],
+                        "title": "Status",
+                        "type": "string"
+                    },
+                    "ValidationError": {
+                        "properties": {
+                            "loc": {
+                                "items": {
+                                    "anyOf": [
+                                        {
+                                            "type": "string"
+                                        },
+                                        {
+                                            "type": "integer"
+                                        }
+                                    ]
+                                },
+                                "title": "Location",
+                                "type": "array"
+                            },
+                            "msg": {
+                                "title": "Message",
+                                "type": "string"
+                            },
+                            "type": {
+                                "title": "Error Type",
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "loc",
+                            "msg",
+                            "type"
+                        ],
+                        "title": "ValidationError",
+                        "type": "object"
+                    }
+                }
+            },
+            "info": {
+                "title": "Cog",
+                "version": "0.1.0"
+            },
+            "openapi": "3.0.2",
+            "paths": {
+                "/": {
+                    "get": {
+                        "operationId": "root__get",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {}
+                                    }
+                                },
+                                "description": "Successful Response"
+                            }
+                        },
+                        "summary": "Root"
+                    }
+                },
+                "/predictions": {
+                    "post": {
+                        "description": "Run a single prediction on the model",
+                        "operationId": "predict_predictions_post",
+                        "requestBody": {
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "$ref": "#/components/schemas/Request"
+                                    }
+                                }
+                            }
+                        },
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/Response"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            },
+                            "422": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/HTTPValidationError"
+                                        }
+                                    }
+                                },
+                                "description": "Validation Error"
+                            }
+                        },
+                        "summary": "Predict"
+                    }
+                }
+            }
+        },
+        "meta": {}
+    },
+    "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/preset-frontpage": {
+        "hash": "sha256:c6cb57059abcf615dd96ec7b86f5001ecf5abc33b3dc8750780eb14a5e1a4ce8",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/preset-frontpage@sha256:c6cb57059abcf615dd96ec7b86f5001ecf5abc33b3dc8750780eb14a5e1a4ce8",
+        "openapi": {
+            "components": {
+                "schemas": {
+                    "HTTPValidationError": {
+                        "properties": {
+                            "detail": {
+                                "items": {
+                                    "$ref": "#/components/schemas/ValidationError"
+                                },
+                                "title": "Detail",
+                                "type": "array"
+                            }
+                        },
+                        "title": "HTTPValidationError",
+                        "type": "object"
+                    },
+                    "Input": {
+                        "properties": {
+                            "Diversity_scale": {
+                                "default": 10,
+                                "description": "As a rule of thumb, higher values of scale produce better samples at the cost of a reduced output diversity.",
+                                "title": "Diversity Scale",
+                                "type": "number",
+                                "x-order": 4
+                            },
+                            "ETA": {
+                                "default": 1,
+                                "description": "Can be 0 or 1",
+                                "title": "Eta",
+                                "type": "integer",
+                                "x-order": 2
+                            },
+                            "Height": {
+                                "default": 256,
+                                "description": "Height",
+                                "title": "Height",
+                                "type": "integer",
+                                "x-order": 6
+                            },
+                            "Prompt": {
+                                "default": "",
+                                "description": "Your text prompt.",
+                                "title": "Prompt",
+                                "type": "string",
+                                "x-order": 0
+                            },
+                            "Samples_in_parallel": {
+                                "default": 3,
+                                "description": "Batch size",
+                                "title": "Samples In Parallel",
+                                "type": "integer",
+                                "x-order": 3
+                            },
+                            "Steps": {
+                                "default": 100,
+                                "description": "Number of steps to run the model",
+                                "title": "Steps",
+                                "type": "integer",
+                                "x-order": 1
+                            },
+                            "Width": {
+                                "default": 256,
+                                "description": "Width",
+                                "title": "Width",
+                                "type": "integer",
+                                "x-order": 5
+                            }
+                        },
+                        "title": "Input",
+                        "type": "object"
+                    },
+                    "Output": {
+                        "title": "Output",
+                        "type": "null"
+                    },
+                    "Request": {
+                        "description": "The request body for a prediction",
+                        "properties": {
+                            "input": {
+                                "$ref": "#/components/schemas/Input"
+                            },
+                            "output_file_prefix": {
+                                "title": "Output File Prefix",
+                                "type": "string"
+                            }
+                        },
+                        "title": "Request",
+                        "type": "object"
+                    },
+                    "Response": {
+                        "description": "The response body for a prediction",
+                        "properties": {
+                            "error": {
+                                "title": "Error",
+                                "type": "string"
+                            },
+                            "output": {
+                                "$ref": "#/components/schemas/Output"
+                            },
+                            "status": {
+                                "$ref": "#/components/schemas/Status"
+                            }
+                        },
+                        "required": [
+                            "status"
+                        ],
+                        "title": "Response",
+                        "type": "object"
+                    },
+                    "Status": {
+                        "description": "An enumeration.",
+                        "enum": [
+                            "processing",
+                            "succeeded",
+                            "failed"
+                        ],
+                        "title": "Status",
+                        "type": "string"
+                    },
+                    "ValidationError": {
+                        "properties": {
+                            "loc": {
+                                "items": {
+                                    "anyOf": [
+                                        {
+                                            "type": "string"
+                                        },
+                                        {
+                                            "type": "integer"
+                                        }
+                                    ]
+                                },
+                                "title": "Location",
+                                "type": "array"
+                            },
+                            "msg": {
+                                "title": "Message",
+                                "type": "string"
+                            },
+                            "type": {
+                                "title": "Error Type",
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "loc",
+                            "msg",
+                            "type"
+                        ],
+                        "title": "ValidationError",
+                        "type": "object"
+                    }
+                }
+            },
+            "info": {
+                "title": "Cog",
+                "version": "0.1.0"
+            },
+            "openapi": "3.0.2",
+            "paths": {
+                "/": {
+                    "get": {
+                        "operationId": "root__get",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {}
+                                    }
+                                },
+                                "description": "Successful Response"
+                            }
+                        },
+                        "summary": "Root"
+                    }
+                },
+                "/predictions": {
+                    "post": {
+                        "description": "Run a single prediction on the model",
+                        "operationId": "predict_predictions_post",
+                        "requestBody": {
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "$ref": "#/components/schemas/Request"
+                                    }
+                                }
+                            }
+                        },
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/Response"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            },
+                            "422": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/HTTPValidationError"
+                                        }
+                                    }
+                                },
+                                "description": "Validation Error"
+                            }
+                        },
+                        "summary": "Predict"
+                    }
+                }
+            }
+        },
+        "meta": {}
+    },
+    "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/majesty-diffusion-cog": {
+        "hash": "sha256:b8cf2e675991cf79cc0b310d49d43276205c353098466cdc7589cc797caaa180",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/majesty-diffusion-cog@sha256:b8cf2e675991cf79cc0b310d49d43276205c353098466cdc7589cc797caaa180",
+        "openapi": {
+            "components": {
+                "schemas": {
+                    "HTTPValidationError": {
+                        "properties": {
+                            "detail": {
+                                "items": {
+                                    "$ref": "#/components/schemas/ValidationError"
+                                },
+                                "title": "Detail",
+                                "type": "array"
+                            }
+                        },
+                        "title": "HTTPValidationError",
+                        "type": "object"
+                    },
+                    "Input": {
+                        "properties": {
+                            "Prompt": {
+                                "default": "",
+                                "description": "Your text prompt.",
+                                "title": "Prompt",
+                                "type": "string",
+                                "x-order": 0
+                            },
+                            "latent_diffusion_guidance_scale": {
+                                "default": 12,
+                                "description": "Balance between creativity and coherent composition. Try values between 0-15. Lower values help with text interpretation and creativity, higher help with composition. ",
+                                "title": "Latent Diffusion Guidance Scale",
+                                "type": "integer",
+                                "x-order": 2
+                            },
+                            "latent_diffusion_model": {
+                                "allOf": [
+                                    {
+                                        "$ref": "#/components/schemas/latent_diffusion_model"
+                                    }
+                                ],
+                                "default": "finetuned",
+                                "description": "Original is the previous LAION model. Finetuned should be better but cannot do text. One of:  [\"original\", \"finetuned\", \"ongo (fine tuned in paintings)\", \"erlich (fine tuned in logos)\"]",
+                                "x-order": 1
+                            }
+                        },
+                        "title": "Input",
+                        "type": "object"
+                    },
+                    "Output": {
+                        "title": "Output",
+                        "type": "null"
+                    },
+                    "Request": {
+                        "description": "The request body for a prediction",
+                        "properties": {
+                            "input": {
+                                "$ref": "#/components/schemas/Input"
+                            },
+                            "output_file_prefix": {
+                                "title": "Output File Prefix",
+                                "type": "string"
+                            }
+                        },
+                        "title": "Request",
+                        "type": "object"
+                    },
+                    "Response": {
+                        "description": "The response body for a prediction",
+                        "properties": {
+                            "error": {
+                                "title": "Error",
+                                "type": "string"
+                            },
+                            "output": {
+                                "$ref": "#/components/schemas/Output"
+                            },
+                            "status": {
+                                "$ref": "#/components/schemas/Status"
+                            }
+                        },
+                        "required": [
+                            "status"
+                        ],
+                        "title": "Response",
+                        "type": "object"
+                    },
+                    "Status": {
+                        "description": "An enumeration.",
+                        "enum": [
+                            "processing",
+                            "succeeded",
+                            "failed"
+                        ],
+                        "title": "Status",
+                        "type": "string"
+                    },
+                    "ValidationError": {
+                        "properties": {
+                            "loc": {
+                                "items": {
+                                    "anyOf": [
+                                        {
+                                            "type": "string"
+                                        },
+                                        {
+                                            "type": "integer"
+                                        }
+                                    ]
+                                },
+                                "title": "Location",
+                                "type": "array"
+                            },
+                            "msg": {
+                                "title": "Message",
+                                "type": "string"
+                            },
+                            "type": {
+                                "title": "Error Type",
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "loc",
+                            "msg",
+                            "type"
+                        ],
+                        "title": "ValidationError",
+                        "type": "object"
+                    },
+                    "latent_diffusion_model": {
+                        "description": "An enumeration.",
+                        "enum": [
+                            "original",
+                            "finetuned",
+                            "ongo (fine tuned in paintings)",
+                            "erlich (fine tuned in logos)"
+                        ],
+                        "title": "latent_diffusion_model",
+                        "type": "string"
+                    }
+                }
+            },
+            "info": {
+                "title": "Cog",
+                "version": "0.1.0"
+            },
+            "openapi": "3.0.2",
+            "paths": {
+                "/": {
+                    "get": {
+                        "operationId": "root__get",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {}
+                                    }
+                                },
+                                "description": "Successful Response"
+                            }
+                        },
+                        "summary": "Root"
+                    }
+                },
+                "/predictions": {
+                    "post": {
+                        "description": "Run a single prediction on the model",
+                        "operationId": "predict_predictions_post",
+                        "requestBody": {
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "$ref": "#/components/schemas/Request"
+                                    }
+                                }
+                            }
+                        },
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/Response"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            },
+                            "422": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/HTTPValidationError"
+                                        }
+                                    }
+                                },
+                                "description": "Validation Error"
+                            }
+                        },
+                        "summary": "Predict"
+                    }
+                }
+            }
+        },
+        "meta": {}
+    },
+    "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/avatarclip": {
+        "hash": "sha256:593b71edd0d471d9748229e2ed84899ae0132ac20e04846e2610a374dad676e2",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/avatarclip@sha256:593b71edd0d471d9748229e2ed84899ae0132ac20e04846e2610a374dad676e2",
+        "openapi": {
+            "components": {
+                "schemas": {
+                    "HTTPValidationError": {
+                        "properties": {
+                            "detail": {
+                                "items": {
+                                    "$ref": "#/components/schemas/ValidationError"
+                                },
+                                "title": "Detail",
+                                "type": "array"
+                            }
+                        },
+                        "title": "HTTPValidationError",
+                        "type": "object"
+                    },
+                    "Input": {
+                        "properties": {
+                            "text": {
+                                "default": "overweight sumo wrestler",
+                                "description": "Coarse character prompt",
+                                "title": "Text",
+                                "type": "string",
+                                "x-order": 0
+                            }
+                        },
+                        "title": "Input",
+                        "type": "object"
+                    },
+                    "Output": {
+                        "format": "uri",
+                        "title": "Output",
+                        "type": "string"
+                    },
+                    "Request": {
+                        "description": "The request body for a prediction",
+                        "properties": {
+                            "input": {
+                                "$ref": "#/components/schemas/Input"
+                            },
+                            "output_file_prefix": {
+                                "title": "Output File Prefix",
+                                "type": "string"
+                            }
+                        },
+                        "title": "Request",
+                        "type": "object"
+                    },
+                    "Response": {
+                        "description": "The response body for a prediction",
+                        "properties": {
+                            "error": {
+                                "title": "Error",
+                                "type": "string"
+                            },
+                            "output": {
+                                "$ref": "#/components/schemas/Output"
+                            },
+                            "status": {
+                                "$ref": "#/components/schemas/Status"
+                            }
+                        },
+                        "required": [
+                            "status"
+                        ],
+                        "title": "Response",
+                        "type": "object"
+                    },
+                    "Status": {
+                        "description": "An enumeration.",
+                        "enum": [
+                            "processing",
+                            "succeeded",
+                            "failed"
+                        ],
+                        "title": "Status",
+                        "type": "string"
+                    },
+                    "ValidationError": {
+                        "properties": {
+                            "loc": {
+                                "items": {
+                                    "anyOf": [
+                                        {
+                                            "type": "string"
+                                        },
+                                        {
+                                            "type": "integer"
+                                        }
+                                    ]
+                                },
+                                "title": "Location",
+                                "type": "array"
+                            },
+                            "msg": {
+                                "title": "Message",
+                                "type": "string"
+                            },
+                            "type": {
+                                "title": "Error Type",
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "loc",
+                            "msg",
+                            "type"
+                        ],
+                        "title": "ValidationError",
+                        "type": "object"
+                    }
+                }
+            },
+            "info": {
+                "title": "Cog",
+                "version": "0.1.0"
+            },
+            "openapi": "3.0.2",
+            "paths": {
+                "/": {
+                    "get": {
+                        "operationId": "root__get",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {}
+                                    }
+                                },
+                                "description": "Successful Response"
+                            }
+                        },
+                        "summary": "Root"
+                    }
+                },
+                "/predictions": {
+                    "post": {
+                        "description": "Run a single prediction on the model",
+                        "operationId": "predict_predictions_post",
+                        "requestBody": {
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "$ref": "#/components/schemas/Request"
+                                    }
+                                }
+                            }
+                        },
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/Response"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            },
+                            "422": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/HTTPValidationError"
+                                        }
+                                    }
+                                },
+                                "description": "Validation Error"
+                            }
+                        },
+                        "summary": "Predict"
+                    }
+                }
+            }
+        },
+        "meta": {}
+    }
+}

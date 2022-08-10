@@ -29,7 +29,8 @@ try:
 except:
     meta = {}
 
-openapi = inspect[0]["ContainerConfig"]["Labels"]["org.cogmodel.openapi_schema"]
+# breakpoint()
+openapi = json.loads(inspect[0]["ContainerConfig"]["Labels"]["org.cogmodel.openapi_schema"])
 hash = inspect[0]["Id"]
 
 metadata[image_url] = {
