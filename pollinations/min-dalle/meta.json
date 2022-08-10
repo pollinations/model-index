@@ -1,0 +1,4 @@
+{
+    "description": "Test description for dalle-mini",
+    "gpu": ["t4"]
+}
