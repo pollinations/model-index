@@ -2633,7 +2633,7 @@
                             "x-order": 1
                         },
                         "iters": {
-                            "default": 30000,
+                            "default": 3000,
                             "description": "training iters",
                             "title": "Iters",
                             "type": "integer",
