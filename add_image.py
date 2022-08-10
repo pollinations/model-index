@@ -5,9 +5,12 @@ Usage: python add_image.py <image_name> <image_url>
 """
 import json
 import sys
+import time
+import os
 
 image_name = sys.argv[1]
-image_url = sys.argv[2]
+original_url = sys.argv[2]
+image_url = original_url.split("@")[0]
 
 with open("images.json", "r") as f:
     images = json.load(f)
@@ -20,8 +23,25 @@ with open("images.json", "w") as f:
 with open("metadata.json", "r") as f:
     metadata = json.load(f)
 
-with open(f"{image_name}/inspect.json", "r") as f:
-    inspect = json.load(f)
+ok = False
+while not ok:
+    try:
+        with open(f"{image_name}/inspect.json", "r") as f:
+            inspect = json.load(f)
+            assert len(inspect) > 0
+            try:
+                openapi = json.loads(inspect[0]["ContainerConfig"]["Labels"]["org.cogmodel.openapi_schema"])
+                hash = inspect[0]["Id"]
+            except:
+                openapi = json.loads(inspect[0]["Config"]["Labels"]["org.cogmodel.openapi_schema"])
+
+            hash = inspect[0]["Id"]
+            ok = True
+    except:
+        os.system(f"docker pull {original_url}")
+        time.sleep(5)
+        os.system(f"docker inspect {original_url} > {image_name}/inspect.json")
+        time.sleep(5)
 
 try:
     with open(f"{image_name}/meta.json", "r") as f:
@@ -29,9 +49,6 @@ try:
 except:
     meta = {}
 
-# breakpoint()
-openapi = json.loads(inspect[0]["ContainerConfig"]["Labels"]["org.cogmodel.openapi_schema"])
-hash = inspect[0]["Id"]
 
 metadata[image_url] = {
     "hash": hash,
