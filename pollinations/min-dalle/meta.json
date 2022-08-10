@@ -1,4 +1,7 @@
 {
     "description": "Test description for dalle-mini",
+    "image": "https://i.imgur.com/a9hByt4.png",
+    "credits": "Boris Dayma, Suraj Patil, Pedro Cuenca, Khalid Saifullah, Tanishq Abraham, Phúc Lê, Luke, Luke Melas, Ritobrata Ghosh.",
+    "license": "MIT License",
     "gpu": ["t4"]
 }
