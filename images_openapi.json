@@ -2550,5 +2550,336 @@
                 }
             }
         }
+    },
+    "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/dreamfields-torch": {
+        "components": {
+            "schemas": {
+                "HTTPValidationError": {
+                    "properties": {
+                        "detail": {
+                            "items": {
+                                "$ref": "#/components/schemas/ValidationError"
+                            },
+                            "title": "Detail",
+                            "type": "array"
+                        }
+                    },
+                    "title": "HTTPValidationError",
+                    "type": "object"
+                },
+                "Input": {
+                    "properties": {
+                        "H": {
+                            "default": 800,
+                            "description": "H",
+                            "title": "H",
+                            "type": "integer",
+                            "x-order": 20
+                        },
+                        "W": {
+                            "default": 800,
+                            "description": "W",
+                            "title": "W",
+                            "type": "integer",
+                            "x-order": 19
+                        },
+                        "aug_copy": {
+                            "default": 8,
+                            "description": "augmentation copy for each renderred image before feeding into CLIP",
+                            "title": "Aug Copy",
+                            "type": "integer",
+                            "x-order": 16
+                        },
+                        "dir_text": {
+                            "default": false,
+                            "description": "direction encoded text prompt",
+                            "title": "Dir Text",
+                            "type": "boolean",
+                            "x-order": 17
+                        },
+                        "dt_gamma": {
+                            "default": 0,
+                            "description": "dt_gamma (>=0) for adaptive ray marching. set to 0 to disable, >0 to accelerate rendering (but usually with worse quality)",
+                            "title": "Dt Gamma",
+                            "type": "number",
+                            "x-order": 10
+                        },
+                        "fovy": {
+                            "default": 90,
+                            "description": "default GUI camera fovy",
+                            "title": "Fovy",
+                            "type": "number",
+                            "x-order": 21
+                        },
+                        "fp16": {
+                            "default": false,
+                            "description": "use amp mixed precision training",
+                            "title": "Fp16",
+                            "type": "boolean",
+                            "x-order": 9
+                        },
+                        "h": {
+                            "default": 128,
+                            "description": "render height for CLIP training (<=224)",
+                            "title": "H",
+                            "type": "integer",
+                            "x-order": 12
+                        },
+                        "image": {
+                            "description": "ref image prompt",
+                            "format": "uri",
+                            "title": "Image",
+                            "type": "string",
+                            "x-order": 1
+                        },
+                        "iters": {
+                            "default": 30000,
+                            "description": "training iters",
+                            "title": "Iters",
+                            "type": "integer",
+                            "x-order": 3
+                        },
+                        "lr": {
+                            "default": 0.0005,
+                            "description": "initital learning rate",
+                            "title": "Lr",
+                            "type": "number",
+                            "x-order": 4
+                        },
+                        "max_ray_batch": {
+                            "default": 4096,
+                            "description": "batch size of rays at inference to avoid OOM (only valid when not using --cuda_ray)",
+                            "title": "Max Ray Batch",
+                            "type": "integer",
+                            "x-order": 8
+                        },
+                        "max_spp": {
+                            "default": 64,
+                            "description": "GUI rendering max sample per pixel",
+                            "title": "Max Spp",
+                            "type": "integer",
+                            "x-order": 22
+                        },
+                        "num_rays": {
+                            "default": 4096,
+                            "description": "number of rays",
+                            "title": "Num Rays",
+                            "type": "integer",
+                            "x-order": 5
+                        },
+                        "num_steps": {
+                            "default": 512,
+                            "description": "num steps sampled per ray (only valid when not using --cuda_ray)",
+                            "title": "Num Steps",
+                            "type": "integer",
+                            "x-order": 6
+                        },
+                        "radius": {
+                            "default": 3,
+                            "description": "default GUI camera radius from center",
+                            "title": "Radius",
+                            "type": "number",
+                            "x-order": 18
+                        },
+                        "seed": {
+                            "default": 123,
+                            "description": "random seed",
+                            "title": "Seed",
+                            "type": "integer",
+                            "x-order": 2
+                        },
+                        "tau_0": {
+                            "default": 0.5,
+                            "description": "target mean transparency 0",
+                            "title": "Tau 0",
+                            "type": "number",
+                            "x-order": 13
+                        },
+                        "tau_1": {
+                            "default": 0.8,
+                            "description": "target mean transparency 1",
+                            "title": "Tau 1",
+                            "type": "number",
+                            "x-order": 14
+                        },
+                        "tau_step": {
+                            "default": 500,
+                            "description": "steps to anneal from tau_0 to tau_1",
+                            "title": "Tau Step",
+                            "type": "number",
+                            "x-order": 15
+                        },
+                        "text": {
+                            "description": "Text to render",
+                            "title": "Text",
+                            "type": "string",
+                            "x-order": 0
+                        },
+                        "upsample_steps": {
+                            "default": 0,
+                            "description": "num steps up-sampled per ray (only valid when not using --cuda_ray)",
+                            "title": "Upsample Steps",
+                            "type": "integer",
+                            "x-order": 7
+                        },
+                        "w": {
+                            "default": 128,
+                            "description": "render width for CLIP training (<=224)",
+                            "title": "W",
+                            "type": "integer",
+                            "x-order": 11
+                        }
+                    },
+                    "required": [
+                        "text"
+                    ],
+                    "title": "Input",
+                    "type": "object"
+                },
+                "Output": {
+                    "format": "uri",
+                    "title": "Output",
+                    "type": "string"
+                },
+                "Request": {
+                    "description": "The request body for a prediction",
+                    "properties": {
+                        "input": {
+                            "$ref": "#/components/schemas/Input"
+                        },
+                        "output_file_prefix": {
+                            "title": "Output File Prefix",
+                            "type": "string"
+                        }
+                    },
+                    "title": "Request",
+                    "type": "object"
+                },
+                "Response": {
+                    "description": "The response body for a prediction",
+                    "properties": {
+                        "error": {
+                            "title": "Error",
+                            "type": "string"
+                        },
+                        "output": {
+                            "$ref": "#/components/schemas/Output"
+                        },
+                        "status": {
+                            "$ref": "#/components/schemas/Status"
+                        }
+                    },
+                    "required": [
+                        "status"
+                    ],
+                    "title": "Response",
+                    "type": "object"
+                },
+                "Status": {
+                    "description": "An enumeration.",
+                    "enum": [
+                        "processing",
+                        "succeeded",
+                        "failed"
+                    ],
+                    "title": "Status",
+                    "type": "string"
+                },
+                "ValidationError": {
+                    "properties": {
+                        "loc": {
+                            "items": {
+                                "anyOf": [
+                                    {
+                                        "type": "string"
+                                    },
+                                    {
+                                        "type": "integer"
+                                    }
+                                ]
+                            },
+                            "title": "Location",
+                            "type": "array"
+                        },
+                        "msg": {
+                            "title": "Message",
+                            "type": "string"
+                        },
+                        "type": {
+                            "title": "Error Type",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "loc",
+                        "msg",
+                        "type"
+                    ],
+                    "title": "ValidationError",
+                    "type": "object"
+                }
+            }
+        },
+        "info": {
+            "title": "Cog",
+            "version": "0.1.0"
+        },
+        "openapi": "3.0.2",
+        "paths": {
+            "/": {
+                "get": {
+                    "operationId": "root__get",
+                    "responses": {
+                        "200": {
+                            "content": {
+                                "application/json": {
+                                    "schema": {}
+                                }
+                            },
+                            "description": "Successful Response"
+                        }
+                    },
+                    "summary": "Root"
+                }
+            },
+            "/predictions": {
+                "post": {
+                    "description": "Run a single prediction on the model",
+                    "operationId": "predict_predictions_post",
+                    "requestBody": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Request"
+                                }
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "$ref": "#/components/schemas/Response"
+                                    }
+                                }
+                            },
+                            "description": "Successful Response"
+                        },
+                        "422": {
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "$ref": "#/components/schemas/HTTPValidationError"
+                                    }
+                                }
+                            },
+                            "description": "Validation Error"
+                        }
+                    },
+                    "summary": "Predict"
+                }
+            }
+        }
     }
 }
