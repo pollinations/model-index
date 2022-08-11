@@ -1867,6 +1867,13 @@
                             "type": "boolean",
                             "x-order": 1
                         },
+                        "iterations": {
+                            "default": 1000,
+                            "description": "number of iterations (for fine avatar)",
+                            "title": "Iterations",
+                            "type": "integer",
+                            "x-order": 2
+                        },
                         "text": {
                             "default": "overweight sumo wrestler",
                             "description": "prompt",
