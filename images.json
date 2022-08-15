@@ -12,5 +12,5 @@
     "pollinations/adampi": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/adampi",
     "pollinations/disco-diffusion": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/disco-diffusion",
     "pollinations/dreamfields-torch": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/dreamfields-torch",
-    "afiaka87/retrieval-augmented-diffusion": "r8.im/afiaka87/retrieval-augmented-diffusion@sha256:aace17ed89538eb52e300bae380bdd7f2e75827cab303d38fe5852bbc5d0b1a8"
+    "afiaka87/retrieval-augmented-diffusion": "r8.im/afiaka87/retrieval-augmented-diffusion"
 }
