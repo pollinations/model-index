@@ -218,7 +218,11 @@
                 }
             }
         },
-        "meta": {}
+        "meta": {
+            "pollinator_group": [
+                "T4"
+            ]
+        }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/voodoohop/dalle-playground": {
         "hash": "sha256:42059abaa3be2a4c69dda2b672a6ee2564ca26552b4479559e54a90cc59071f7",
@@ -430,7 +434,11 @@
                 }
             }
         },
-        "meta": {}
+        "meta": {
+            "pollinator_group": [
+                "T4"
+            ]
+        }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/latent-diffusion-400m": {
         "hash": "sha256:27233942e8b1a2c3499fdc8bb15ab832306dadd0f21285693898be6c3586d4d4",
@@ -651,7 +659,11 @@
                 }
             }
         },
-        "meta": {}
+        "meta": {
+            "pollinator_group": [
+                "T4"
+            ]
+        }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/min-dalle": {
         "hash": "sha256:a4cd81dfb0dece527d829ffa5af4de64e32807ba696a1b638a48e73f8bf54ca3",
@@ -870,7 +882,10 @@
             "path": "dalle",
             "category": "0 Featured",
             "credits": "Boris Dayma, Suraj Patil, Pedro Cuenca, Khalid Saifullah, Tanishq Abraham, Ph\u00fac L\u00ea, Luke, Luke Melas, Ritobrata Ghosh.",
-            "description": "<img src=\"https://i.imgur.com/a9hByt4.png\" width=\"300\">\n\n\n\n*Sunset over a lake*\n\n\n\nThe new model everyone is excited about.\n"
+            "description": "<img src=\"https://i.imgur.com/a9hByt4.png\" width=\"300\">\n\n\n\n*Sunset over a lake*\n\n\n\nThe new model everyone is excited about.\n",
+            "pollinator_group": [
+                "T4"
+            ]
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/preset-frontpage": {
@@ -1092,7 +1107,11 @@
                 }
             }
         },
-        "meta": {}
+        "meta": {
+            "pollinator_group": [
+                "T4"
+            ]
+        }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/majesty-diffusion-cog": {
         "hash": "sha256:b8cf2e675991cf79cc0b310d49d43276205c353098466cdc7589cc797caaa180",
@@ -1309,7 +1328,10 @@
             "category": "0 Featured",
             "credits": "by [dango233](https://github.com/Dango233/) and [apolinario (@multimodalart)](https://twitter.com/multimodalart).",
             "description": "![castle](https://user-images.githubusercontent.com/788417/169712054-fe3bf4bd-4473-4070-ba69-0f74f5c3e475.png)\n\n\n\nMajesty Diffusion is a mix of LAION and Disco Diffusion. Creates images that are more coherent and focused on individual objects rather than the complexity images with lots of small details in every part.\n\n\n\n---\n\n\n\nAccess our [Majestic Guide](https://multimodal.art/majesty-diffusion) (_under construction_), our [GitHub](https://github.com/multimodalart/majesty-diffusion), join our community on [Discord](https://discord.gg/yNBtQBEDfZ) or reach out via [@multimodalart on Twitter](https://twitter.com/multimodalart))\n\n\n\nby [dango233](https://github.com/Dango233/) and [apolinario (@multimodalart)](https://twitter.com/multimodalart). \n\nThe LAION-400M-trained model and the modified inference code are from [CompVis Latent Diffusion](https://github.com/CompVis/latent-diffusion). The guided-diffusion method is modified by Dango233 based on [Katherine Crowson](https://twitter.com/RiversHaveWings)'s guided diffusion notebook. multimodalart savable settings, MMC and assembled the Colab. Check the complete list on our GitHub. Some functions and methods are from various code masters (nsheppard, DanielRussRuss and others)\n",
-            "img": "https://user-images.githubusercontent.com/788417/169712054-fe3bf4bd-4473-4070-ba69-0f74f5c3e475.png"
+            "img": "https://user-images.githubusercontent.com/788417/169712054-fe3bf4bd-4473-4070-ba69-0f74f5c3e475.png",
+            "pollinator_group": [
+                "T4"
+            ]
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/avatarclip": {
@@ -1499,7 +1521,10 @@
             "id2pop": "",
             "path": "avatarclip",
             "category": "0 Featured",
-            "description": "<img src=\"https://i.imgur.com/a9hByt4.png\" width=\"300\"> \n\n\n\nThis is a model that clips the avatar of a user to a specific part of the image. It is useful for creating avatars for other users.\n\n\n\n---\n\n\n\nAccess our Avatar Clip Guide(https://multimodal.art/avatar-clip) (_under construction_), our [GitHub]("
+            "description": "<img src=\"https://i.imgur.com/a9hByt4.png\" width=\"300\"> \n\n\n\nThis is a model that clips the avatar of a user to a specific part of the image. It is useful for creating avatars for other users.\n\n\n\n---\n\n\n\nAccess our Avatar Clip Guide(https://multimodal.art/avatar-clip) (_under construction_), our [GitHub](",
+            "pollinator_group": [
+                "T4"
+            ]
         }
     },
     "r8.im/jingyunliang/swinir": {
@@ -1584,7 +1609,10 @@
             "path": "swinir",
             "category": "0 Featured",
             "credits": "[Jingyun Liang](https://github.com/JingyunLiang)",
-            "description": "<img src=\"https://i.imgur.com/BKvDhnf.png\" width=\"300\" height=\"300\" />\n\n\n\nUses [SwinIR](https://github.com/JingyunLiang/SwinIR) to perform 4x neural super-resolution (creates HD images from low resolution)\n\n\n\n---\n\nCredits: [Jingyun Liang]((https://github.com/JingyunLiang)\n\nLicense: MIT"
+            "description": "<img src=\"https://i.imgur.com/BKvDhnf.png\" width=\"300\" height=\"300\" />\n\n\n\nUses [SwinIR](https://github.com/JingyunLiang/SwinIR) to perform 4x neural super-resolution (creates HD images from low resolution)\n\n\n\n---\n\nCredits: [Jingyun Liang]((https://github.com/JingyunLiang)\n\nLicense: MIT",
+            "pollinator_group": [
+                "T4"
+            ]
         }
     },
     "r8.im/nightmareai/disco-diffusion": {
@@ -2295,7 +2323,10 @@
             "path": "adampi",
             "category": "0 Featured",
             "credits": "",
-            "description": "<img src=\"https://i.imgur.com/BKvDhnf.png\" width=\"300\" height=\"300\" />\n\n\n\nUses [SwinIR](https://github.com/JingyunLiang/SwinIR) to perform 4x neural super-resolution (creates HD images from low resolution)\n\n\n\n---\n\nCredits: [Jingyun Liang]((https://github.com/JingyunLiang)\n\nLicense: MIT"
+            "description": "<img src=\"https://i.imgur.com/BKvDhnf.png\" width=\"300\" height=\"300\" />\n\n\n\nUses [SwinIR](https://github.com/JingyunLiang/SwinIR) to perform 4x neural super-resolution (creates HD images from low resolution)\n\n\n\n---\n\nCredits: [Jingyun Liang]((https://github.com/JingyunLiang)\n\nLicense: MIT",
+            "pollinator_group": [
+                "T4"
+            ]
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/disco-diffusion": {
@@ -2660,7 +2691,10 @@
             "category": "0 Featured",
             "credits": "Credits: [@gandamu](https://twitter.com/gandamu_ml)x, [@somnai_dreams](https://twitter.com/somnai_dreams), [Katherine Crowson](https://twitter.com/RiversHaveWings), [Adam Letts](https://twitter.com/gandamu_ml)",
             "description": "![A Wonderful landscape of pollinations in a beautiful flower fields, in a mystical flower field Ultra detailed, hyper realistic 4k by Albert Bierstadt and Greg rutkowski](https://i.imgur.com/H1F0gTN.png)\n\n\n\n*A Wonderful landscape of pollinations in a beautiful flower fields, in a mystical flower field Ultra detailed, hyper realistic 4k by Albert Bierstadt and Greg rutkowski*\n\n\n\nThis is the  current go-to model for turning text into images. It might take a few minutes, but it is very artistic\n\n\n\n---\n\nTutorial Video *by Greg Bechtel* :\n\n\n\n<iframe \n\n    src=\"https://www.youtube.com/embed/-aUNQO5pXe0\"     \n\n    frameborder=\"0\"\n\n    allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\"\n\n    allowfullscreen> </iframe>\n\n\n\nCredits: [@gandamu](https://twitter.com/gandamu_ml)x, [@somnai_dreams](https://twitter.com/somnai_dreams), [Katherine Crowson](https://twitter.com/RiversHaveWings), [Adam Letts](https://twitter.com/gandamu_ml)",
-            "img": "https://i.imgur.com/H1F0gTN.png"
+            "img": "https://i.imgur.com/H1F0gTN.png",
+            "pollinator_group": [
+                "T4"
+            ]
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/dreamfields-torch": {
@@ -3004,7 +3038,10 @@
             "name": "Dreamfields",
             "description": "<img src=\"https://i.imgur.com/a9hByt4.png\" width=\"300\">\n\n\n\n Dreamfields is a deep neural network that can be used to predict the growth of your baby's weight. It is a powerful tool for predicting the future of your baby's weight.",
             "category": "0 Featured",
-            "image": "https://i.imgur.com/a9hByt4.png"
+            "image": "https://i.imgur.com/a9hByt4.png",
+            "pollinator_group": [
+                "T4"
+            ]
         }
     },
     "r8.im/afiaka87/retrieval-augmented-diffusion": {
@@ -3253,6 +3290,10 @@
                 }
             }
         },
-        "meta": {}
+        "meta": {
+            "pollinator_group": [
+                "T4"
+            ]
+        }
     }
 }
