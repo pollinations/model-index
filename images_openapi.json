@@ -2888,5 +2888,248 @@
                 }
             }
         }
+    },
+    "r8.im/afiaka87/retrieval-augmented-diffusion": {
+        "components": {
+            "schemas": {
+                "HTTPValidationError": {
+                    "properties": {
+                        "detail": {
+                            "items": {
+                                "$ref": "#/components/schemas/ValidationError"
+                            },
+                            "title": "Detail",
+                            "type": "array"
+                        }
+                    },
+                    "title": "HTTPValidationError",
+                    "type": "object"
+                },
+                "Input": {
+                    "properties": {
+                        "database_name": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/components/schemas/database_name"
+                                }
+                            ],
+                            "default": "laion-aesthetic",
+                            "description": "Which database to use for the semantic search. Different databases have different capabilties.",
+                            "x-order": 2
+                        },
+                        "height": {
+                            "default": 768,
+                            "description": "Desired height of generated images.",
+                            "title": "Height",
+                            "type": "integer",
+                            "x-order": 5
+                        },
+                        "num_database_reuslts": {
+                            "default": 10,
+                            "description": "The number of search results to guide the generation with. Using more will 'broaden' capabilities of the model at the risk of causing mode collapse or artifacting.",
+                            "maximum": 20,
+                            "minimum": 1,
+                            "title": "Num Database Reuslts",
+                            "type": "integer",
+                            "x-order": 3
+                        },
+                        "num_generations": {
+                            "default": 4,
+                            "description": "Number of images to generate. Using more will make generation take longer.",
+                            "title": "Num Generations",
+                            "type": "integer",
+                            "x-order": 4
+                        },
+                        "prompt": {
+                            "default": "",
+                            "description": "model will try to generate this text.",
+                            "title": "Prompt",
+                            "type": "string",
+                            "x-order": 0
+                        },
+                        "prompt_scale": {
+                            "default": 5,
+                            "description": "Determines influence of the prompt on the generated image. Going above 5.0 is likely to cause artifacting.",
+                            "title": "Prompt Scale",
+                            "type": "number",
+                            "x-order": 1
+                        },
+                        "steps": {
+                            "default": 50,
+                            "description": "How many steps to run the model for. Using more will make generation take longer. 50 tends to work well.",
+                            "title": "Steps",
+                            "type": "integer",
+                            "x-order": 7
+                        },
+                        "width": {
+                            "default": 768,
+                            "description": "Desired width of generated images.",
+                            "title": "Width",
+                            "type": "integer",
+                            "x-order": 6
+                        }
+                    },
+                    "title": "Input",
+                    "type": "object"
+                },
+                "Output": {
+                    "items": {
+                        "format": "uri",
+                        "type": "string"
+                    },
+                    "title": "Output",
+                    "type": "array"
+                },
+                "Request": {
+                    "description": "The request body for a prediction",
+                    "properties": {
+                        "input": {
+                            "$ref": "#/components/schemas/Input"
+                        },
+                        "output_file_prefix": {
+                            "title": "Output File Prefix",
+                            "type": "string"
+                        }
+                    },
+                    "title": "Request",
+                    "type": "object"
+                },
+                "Response": {
+                    "description": "The response body for a prediction",
+                    "properties": {
+                        "error": {
+                            "title": "Error",
+                            "type": "string"
+                        },
+                        "output": {
+                            "$ref": "#/components/schemas/Output"
+                        },
+                        "status": {
+                            "$ref": "#/components/schemas/Status"
+                        }
+                    },
+                    "required": [
+                        "status"
+                    ],
+                    "title": "Response",
+                    "type": "object"
+                },
+                "Status": {
+                    "description": "An enumeration.",
+                    "enum": [
+                        "processing",
+                        "succeeded",
+                        "failed"
+                    ],
+                    "title": "Status",
+                    "type": "string"
+                },
+                "ValidationError": {
+                    "properties": {
+                        "loc": {
+                            "items": {
+                                "anyOf": [
+                                    {
+                                        "type": "string"
+                                    },
+                                    {
+                                        "type": "integer"
+                                    }
+                                ]
+                            },
+                            "title": "Location",
+                            "type": "array"
+                        },
+                        "msg": {
+                            "title": "Message",
+                            "type": "string"
+                        },
+                        "type": {
+                            "title": "Error Type",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "loc",
+                        "msg",
+                        "type"
+                    ],
+                    "title": "ValidationError",
+                    "type": "object"
+                },
+                "database_name": {
+                    "description": "An enumeration.",
+                    "enum": [
+                        "laion-aesthetic",
+                        "simulacra",
+                        "prompt-engineer",
+                        "pokemon"
+                    ],
+                    "title": "database_name",
+                    "type": "string"
+                }
+            }
+        },
+        "info": {
+            "title": "Cog",
+            "version": "0.1.0"
+        },
+        "openapi": "3.0.2",
+        "paths": {
+            "/": {
+                "get": {
+                    "operationId": "root__get",
+                    "responses": {
+                        "200": {
+                            "content": {
+                                "application/json": {
+                                    "schema": {}
+                                }
+                            },
+                            "description": "Successful Response"
+                        }
+                    },
+                    "summary": "Root"
+                }
+            },
+            "/predictions": {
+                "post": {
+                    "description": "Run a single prediction on the model",
+                    "operationId": "predict_predictions_post",
+                    "requestBody": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Request"
+                                }
+                            }
+                        }
+                    },
+                    "responses": {
+                        "200": {
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "$ref": "#/components/schemas/Response"
+                                    }
+                                }
+                            },
+                            "description": "Successful Response"
+                        },
+                        "422": {
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "$ref": "#/components/schemas/HTTPValidationError"
+                                    }
+                                }
+                            },
+                            "description": "Validation Error"
+                        }
+                    },
+                    "summary": "Predict"
+                }
+            }
+        }
     }
 }
