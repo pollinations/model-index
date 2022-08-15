@@ -8,7 +8,7 @@ with open("metadata.json", "r") as f:
     metadata = json.load(f)
 
 try:
-    with open("pollinator_group", "r") as f:
+    with open("/home/ec2-user/pollinator_group", "r") as f:
         pollinator_group = f.read().strip()
 except:
     pollinator_group = "T4"
