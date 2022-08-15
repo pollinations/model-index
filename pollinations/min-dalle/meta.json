@@ -1,7 +1,1 @@
-{
-    "description": "Test description for dalle-mini",
-    "image": "https://i.imgur.com/a9hByt4.png",
-    "credits": "Boris Dayma, Suraj Patil, Pedro Cuenca, Khalid Saifullah, Tanishq Abraham, Phúc Lê, Luke, Luke Melas, Ritobrata Ghosh.",
-    "license": "MIT License",
-    "gpu": ["t4"]
-}
+{"featured": true, "url": "pollinations/min-dalle", "key": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/min-dalle", "name": "DallE Mini", "img": "https://i.imgur.com/a9hByt4.png", "id2pop": "2 DALLE-Mega (Requires Colab Pro)", "path": "dalle", "category": "0 Featured", "credits": "Boris Dayma, Suraj Patil, Pedro Cuenca, Khalid Saifullah, Tanishq Abraham, Ph\u00fac L\u00ea, Luke, Luke Melas, Ritobrata Ghosh.", "description": "<img src=\"https://i.imgur.com/a9hByt4.png\" width=\"300\">\n\n\n\n*Sunset over a lake*\n\n\n\nThe new model everyone is excited about.\n"}
