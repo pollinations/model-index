@@ -1,0 +1,122 @@
+[
+    {
+        "Id": "sha256:ca70ef67b84d8d36930c75d62704321478f83eb44e0e762ea1426b02e68527bc",
+        "RepoTags": [
+            "r8.im/jingyunliang/swinir:latest"
+        ],
+        "RepoDigests": [
+            "r8.im/jingyunliang/swinir@sha256:a6655af5d286c0362310303ace66a638b0e1e01be584a327f18d0d6c8c00025a"
+        ],
+        "Parent": "",
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2022-03-17T00:51:35.168126152Z",
+        "Container": "",
+        "ContainerConfig": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": null,
+            "Cmd": null,
+            "Image": "",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": null
+        },
+        "DockerVersion": "",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/root/.pyenv/shims:/root/.pyenv/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "CUDA_VERSION=11.1.1",
+                "LD_LIBRARY_PATH=/usr/local/nvidia/lib:/usr/local/nvidia/lib64:/usr/lib/x86_64-linux-gnu:/usr/local/nvidia/lib64:/usr/local/nvidia/bin",
+                "NVIDIA_VISIBLE_DEVICES=all",
+                "NVIDIA_DRIVER_CAPABILITIES=compute,utility",
+                "NVIDIA_REQUIRE_CUDA=cuda>=11.1 brand=tesla,driver>=418,driver<419 brand=tesla,driver>=440,driver<441 brand=tesla,driver>=450,driver<451",
+                "NCCL_VERSION=2.7.8",
+                "LIBRARY_PATH=/usr/local/cuda/lib64/stubs",
+                "CUDNN_VERSION=8.0.5.39",
+                "DEBIAN_FRONTEND=noninteractive",
+                "PYTHONUNBUFFERED=1"
+            ],
+            "Cmd": [
+                "python",
+                "-m",
+                "cog.server.http"
+            ],
+            "ArgsEscaped": true,
+            "Image": "",
+            "Volumes": null,
+            "WorkingDir": "/src",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {
+                "com.nvidia.cudnn.version": "8.0.5.39",
+                "maintainer": "NVIDIA CORPORATION <cudatools@nvidia.com>",
+                "org.cogmodel.cog_version": "0.0.10",
+                "org.cogmodel.config": "{\"build\":{\"gpu\":true,\"python_version\":\"3.8\",\"python_packages\":[\"torchvision==0.9.0\",\"torch==1.8.0\",\"numpy==1.19.4\",\"opencv-python==4.4.0.46\",\"tqdm==4.62.2\",\"Pillow==8.3.2\",\"timm==0.4.12\",\"ipython==7.19.0\"],\"system_packages\":[\"libgl1-mesa-glx\",\"libglib2.0-0\"],\"cuda\":\"11.1\",\"cudnn\":\"8\"},\"predict\":\"predict.py:Predictor\"}",
+                "org.cogmodel.openapi_schema": "{\"components\": {\"schemas\": {\"Input\": {\"type\": \"object\", \"properties\": {\"image\": {\"type\": \"string\", \"format\": \"uri\", \"description\": \"input image\", \"x-order\": 0}, \"task_type\": {\"type\": \"string\", \"description\": \"image restoration task type\", \"default\": \"Real-World Image Super-Resolution\", \"enum\": [\"Real-World Image Super-Resolution\", \"Grayscale Image Denoising\", \"Color Image Denoising\", \"JPEG Compression Artifact Reduction\"], \"x-order\": 1}, \"noise\": {\"type\": \"integer\", \"description\": \"noise level, activated for Grayscale Image Denoising and Color Image Denoising. Leave it as default or arbitrary if other tasks are selected\", \"default\": 15, \"enum\": [\"15\", \"25\", \"50\"], \"x-order\": 2}, \"jpeg\": {\"type\": \"integer\", \"description\": \"scale factor, activated for JPEG Compression Artifact Reduction. Leave it as default or arbitrary if other tasks are selected\", \"default\": 40, \"enum\": [\"10\", \"20\", \"30\", \"40\"], \"x-order\": 3}}}, \"Output\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"file\": {\"type\": \"string\", \"format\": \"uri\", \"x-order\": 0}, \"text\": {\"type\": \"string\", \"x-order\": 1}}}}}}}",
+                "org.cogmodel.type_signature": "{\"inputs\":[{\"name\":\"image\",\"type\":\"Path\",\"help\":\"input image\"},{\"name\":\"task_type\",\"type\":\"str\",\"default\":\"Real-World Image Super-Resolution\",\"options\":[\"Real-World Image Super-Resolution\",\"Grayscale Image Denoising\",\"Color Image Denoising\",\"JPEG Compression Artifact Reduction\"],\"help\":\"image restoration task type\"},{\"name\":\"noise\",\"type\":\"int\",\"default\":\"15\",\"options\":[\"15\",\"25\",\"50\"],\"help\":\"noise level, activated for Grayscale Image Denoising and Color Image Denoising. Leave it as default or arbitrary if other tasks are selected\"},{\"name\":\"jpeg\",\"type\":\"int\",\"default\":\"40\",\"options\":[\"10\",\"20\",\"30\",\"40\"],\"help\":\"scale factor, activated for JPEG Compression Artifact Reduction. Leave it as default or arbitrary if other tasks are selected\"}]}"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 15641357254,
+        "VirtualSize": 15641357254,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/cdf1e974df8dcffbc00518197bc317f99c7c54c6bab04e2b79e399fd5f256f0b/diff:/var/lib/docker/overlay2/e6060efed275877cd93201b3d9a729cc78238063ae75e0963ec5ee9002e8161b/diff:/var/lib/docker/overlay2/a56d2e01a62519bba6d663d4b5b9a6342b42f0d680c7b716a7fe5511605aaa24/diff:/var/lib/docker/overlay2/b48afb7c52abf24abe7873fb78cd53df8be26e607bfe36e7a669ca12329dee53/diff:/var/lib/docker/overlay2/5c6cce69080272d71a1b40bf7d4b07f1fde534bfb7ed949a3404d76f1000baa4/diff:/var/lib/docker/overlay2/994b2ce2d6470b714704dc173c7baf879090c804dfb3731c7f1aa1f09feb44ab/diff:/var/lib/docker/overlay2/cb4145a35a365e028330791b914a613348571a5e1025ebe0f69c40a9c4300fab/diff:/var/lib/docker/overlay2/9b04692bf3313212e159900ac084cc16dca7e8b9e35d065de04db04e1b678ffe/diff:/var/lib/docker/overlay2/e7828310a1afcdd7a65848e2a9384971c85932c1bf5fb04270895ba46cf864b5/diff:/var/lib/docker/overlay2/965c191f61b6f8d4be6ebca3c49cc0523cb420345a863976f89338c7520816d0/diff:/var/lib/docker/overlay2/c4d040b449578b73fef11d2add641c68a755c0986a4ac939e7dcc87839f941cc/diff:/var/lib/docker/overlay2/65f65ef8391bb800e9f50de8a9b1a4c805575d434873395a764d71370ee64821/diff:/var/lib/docker/overlay2/31412d85ce88af79ecc910ae5f3524f9acd14c91d72be66fd03e667f51e2e65f/diff:/var/lib/docker/overlay2/bf9dc14b44de3b532ce7124480bd9db3238e9decf9ffce7b07aebb499ddb2594/diff:/var/lib/docker/overlay2/5e030cec6b5956fae647f62b0e6e911c88a5673f676413557122dd2a2573978b/diff:/var/lib/docker/overlay2/c500306ac9dbfe78b336ec8bcbeb7e88c4bed130f30098b1ba9868f21a87bc4b/diff:/var/lib/docker/overlay2/3934b006fd7d7005e831210714687f40a160fcee151b23c74a93241eb5fb131e/diff:/var/lib/docker/overlay2/ff41d9c2a1d34989498c04b3ca2a90c8dfa878ba2509c31aa34277c201b6b514/diff:/var/lib/docker/overlay2/b0bf7e3cd49ad87d26d1883d22201a8c2289086cdd36141b63c53953311a666d/diff:/var/lib/docker/overlay2/1e49914e4a98bc29694df7a7ba48967776682dc88ff4f6825655362d2510fba9/diff:/var/lib/docker/overlay2/7c20679ef394eb50dcd52a4e9cea3156d54231523ff5d176bc2a7b7fd2a4109f/diff",
+                "MergedDir": "/var/lib/docker/overlay2/505da5af25d9e0ed1447f18494bbca751bc7cdfcc058036045ff980a7e9b4ad2/merged",
+                "UpperDir": "/var/lib/docker/overlay2/505da5af25d9e0ed1447f18494bbca751bc7cdfcc058036045ff980a7e9b4ad2/diff",
+                "WorkDir": "/var/lib/docker/overlay2/505da5af25d9e0ed1447f18494bbca751bc7cdfcc058036045ff980a7e9b4ad2/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:da2785b7bb163ff867008430c06b6c02d3ffc16fcee57ef38822861af85989ea",
+                "sha256:bbc674332e2e42ff92e896664df969c201a969b9ec096c5905aa725148d1c4f5",
+                "sha256:5b7dc8292d9bd9c2bec6b0ec05259f697171360b8b52fe9d61aaa42226d911b2",
+                "sha256:1a1a19626b20bd2320ad590b025f8ced47bab9d667bc256e378ff6df3674e2c4",
+                "sha256:0c5746584249e805e5ff1daa26d164803f1ee41545f4cdb4ee5d869e61db61f8",
+                "sha256:501309e4995242b5a1f2c2b8606eeed0ab75d61badd59aca01ecfa99dd883a99",
+                "sha256:feacfd9ce92def947a44e3196fdef8bb80021378a63791ed66bb1f106828a324",
+                "sha256:aa091f54d0c42f8ec1f0682d8ac300d6dd8d7749331ec8bf403a7e00ad207934",
+                "sha256:19347dc82c1399a8825d0842a6bbd7b620d74210687198e74101cc7dd565e4a0",
+                "sha256:5bdaf1f57aee93d6a06e8dd369f307c37665c1da4f04d811b322862cbf3a032a",
+                "sha256:ea30936918324379f3c1dddbda6917202c7b6350a75966206517c66a0c2b217a",
+                "sha256:1fdaf04c73821eeb237e40d0b45dda93b177e1d9d1f63730dc3d02d1915047a8",
+                "sha256:ee40fc3059d1809694209937a1ad5cadbeb1e82ac5cb21a6c259de646ac7ca30",
+                "sha256:c96757b3a90fe0dc765a8785f9dc2e89c0fb242708ba750200e46d5643a95bcc",
+                "sha256:8f36440b885c80b3e2bb78a65655b9b543af34fa93336248c3ae3f8cddb37f07",
+                "sha256:5fea0218c241ef0834bc682317f3c8582af627a72c3d9ae8e07355b32d5a3fca",
+                "sha256:54ad3664862e0d01f2d0deaaf5bfef381a14a575781ad8d7c0884c4ac008d288",
+                "sha256:8f44d2ba2dbbb1ac25b7c190b22cf049701f8f475fad01f1c4647c3a01111b99",
+                "sha256:ac532c3a18ce6607bd164de2602980329fefeab71d9370fd7469c21e92345063",
+                "sha256:64b49ae0288002a86dd4343278055281edfb2aeb97f6173e0b7d808fbe99b05c",
+                "sha256:febbe806557c2d1ecd487e5e9f055a2f6def79a7dc45fcdc181823d5c9c70f62",
+                "sha256:ac4d40c029f032a01937a4cadab3f345ff5a49942f3471170bb2e0312cd16585"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "0001-01-01T00:00:00Z"
+        }
+    }
+]
