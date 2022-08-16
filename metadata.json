@@ -666,8 +666,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/min-dalle": {
-        "hash": "sha256:a4cd81dfb0dece527d829ffa5af4de64e32807ba696a1b638a48e73f8bf54ca3",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/min-dalle@sha256:a4cd81dfb0dece527d829ffa5af4de64e32807ba696a1b638a48e73f8bf54ca3",
+        "hash": "sha256:2b6cae3ec29ababbdee0a26a8ff69d8077e3bf7fd89c0b70a8eda6243582c500",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/min-dalle@sha256:2b6cae3ec29ababbdee0a26a8ff69d8077e3bf7fd89c0b70a8eda6243582c500",
         "openapi": {
             "components": {
                 "schemas": {
