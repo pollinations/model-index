@@ -1335,8 +1335,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/avatarclip": {
-        "hash": "sha256:593b71edd0d471d9748229e2ed84899ae0132ac20e04846e2610a374dad676e2",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/avatarclip@sha256:593b71edd0d471d9748229e2ed84899ae0132ac20e04846e2610a374dad676e2",
+        "hash": "sha256:65e07f7ac08544c8aaa3e1ce1e4647692f9991e387a53b6d25c69c29d0e77a0e",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/avatarclip@sha256:65e07f7ac08544c8aaa3e1ce1e4647692f9991e387a53b6d25c69c29d0e77a0e",
         "openapi": {
             "components": {
                 "schemas": {
@@ -1355,9 +1355,23 @@
                     },
                     "Input": {
                         "properties": {
+                            "coarse": {
+                                "default": true,
+                                "description": "generate coarse avatar (super fast)",
+                                "title": "Coarse",
+                                "type": "boolean",
+                                "x-order": 1
+                            },
+                            "iterations": {
+                                "default": 1000,
+                                "description": "number of iterations (for fine avatar)",
+                                "title": "Iterations",
+                                "type": "integer",
+                                "x-order": 2
+                            },
                             "text": {
                                 "default": "overweight sumo wrestler",
-                                "description": "Coarse character prompt",
+                                "description": "prompt",
                                 "title": "Text",
                                 "type": "string",
                                 "x-order": 0
