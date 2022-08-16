@@ -441,8 +441,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/latent-diffusion-400m": {
-        "hash": "sha256:798edc68430418703badc47f80439d88a07b4e39aaa5daf9e5b4f94b18f2ac21",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/latent-diffusion-400m@sha256:798edc68430418703badc47f80439d88a07b4e39aaa5daf9e5b4f94b18f2ac21",
+        "hash": "sha256:9e2d3a6654d2a9b0bd07bc73c3cd0b6a59e23a66925eac176356965cfa2e20b7",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/latent-diffusion-400m@sha256:9e2d3a6654d2a9b0bd07bc73c3cd0b6a59e23a66925eac176356965cfa2e20b7",
         "openapi": {
             "components": {
                 "schemas": {
