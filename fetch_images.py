@@ -1,9 +1,10 @@
 import json
-
+import os
 
 with open("images.json", "r") as f:
     images = json.load(f)
 
+os.system("curl -o metadata.json https://raw.githubusercontent.com/pollinations/model-index/main/metadata.json")
 with open("metadata.json", "r") as f:
     metadata = json.load(f)
 
