@@ -441,8 +441,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/latent-diffusion-400m": {
-        "hash": "sha256:27233942e8b1a2c3499fdc8bb15ab832306dadd0f21285693898be6c3586d4d4",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/latent-diffusion-400m@sha256:27233942e8b1a2c3499fdc8bb15ab832306dadd0f21285693898be6c3586d4d4",
+        "hash": "sha256:798edc68430418703badc47f80439d88a07b4e39aaa5daf9e5b4f94b18f2ac21",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/latent-diffusion-400m@sha256:798edc68430418703badc47f80439d88a07b4e39aaa5daf9e5b4f94b18f2ac21",
         "openapi": {
             "components": {
                 "schemas": {
@@ -461,62 +461,89 @@
                     },
                     "Input": {
                         "properties": {
-                            "Diversity_scale": {
-                                "default": 10,
-                                "description": "As a rule of thumb, higher values of scale produce better samples at the cost of a reduced output diversity.",
-                                "title": "Diversity Scale",
-                                "type": "number",
-                                "x-order": 4
-                            },
-                            "ETA": {
-                                "default": 1,
-                                "description": "Can be 0 or 1",
-                                "title": "Eta",
-                                "type": "integer",
-                                "x-order": 2
-                            },
-                            "Height": {
-                                "default": 256,
-                                "description": "Height",
-                                "title": "Height",
-                                "type": "integer",
-                                "x-order": 6
-                            },
-                            "Prompt": {
-                                "default": "",
-                                "description": "Your text prompt.",
-                                "title": "Prompt",
-                                "type": "string",
-                                "x-order": 0
-                            },
-                            "Samples_in_parallel": {
-                                "default": 4,
-                                "description": "Batch size",
-                                "title": "Samples In Parallel",
+                            "H": {
+                                "default": 768,
+                                "description": "image height, in pixel space",
+                                "title": "H",
                                 "type": "integer",
                                 "x-order": 3
                             },
-                            "Steps": {
-                                "default": 100,
-                                "description": "Number of steps to run the model",
-                                "title": "Steps",
+                            "W": {
+                                "default": 768,
+                                "description": "image width, in pixel space",
+                                "title": "W",
+                                "type": "integer",
+                                "x-order": 4
+                            },
+                            "ddim_eta": {
+                                "default": 0,
+                                "description": "ddim eta (eta=0.0 corresponds to deterministic sampling",
+                                "title": "Ddim Eta",
+                                "type": "number",
+                                "x-order": 2
+                            },
+                            "ddim_steps": {
+                                "default": 50,
+                                "description": "number of ddim sampling steps",
+                                "title": "Ddim Steps",
                                 "type": "integer",
                                 "x-order": 1
                             },
-                            "Width": {
-                                "default": 256,
-                                "description": "Width",
-                                "title": "Width",
+                            "knn": {
+                                "default": 10,
+                                "description": "The number of included neighbors, only applied when --use_neighbors=True",
+                                "maximum": 20,
+                                "minimum": 1,
+                                "title": "Knn",
+                                "type": "integer",
+                                "x-order": 8
+                            },
+                            "n_rows": {
+                                "default": 0,
+                                "description": "rows in the grid (default: n_samples)",
+                                "title": "N Rows",
+                                "type": "integer",
+                                "x-order": 6
+                            },
+                            "n_samples": {
+                                "default": 3,
+                                "description": "how many samples to produce for each given prompt. A.k.a batch size",
+                                "title": "N Samples",
                                 "type": "integer",
                                 "x-order": 5
+                            },
+                            "prompts": {
+                                "default": "",
+                                "description": "model will try to generate this text. use newlines to generate multiple prompts",
+                                "title": "Prompts",
+                                "type": "string",
+                                "x-order": 0
+                            },
+                            "scale": {
+                                "default": 5,
+                                "description": "unconditional guidance scale: eps = eps(x, empty) + scale * (eps(x, cond) - eps(x, empty))",
+                                "title": "Scale",
+                                "type": "number",
+                                "x-order": 7
+                            },
+                            "use_search": {
+                                "default": false,
+                                "description": "Use searcher",
+                                "title": "Use Search",
+                                "type": "boolean",
+                                "x-order": 9
                             }
                         },
                         "title": "Input",
                         "type": "object"
                     },
                     "Output": {
+                        "items": {
+                            "format": "uri",
+                            "type": "string"
+                        },
                         "title": "Output",
-                        "type": "null"
+                        "type": "array"
                     },
                     "Request": {
                         "description": "The request body for a prediction",
@@ -666,8 +693,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/min-dalle": {
-        "hash": "sha256:a4cd81dfb0dece527d829ffa5af4de64e32807ba696a1b638a48e73f8bf54ca3",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/min-dalle@sha256:a4cd81dfb0dece527d829ffa5af4de64e32807ba696a1b638a48e73f8bf54ca3",
+        "hash": "sha256:2b6cae3ec29ababbdee0a26a8ff69d8077e3bf7fd89c0b70a8eda6243582c500",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/min-dalle@sha256:2b6cae3ec29ababbdee0a26a8ff69d8077e3bf7fd89c0b70a8eda6243582c500",
         "openapi": {
             "components": {
                 "schemas": {
@@ -1335,8 +1362,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/avatarclip": {
-        "hash": "sha256:593b71edd0d471d9748229e2ed84899ae0132ac20e04846e2610a374dad676e2",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/avatarclip@sha256:593b71edd0d471d9748229e2ed84899ae0132ac20e04846e2610a374dad676e2",
+        "hash": "sha256:65e07f7ac08544c8aaa3e1ce1e4647692f9991e387a53b6d25c69c29d0e77a0e",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/avatarclip@sha256:65e07f7ac08544c8aaa3e1ce1e4647692f9991e387a53b6d25c69c29d0e77a0e",
         "openapi": {
             "components": {
                 "schemas": {
@@ -1355,9 +1382,23 @@
                     },
                     "Input": {
                         "properties": {
+                            "coarse": {
+                                "default": true,
+                                "description": "generate coarse avatar (super fast)",
+                                "title": "Coarse",
+                                "type": "boolean",
+                                "x-order": 1
+                            },
+                            "iterations": {
+                                "default": 1000,
+                                "description": "number of iterations (for fine avatar)",
+                                "title": "Iterations",
+                                "type": "integer",
+                                "x-order": 2
+                            },
                             "text": {
                                 "default": "overweight sumo wrestler",
-                                "description": "Coarse character prompt",
+                                "description": "prompt",
                                 "title": "Text",
                                 "type": "string",
                                 "x-order": 0
@@ -2133,8 +2174,8 @@
         "meta": {}
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/adampi": {
-        "hash": "sha256:88261d8bb6532f2c78ff2a684fa770c34eb93fb27ce5d90313366c00ded0e10a",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/adampi@sha256:88261d8bb6532f2c78ff2a684fa770c34eb93fb27ce5d90313366c00ded0e10a",
+        "hash": "sha256:d772cdd557df94b06912b1e2c5910c552d4942f1d2b7704601de92b9c1dd1799",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/adampi@sha256:d772cdd557df94b06912b1e2c5910c552d4942f1d2b7704601de92b9c1dd1799",
         "openapi": {
             "components": {
                 "schemas": {
@@ -2698,8 +2739,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/dreamfields-torch": {
-        "hash": "sha256:19b767a7206a3a204992c20420adc6a01024ba60e4d4d7427a0cb92de29886ad",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/dreamfields-torch@sha256:19b767a7206a3a204992c20420adc6a01024ba60e4d4d7427a0cb92de29886ad",
+        "hash": "sha256:f249705944aa40bc077320d863efa85de3e14534c36e813af25050cb07cb03b7",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/dreamfields-torch@sha256:f249705944aa40bc077320d863efa85de3e14534c36e813af25050cb07cb03b7",
         "openapi": {
             "components": {
                 "schemas": {
@@ -3297,8 +3338,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/no-gpu-test-image": {
-        "hash": "sha256:71ae097e240714a4a9064842c52f8a084cb562ee09db355c751de1fc2859c9e1",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/no-gpu-test-image@sha256:71ae097e240714a4a9064842c52f8a084cb562ee09db355c751de1fc2859c9e1",
+        "hash": "sha256:286910ff162a7dffe0d8f8711511f1a2995190b30a8618fcf2d82b5aa053e1d9",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/no-gpu-test-image@sha256:286910ff162a7dffe0d8f8711511f1a2995190b30a8618fcf2d82b5aa053e1d9",
         "openapi": {
             "components": {
                 "schemas": {
