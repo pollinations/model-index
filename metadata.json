@@ -2133,8 +2133,8 @@
         "meta": {}
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/adampi": {
-        "hash": "sha256:88261d8bb6532f2c78ff2a684fa770c34eb93fb27ce5d90313366c00ded0e10a",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/adampi@sha256:88261d8bb6532f2c78ff2a684fa770c34eb93fb27ce5d90313366c00ded0e10a",
+        "hash": "sha256:d772cdd557df94b06912b1e2c5910c552d4942f1d2b7704601de92b9c1dd1799",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/adampi@sha256:d772cdd557df94b06912b1e2c5910c552d4942f1d2b7704601de92b9c1dd1799",
         "openapi": {
             "components": {
                 "schemas": {
