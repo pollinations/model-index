@@ -441,8 +441,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/latent-diffusion-400m": {
-        "hash": "sha256:27233942e8b1a2c3499fdc8bb15ab832306dadd0f21285693898be6c3586d4d4",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/latent-diffusion-400m@sha256:27233942e8b1a2c3499fdc8bb15ab832306dadd0f21285693898be6c3586d4d4",
+        "hash": "sha256:798edc68430418703badc47f80439d88a07b4e39aaa5daf9e5b4f94b18f2ac21",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/latent-diffusion-400m@sha256:798edc68430418703badc47f80439d88a07b4e39aaa5daf9e5b4f94b18f2ac21",
         "openapi": {
             "components": {
                 "schemas": {
@@ -461,62 +461,89 @@
                     },
                     "Input": {
                         "properties": {
-                            "Diversity_scale": {
-                                "default": 10,
-                                "description": "As a rule of thumb, higher values of scale produce better samples at the cost of a reduced output diversity.",
-                                "title": "Diversity Scale",
-                                "type": "number",
-                                "x-order": 4
-                            },
-                            "ETA": {
-                                "default": 1,
-                                "description": "Can be 0 or 1",
-                                "title": "Eta",
-                                "type": "integer",
-                                "x-order": 2
-                            },
-                            "Height": {
-                                "default": 256,
-                                "description": "Height",
-                                "title": "Height",
-                                "type": "integer",
-                                "x-order": 6
-                            },
-                            "Prompt": {
-                                "default": "",
-                                "description": "Your text prompt.",
-                                "title": "Prompt",
-                                "type": "string",
-                                "x-order": 0
-                            },
-                            "Samples_in_parallel": {
-                                "default": 4,
-                                "description": "Batch size",
-                                "title": "Samples In Parallel",
+                            "H": {
+                                "default": 768,
+                                "description": "image height, in pixel space",
+                                "title": "H",
                                 "type": "integer",
                                 "x-order": 3
                             },
-                            "Steps": {
-                                "default": 100,
-                                "description": "Number of steps to run the model",
-                                "title": "Steps",
+                            "W": {
+                                "default": 768,
+                                "description": "image width, in pixel space",
+                                "title": "W",
+                                "type": "integer",
+                                "x-order": 4
+                            },
+                            "ddim_eta": {
+                                "default": 0,
+                                "description": "ddim eta (eta=0.0 corresponds to deterministic sampling",
+                                "title": "Ddim Eta",
+                                "type": "number",
+                                "x-order": 2
+                            },
+                            "ddim_steps": {
+                                "default": 50,
+                                "description": "number of ddim sampling steps",
+                                "title": "Ddim Steps",
                                 "type": "integer",
                                 "x-order": 1
                             },
-                            "Width": {
-                                "default": 256,
-                                "description": "Width",
-                                "title": "Width",
+                            "knn": {
+                                "default": 10,
+                                "description": "The number of included neighbors, only applied when --use_neighbors=True",
+                                "maximum": 20,
+                                "minimum": 1,
+                                "title": "Knn",
+                                "type": "integer",
+                                "x-order": 8
+                            },
+                            "n_rows": {
+                                "default": 0,
+                                "description": "rows in the grid (default: n_samples)",
+                                "title": "N Rows",
+                                "type": "integer",
+                                "x-order": 6
+                            },
+                            "n_samples": {
+                                "default": 3,
+                                "description": "how many samples to produce for each given prompt. A.k.a batch size",
+                                "title": "N Samples",
                                 "type": "integer",
                                 "x-order": 5
+                            },
+                            "prompts": {
+                                "default": "",
+                                "description": "model will try to generate this text. use newlines to generate multiple prompts",
+                                "title": "Prompts",
+                                "type": "string",
+                                "x-order": 0
+                            },
+                            "scale": {
+                                "default": 5,
+                                "description": "unconditional guidance scale: eps = eps(x, empty) + scale * (eps(x, cond) - eps(x, empty))",
+                                "title": "Scale",
+                                "type": "number",
+                                "x-order": 7
+                            },
+                            "use_search": {
+                                "default": false,
+                                "description": "Use searcher",
+                                "title": "Use Search",
+                                "type": "boolean",
+                                "x-order": 9
                             }
                         },
                         "title": "Input",
                         "type": "object"
                     },
                     "Output": {
+                        "items": {
+                            "format": "uri",
+                            "type": "string"
+                        },
                         "title": "Output",
-                        "type": "null"
+                        "type": "array"
                     },
                     "Request": {
                         "description": "The request body for a prediction",
