@@ -13,7 +13,9 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Fetch images referenced in images.json
-        run: python .github/workflows/get_openapi.py
+        run: |
+          python .github/workflows/get_openapi.py
+          python regenerate_metadata.py
           
       - uses: webfactory/ssh-agent@v0.5.4
         with:
