@@ -8,14 +8,20 @@ os.system("curl -o metadata.json https://raw.githubusercontent.com/pollinations/
 with open("metadata.json", "r") as f:
     metadata = json.load(f)
 
-try:
-    with open("/home/ec2-user/pollinator_group", "r") as f:
-        pollinator_group = f.read().strip()
-except:
-    pollinator_group = "T4"
+
+pollinator_group = "T4"
+with open(".env", "r") as f:
+    for line in f.readlines():
+        env, val = line.split("=")
+        if env == "POLLINATOR_GROUP":
+            pollinator_group = val
+
+print("Pollinator group:", pollinator_group)  
 
 for _, image in images.items():
-    if pollinator_group not in metadata[image.split("@")[0]]["meta"]["pollinator_group"]:
+    try:
+        assert pollinator_group in metadata[image.split("@")[0]]["meta"]["pollinator_group"]
+    except (AssertionError, KeyError):
         continue
     print(f"docker pull {image}")
     if "@" in image:
