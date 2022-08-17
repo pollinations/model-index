@@ -441,8 +441,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/latent-diffusion-400m": {
-        "hash": "sha256:798edc68430418703badc47f80439d88a07b4e39aaa5daf9e5b4f94b18f2ac21",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/latent-diffusion-400m@sha256:798edc68430418703badc47f80439d88a07b4e39aaa5daf9e5b4f94b18f2ac21",
+        "hash": "sha256:161df71d0186fe37ef231990d425528c775cacae3d9fface18eddfdcbf8ede17",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/latent-diffusion-400m@sha256:161df71d0186fe37ef231990d425528c775cacae3d9fface18eddfdcbf8ede17",
         "openapi": {
             "components": {
                 "schemas": {
@@ -461,77 +461,66 @@
                     },
                     "Input": {
                         "properties": {
-                            "H": {
-                                "default": 768,
-                                "description": "image height, in pixel space",
-                                "title": "H",
-                                "type": "integer",
-                                "x-order": 3
-                            },
-                            "W": {
-                                "default": 768,
-                                "description": "image width, in pixel space",
-                                "title": "W",
-                                "type": "integer",
-                                "x-order": 4
-                            },
-                            "ddim_eta": {
-                                "default": 0,
-                                "description": "ddim eta (eta=0.0 corresponds to deterministic sampling",
-                                "title": "Ddim Eta",
-                                "type": "number",
-                                "x-order": 2
-                            },
-                            "ddim_steps": {
-                                "default": 50,
-                                "description": "number of ddim sampling steps",
-                                "title": "Ddim Steps",
-                                "type": "integer",
+                            "database_name": {
+                                "allOf": [
+                                    {
+                                        "$ref": "#/components/schemas/database_name"
+                                    }
+                                ],
+                                "default": "laion-aesthetic",
+                                "description": "Which database to use for the semantic search. Different databases have different capabilities.",
                                 "x-order": 1
                             },
-                            "knn": {
-                                "default": 10,
-                                "description": "The number of included neighbors, only applied when --use_neighbors=True",
-                                "maximum": 20,
-                                "minimum": 1,
-                                "title": "Knn",
-                                "type": "integer",
-                                "x-order": 8
-                            },
-                            "n_rows": {
-                                "default": 0,
-                                "description": "rows in the grid (default: n_samples)",
-                                "title": "N Rows",
-                                "type": "integer",
-                                "x-order": 6
-                            },
-                            "n_samples": {
-                                "default": 3,
-                                "description": "how many samples to produce for each given prompt. A.k.a batch size",
-                                "title": "N Samples",
+                            "height": {
+                                "default": 768,
+                                "description": "Desired height of generated images.",
+                                "title": "Height",
                                 "type": "integer",
                                 "x-order": 5
                             },
-                            "prompts": {
+                            "num_database_results": {
+                                "default": 10,
+                                "description": "The number of search results to guide the generation with. Using more will 'broaden' capabilities of the model at the risk of causing mode collapse or artifacting.",
+                                "maximum": 20,
+                                "minimum": 1,
+                                "title": "Num Database Results",
+                                "type": "integer",
+                                "x-order": 3
+                            },
+                            "num_generations": {
+                                "default": 1,
+                                "description": "Number of images to generate. Using more will make generation take longer.",
+                                "title": "Num Generations",
+                                "type": "integer",
+                                "x-order": 4
+                            },
+                            "prompt": {
                                 "default": "",
-                                "description": "model will try to generate this text. use newlines to generate multiple prompts",
-                                "title": "Prompts",
+                                "description": "model will try to generate this text.",
+                                "title": "Prompt",
                                 "type": "string",
                                 "x-order": 0
                             },
-                            "scale": {
+                            "prompt_scale": {
                                 "default": 5,
-                                "description": "unconditional guidance scale: eps = eps(x, empty) + scale * (eps(x, cond) - eps(x, empty))",
-                                "title": "Scale",
+                                "description": "Determines influence of your prompt on generation.",
+                                "title": "Prompt Scale",
                                 "type": "number",
+                                "x-order": 2
+                            },
+                            "steps": {
+                                "default": 50,
+                                "description": "How many steps to run the model for. Using more will make generation take longer. 50 tends to work well.",
+                                "title": "Steps",
+                                "type": "integer",
                                 "x-order": 7
                             },
-                            "use_search": {
-                                "default": false,
-                                "description": "Use searcher",
-                                "title": "Use Search",
-                                "type": "boolean",
-                                "x-order": 9
+                            "width": {
+                                "default": 768,
+                                "description": "Desired width of generated images.",
+                                "title": "Width",
+                                "type": "integer",
+                                "x-order": 6
                             }
                         },
                         "title": "Input",
@@ -621,6 +610,28 @@
                         ],
                         "title": "ValidationError",
                         "type": "object"
+                    },
+                    "database_name": {
+                        "description": "An enumeration.",
+                        "enum": [
+                            "none",
+                            "prompt-engineer",
+                            "cars",
+                            "openimages",
+                            "faces",
+                            "simulacra",
+                            "coco",
+                            "pixelart",
+                            "food",
+                            "country211",
+                            "laion-aesthetic",
+                            "vaporwave",
+                            "pets",
+                            "emotes",
+                            "pokemon"
+                        ],
+                        "title": "database_name",
+                        "type": "string"
                     }
                 }
             },
@@ -1362,8 +1373,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/avatarclip": {
-        "hash": "sha256:65e07f7ac08544c8aaa3e1ce1e4647692f9991e387a53b6d25c69c29d0e77a0e",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/avatarclip@sha256:65e07f7ac08544c8aaa3e1ce1e4647692f9991e387a53b6d25c69c29d0e77a0e",
+        "hash": "sha256:09a7e5635d8a02d28f958453e90a3a22eb2599efef3b1b6b0526e2eec48aa336",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/avatarclip@sha256:09a7e5635d8a02d28f958453e90a3a22eb2599efef3b1b6b0526e2eec48aa336",
         "openapi": {
             "components": {
                 "schemas": {
@@ -1564,7 +1575,7 @@
             "category": "0 Featured",
             "description": "<img src=\"https://i.imgur.com/a9hByt4.png\" width=\"300\"> \n\n\n\nThis is a model that clips the avatar of a user to a specific part of the image. It is useful for creating avatars for other users.\n\n\n\n---\n\n\n\nAccess our Avatar Clip Guide(https://multimodal.art/avatar-clip) (_under construction_), our [GitHub](",
             "pollinator_group": [
-                "T4"
+                "a100"
             ]
         }
     },
@@ -2739,8 +2750,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/dreamfields-torch": {
-        "hash": "sha256:f249705944aa40bc077320d863efa85de3e14534c36e813af25050cb07cb03b7",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/dreamfields-torch@sha256:f249705944aa40bc077320d863efa85de3e14534c36e813af25050cb07cb03b7",
+        "hash": "sha256:4c6faeb79e3e336bcc8e7516828d0456953d9098c47e83def3b28b2d4e551e32",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/dreamfields-torch@sha256:4c6faeb79e3e336bcc8e7516828d0456953d9098c47e83def3b28b2d4e551e32",
         "openapi": {
             "components": {
                 "schemas": {
@@ -3081,7 +3092,7 @@
             "category": "0 Featured",
             "image": "https://i.imgur.com/a9hByt4.png",
             "pollinator_group": [
-                "T4"
+                "a100"
             ]
         }
     },
