@@ -2750,8 +2750,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/dreamfields-torch": {
-        "hash": "sha256:f249705944aa40bc077320d863efa85de3e14534c36e813af25050cb07cb03b7",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/dreamfields-torch@sha256:f249705944aa40bc077320d863efa85de3e14534c36e813af25050cb07cb03b7",
+        "hash": "sha256:4c6faeb79e3e336bcc8e7516828d0456953d9098c47e83def3b28b2d4e551e32",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/dreamfields-torch@sha256:4c6faeb79e3e336bcc8e7516828d0456953d9098c47e83def3b28b2d4e551e32",
         "openapi": {
             "components": {
                 "schemas": {
@@ -3092,7 +3092,7 @@
             "category": "0 Featured",
             "image": "https://i.imgur.com/a9hByt4.png",
             "pollinator_group": [
-                "T4"
+                "a100"
             ]
         }
     },
