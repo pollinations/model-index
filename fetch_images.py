@@ -14,14 +14,15 @@ with open(".env", "r") as f:
     for line in f.readlines():
         env, val = line.split("=")
         if env == "POLLINATOR_GROUP":
-            pollinator_group = val
+            pollinator_group = val.strip()
 
-print("Pollinator group:", pollinator_group)  
+print("# Pollinator group:", pollinator_group)  
 
 for _, image in images.items():
     try:
         assert pollinator_group in metadata[image.split("@")[0]]["meta"]["pollinator_group"]
     except (AssertionError, KeyError):
+        print("# Ignore ", image)
         continue
     print(f"docker pull {image}")
     if "@" in image:
