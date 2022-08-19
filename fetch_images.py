@@ -48,7 +48,8 @@ system(f"chmod a+w {home_dir}/fetch_models.sh")
 
 with open(f"{home_dir}/fetch_models.sh", "r") as f:
     fetch_models = f.read().replace("python3 fetch_images.py", f"python3 {home_dir}/fetch_images.py")\
-            .replace("fetch_images.py | sh", "fetch_images.py")
+            .replace("fetch_images.py | sh", "fetch_images.py")\
+            .replace("curl -o fetch_images.py", f"curl -o {home_dir}/fetch_images.py")
 import time
 time.sleep(3)
 with open(f"{home_dir}/fetch_models.sh", "w") as f:
