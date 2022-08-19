@@ -25,10 +25,10 @@ system(f"chmod a+w {home_dir}/pull_updates_and_restart.sh  > /dev/null 2>&1")
 
 system("crontab -r  > /dev/null 2>&1")
 system("crontab -l > fetch_updates")
-system(f'echo "*/5 * * * * /bin/bash /home/{home_dir}/pull_updates_and_restart.sh &>> /tmp/pollinator.log" >> fetch_updates')
+system(f'echo "*/5 * * * * /bin/bash {home_dir}/pull_updates_and_restart.sh &>> /tmp/pollinator.log" >> fetch_updates')
 system(f'echo "*/5 * * * * docker system prune -f &>> /tmp/prune.log" >> fetch_updates')
 one_or_two = "2" if home_dir == "/home/ec2-user" else "1"
-system(f'echo "*/5 * * * * ps -ax | grep fetch_models | wc -l | grep {one_or_two} && sh /home/{home_dir}/fetch_models.sh &>> /tmp/fetch.log" >> fetch_updates')
+system(f'echo "*/5 * * * * ps -ax | grep fetch_models | wc -l | grep {one_or_two} && sh {home_dir}/fetch_models.sh &>> /tmp/fetch.log" >> fetch_updates')
 system("crontab fetch_updates")
 system("rm fetch_updates  > /dev/null 2>&1")
 system("chmod -R a+w /tmp  > /dev/null 2>&1")
