@@ -1373,8 +1373,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/avatarclip": {
-        "hash": "sha256:ff7700bb614f6118fbaeeb00a9d317f7f554ffb24a979f86e428e54fdb0b68f2",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/avatarclip@sha256:ff7700bb614f6118fbaeeb00a9d317f7f554ffb24a979f86e428e54fdb0b68f2",
+        "hash": "sha256:02f2e6aa61c77a8ecc3a7188cf34afe0a3dc495c909bc53680a7466984ed468b",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/avatarclip@sha256:02f2e6aa61c77a8ecc3a7188cf34afe0a3dc495c909bc53680a7466984ed468b",
         "openapi": {
             "components": {
                 "schemas": {
@@ -1393,15 +1393,15 @@
                     },
                     "Input": {
                         "properties": {
-                            "coarse": {
+                            "fine": {
                                 "default": true,
-                                "description": "generate coarse avatar (super fast)",
-                                "title": "Coarse",
+                                "description": "whether to generate a coarse avatar with no color (fast) or whether to add detail and texture (slow)",
+                                "title": "Fine",
                                 "type": "boolean",
                                 "x-order": 1
                             },
                             "iterations": {
-                                "default": 1000,
+                                "default": 10000,
                                 "description": "number of iterations (for fine avatar)",
                                 "title": "Iterations",
                                 "type": "integer",
