@@ -44,15 +44,15 @@ if [[ $(< /tmp/ipfs/output/done) == "true" ]]; then
     docker pull 614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/pollinator:{dev_or_main} \\
         | grep "Status: Downloaded newer image" \\
         && (docker kill pollinator && sleep 3 || echo Pollinator not running...)
-    docker run {gpu_flag} -d --rm \\
-            --network host \\
-            --name pollinator \\
-            --env-file {home_dir}/.env \\
-            -v /var/run/docker.sock:/var/run/docker.sock \\
-            -v "$HOME/.aws/:/root/.aws/" \\
-            --mount type=bind,source=/tmp/ipfs,target=/tmp/ipfs \\
-            614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/pollinator:{dev_or_main}
 fi
+docker run {gpu_flag} -d --rm \\
+        --network host \\
+        --name pollinator \\
+        --env-file {home_dir}/.env \\
+        -v /var/run/docker.sock:/var/run/docker.sock \\
+        -v "$HOME/.aws/:/root/.aws/" \\
+        --mount type=bind,source=/tmp/ipfs,target=/tmp/ipfs \\
+        614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/pollinator:{dev_or_main}
 """
 with open(f"{home_dir}/pull_updates_and_restart.sh", "w") as f:
     f.writelines(update_pollinator)
