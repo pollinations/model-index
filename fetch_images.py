@@ -10,14 +10,16 @@ if not os.path.exists(home_dir):
 if not os.path.exists(home_dir):
     home_dir = "/home/ubuntu"
 
-gpu_flag = "--gpus all" if os.system("nvidia-smi") == 0 else ""
+def system(cmd):
+    os.system(f"sudo {cmd} > /dev/null 2>&1")
+    
+gpu_flag = "--gpus all" if system("nvidia-smi") == 0 else ""
 
 with open(f"{home_dir}/pull_updates_and_restart.sh", "r") as f:
     content = f.read()
     dev_or_main = "dev" if "pollinator:dev" in content else "main"
 
-def system(cmd):
-    os.system(f"sudo {cmd}")
+
 
 system(f"chmod a+w {home_dir}/pull_updates_and_restart.sh")
 
@@ -81,5 +83,3 @@ for _, image in images.items():
     print(f"docker pull {image}")
     if "@" in image:
         print(f"docker tag {image} {image.split('@')[0]}")
-
-
