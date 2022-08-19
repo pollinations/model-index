@@ -6,7 +6,7 @@ import os
 
 home_dir = "/home/ec2-user"
 if not os.path.exists(home_dir):
-    home_dir = "/home/nielswarncke"
+    home_dir = "/home/{home_dir}"
 if not os.path.exists(home_dir):
     home_dir = "/home/ubuntu"
 
@@ -21,9 +21,10 @@ def system(cmd):
 
 system("crontab -r")
 system("crontab -l > fetch_updates")
-system('echo "*/5 * * * * /bin/bash /home/nielswarncke/pull_updates_and_restart.sh &>> /tmp/pollinator.log" >> fetch_updates')
-system('echo "*/5 * * * * docker system prune -f &>> /tmp/prune.log" >> fetch_updates')
-system('echo "*/5 * * * * ps -ax | grep fetch_models | wc -l | grep 1 && sh /home/nielswarncke/fetch_models.sh &>> /tmp/fetch.log" >> fetch_updates')
+system(f'echo "*/5 * * * * /bin/bash /home/{home_dir}/pull_updates_and_restart.sh &>> /tmp/pollinator.log" >> fetch_updates')
+system(f'echo "*/5 * * * * docker system prune -f &>> /tmp/prune.log" >> fetch_updates')
+one_or_two = "2" if home_dir == "/home/ec2-user" else "1"
+system(f'echo "*/5 * * * * ps -ax | grep fetch_models | wc -l | grep {one_or_two} && sh /home/{home_dir}/fetch_models.sh &>> /tmp/fetch.log" >> fetch_updates')
 system("crontab fetch_updates")
 system("rm fetch_updates")
 system("chmod -R a+w /tmp")
@@ -61,7 +62,7 @@ with open("metadata.json", "r") as f:
 
 
 pollinator_group = "T4"
-with open(".env", "r") as f:
+with open(f"{home_dir}/.env", "r") as f:
     for line in f.readlines():
         env, val = line.split("=")
         if env == "POLLINATOR_GROUP":
