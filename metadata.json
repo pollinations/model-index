@@ -1373,8 +1373,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/avatarclip": {
-        "hash": "sha256:f1817409afbf753ec2ab61b0cbd54a9abf2374aeac022c052c41baec067b6092",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/avatarclip@sha256:f1817409afbf753ec2ab61b0cbd54a9abf2374aeac022c052c41baec067b6092",
+        "hash": "sha256:e861312abbcc16ffe348800316930489c0065572d04b836928a36cf8a3816406",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/avatarclip@sha256:e861312abbcc16ffe348800316930489c0065572d04b836928a36cf8a3816406",
         "openapi": {
             "components": {
                 "schemas": {
@@ -1575,7 +1575,8 @@
             "category": "0 Featured",
             "description": "<img src=\"https://i.imgur.com/a9hByt4.png\" width=\"300\"> \n\n\n\nThis is a model that clips the avatar of a user to a specific part of the image. It is useful for creating avatars for other users.\n\n\n\n---\n\n\n\nAccess our Avatar Clip Guide(https://multimodal.art/avatar-clip) (_under construction_), our [GitHub](",
             "pollinator_group": [
-                "a100"
+                "a100",
+                "v100"
             ]
         }
     },
