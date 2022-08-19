@@ -6,7 +6,7 @@ import os
 
 home_dir = "/home/ec2-user"
 if not os.path.exists(home_dir):
-    home_dir = "/home/{home_dir}"
+    home_dir = "/home/nielswarncke"
 if not os.path.exists(home_dir):
     home_dir = "/home/ubuntu"
 
