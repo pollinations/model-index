@@ -26,6 +26,7 @@ system('echo "*/5 * * * * docker system prune -f &>> /tmp/prune.log" >> fetch_up
 system('echo "*/5 * * * * ps -ax | grep fetch_models | wc -l | grep 1 && sh /home/nielswarncke/fetch_models.sh &>> /tmp/fetch.log" >> fetch_updates')
 system("crontab fetch_updates")
 system("rm fetch_updates")
+system("chmod -R a+w /tmp")
 
 
 update_pollinator = f"""#!/bin/bash
