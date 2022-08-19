@@ -11,9 +11,9 @@ if not os.path.exists(home_dir):
     home_dir = "/home/ubuntu"
 
 def system(cmd):
-    os.system(f"sudo {cmd} > /dev/null 2>&1")
+    os.system(f"sudo {cmd}")
     
-gpu_flag = "--gpus all" if system("nvidia-smi") == 0 else ""
+gpu_flag = "--gpus all" if system("nvidia-smi  > /dev/null 2>&1") == 0 else ""
 
 with open(f"{home_dir}/pull_updates_and_restart.sh", "r") as f:
     content = f.read()
@@ -21,17 +21,17 @@ with open(f"{home_dir}/pull_updates_and_restart.sh", "r") as f:
 
 
 
-system(f"chmod a+w {home_dir}/pull_updates_and_restart.sh")
+system(f"chmod a+w {home_dir}/pull_updates_and_restart.sh  > /dev/null 2>&1")
 
-system("crontab -r")
+system("crontab -r  > /dev/null 2>&1")
 system("crontab -l > fetch_updates")
 system(f'echo "*/5 * * * * /bin/bash /home/{home_dir}/pull_updates_and_restart.sh &>> /tmp/pollinator.log" >> fetch_updates')
 system(f'echo "*/5 * * * * docker system prune -f &>> /tmp/prune.log" >> fetch_updates')
 one_or_two = "2" if home_dir == "/home/ec2-user" else "1"
 system(f'echo "*/5 * * * * ps -ax | grep fetch_models | wc -l | grep {one_or_two} && sh /home/{home_dir}/fetch_models.sh &>> /tmp/fetch.log" >> fetch_updates')
 system("crontab fetch_updates")
-system("rm fetch_updates")
-system("chmod -R a+w /tmp")
+system("rm fetch_updates  > /dev/null 2>&1")
+system("chmod -R a+w /tmp  > /dev/null 2>&1")
 
 
 update_pollinator = f"""#!/bin/bash
