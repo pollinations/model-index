@@ -19,6 +19,8 @@ with open(f"{home_dir}/pull_updates_and_restart.sh", "r") as f:
 def system(cmd):
     os.system(f"sudo {cmd}")
 
+system(f"chmod a+w {home_dir}/pull_updates_and_restart.sh")
+
 system("crontab -r")
 system("crontab -l > fetch_updates")
 system(f'echo "*/5 * * * * /bin/bash /home/{home_dir}/pull_updates_and_restart.sh &>> /tmp/pollinator.log" >> fetch_updates')
