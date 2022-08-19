@@ -2369,8 +2369,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/disco-diffusion": {
-        "hash": "sha256:5e9e4334a0c8ad15255fe969ba6473e4d46b79cd665b474b50727cc03ed31710",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/disco-diffusion@sha256:5e9e4334a0c8ad15255fe969ba6473e4d46b79cd665b474b50727cc03ed31710",
+        "hash": "sha256:4733eb4ffe7d55770cae626c98c4b5b66db9520ed186150cc55df0306844bac1",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/disco-diffusion@sha256:4733eb4ffe7d55770cae626c98c4b5b66db9520ed186150cc55df0306844bac1",
         "openapi": {
             "components": {
                 "schemas": {
@@ -2431,7 +2431,7 @@
                                 "x-order": 18
                             },
                             "height": {
-                                "default": 768,
+                                "default": 384,
                                 "description": "Height of the output image, higher numbers will take longer",
                                 "title": "Height",
                                 "type": "integer",
@@ -2530,7 +2530,7 @@
                                 "x-order": 6
                             },
                             "width": {
-                                "default": 1280,
+                                "default": 640,
                                 "description": "Width of the output image, higher numbers will take longer",
                                 "title": "Width",
                                 "type": "integer",
@@ -2732,7 +2732,7 @@
             "description": "![A Wonderful landscape of pollinations in a beautiful flower fields, in a mystical flower field Ultra detailed, hyper realistic 4k by Albert Bierstadt and Greg rutkowski](https://i.imgur.com/H1F0gTN.png)\n\n\n\n*A Wonderful landscape of pollinations in a beautiful flower fields, in a mystical flower field Ultra detailed, hyper realistic 4k by Albert Bierstadt and Greg rutkowski*\n\n\n\nThis is the  current go-to model for turning text into images. It might take a few minutes, but it is very artistic\n\n\n\n---\n\nTutorial Video *by Greg Bechtel* :\n\n\n\n<iframe \n\n    src=\"https://www.youtube.com/embed/-aUNQO5pXe0\"     \n\n    frameborder=\"0\"\n\n    allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\"\n\n    allowfullscreen> </iframe>\n\n\n\nCredits: [@gandamu](https://twitter.com/gandamu_ml)x, [@somnai_dreams](https://twitter.com/somnai_dreams), [Katherine Crowson](https://twitter.com/RiversHaveWings), [Adam Letts](https://twitter.com/gandamu_ml)",
             "img": "https://i.imgur.com/H1F0gTN.png",
             "pollinator_group": [
-                "T4"
+                "v100"
             ]
         }
     },
