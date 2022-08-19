@@ -11,7 +11,7 @@ if not os.path.exists(home_dir):
     home_dir = "/home/ubuntu"
 
 def system(cmd):
-    os.system(f"sudo {cmd}")
+    return os.system(f"sudo {cmd}")
     
 gpu_flag = "--gpus all" if system("nvidia-smi  > /dev/null 2>&1") == 0 else ""
 
