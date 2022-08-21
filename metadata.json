@@ -2294,8 +2294,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/disco-diffusion": {
-        "hash": "sha256:4733eb4ffe7d55770cae626c98c4b5b66db9520ed186150cc55df0306844bac1",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/disco-diffusion@sha256:4733eb4ffe7d55770cae626c98c4b5b66db9520ed186150cc55df0306844bac1",
+        "hash": "sha256:d632a98e812ac2a8e330aff867826ba2af9076f21b7d195044b0d99beae7effa",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/disco-diffusion@sha256:d632a98e812ac2a8e330aff867826ba2af9076f21b7d195044b0d99beae7effa",
         "openapi": {
             "components": {
                 "schemas": {
@@ -2314,19 +2314,180 @@
                     },
                     "Input": {
                         "properties": {
+                            "RN101": {
+                                "default": false,
+                                "description": "Use RN101 model",
+                                "title": "Rn101",
+                                "type": "boolean",
+                                "x-order": 15
+                            },
+                            "RN101_quickgelu_yfcc15m": {
+                                "default": false,
+                                "description": "Use RN101_quickgelu_yfcc15m model",
+                                "title": "Rn101 Quickgelu Yfcc15M",
+                                "type": "boolean",
+                                "x-order": 28
+                            },
+                            "RN101_yfcc15m": {
+                                "default": false,
+                                "description": "Use RN101_yfcc15m model",
+                                "title": "Rn101 Yfcc15M",
+                                "type": "boolean",
+                                "x-order": 27
+                            },
+                            "RN50": {
+                                "default": true,
+                                "description": "Use RN50 model",
+                                "title": "Rn50",
+                                "type": "boolean",
+                                "x-order": 10
+                            },
+                            "RN50_cc12m": {
+                                "default": false,
+                                "description": "Use RN50_cc12m model",
+                                "title": "Rn50 Cc12M",
+                                "type": "boolean",
+                                "x-order": 24
+                            },
+                            "RN50_quickgelu_cc12m": {
+                                "default": false,
+                                "description": "Use RN50_quickgelu_cc12m model",
+                                "title": "Rn50 Quickgelu Cc12M",
+                                "type": "boolean",
+                                "x-order": 26
+                            },
+                            "RN50_quickgelu_yfcc15m": {
+                                "default": false,
+                                "description": "Use RN50_quickgelu_yfcc15m model",
+                                "title": "Rn50 Quickgelu Yfcc15M",
+                                "type": "boolean",
+                                "x-order": 25
+                            },
+                            "RN50_yffcc15m": {
+                                "default": false,
+                                "description": "Use RN50_yffcc15m model",
+                                "title": "Rn50 Yffcc15M",
+                                "type": "boolean",
+                                "x-order": 23
+                            },
+                            "RN50x101": {
+                                "default": false,
+                                "description": "Use RN50x101 model",
+                                "title": "Rn50X101",
+                                "type": "boolean",
+                                "x-order": 14
+                            },
+                            "RN50x16": {
+                                "default": false,
+                                "description": "Use RN50x16 model",
+                                "title": "Rn50X16",
+                                "type": "boolean",
+                                "x-order": 12
+                            },
+                            "RN50x4": {
+                                "default": false,
+                                "description": "Use RN50x4 model",
+                                "title": "Rn50X4",
+                                "type": "boolean",
+                                "x-order": 11
+                            },
+                            "RN50x64": {
+                                "default": false,
+                                "description": "Use RN50x64 model",
+                                "title": "Rn50X64",
+                                "type": "boolean",
+                                "x-order": 13
+                            },
+                            "ViTB16": {
+                                "default": true,
+                                "description": "Use ViTB16 model",
+                                "title": "Vitb16",
+                                "type": "boolean",
+                                "x-order": 7
+                            },
+                            "ViTB16_laion400m_e31": {
+                                "default": false,
+                                "description": "Use ViTB16_laion400m_e31 model",
+                                "title": "Vitb16 Laion400M E31",
+                                "type": "boolean",
+                                "x-order": 21
+                            },
+                            "ViTB16_laion400m_e32": {
+                                "default": false,
+                                "description": "Use ViTB16_laion400m_e32 model",
+                                "title": "Vitb16 Laion400M E32",
+                                "type": "boolean",
+                                "x-order": 22
+                            },
+                            "ViTB32": {
+                                "default": true,
+                                "description": "Use ViTB32 model",
+                                "title": "Vitb32",
+                                "type": "boolean",
+                                "x-order": 6
+                            },
+                            "ViTB32_laion2b_e16": {
+                                "default": false,
+                                "description": "Use ViTB32_laion2b_e16 model",
+                                "title": "Vitb32 Laion2B E16",
+                                "type": "boolean",
+                                "x-order": 16
+                            },
+                            "ViTB32_laion400m_e31": {
+                                "default": false,
+                                "description": "Use ViTB32_laion400m_e31 model",
+                                "title": "Vitb32 Laion400M E31",
+                                "type": "boolean",
+                                "x-order": 17
+                            },
+                            "ViTB32_laion400m_e32": {
+                                "default": false,
+                                "description": "Use ViTB32_laion400m_e32 model",
+                                "title": "Vitb32 Laion400M E32",
+                                "type": "boolean",
+                                "x-order": 18
+                            },
+                            "ViTB32quickgelu_laion400m_e31": {
+                                "default": false,
+                                "description": "Use ViTB32quickgelu_laion400m_e31 model",
+                                "title": "Vitb32Quickgelu Laion400M E31",
+                                "type": "boolean",
+                                "x-order": 19
+                            },
+                            "ViTB32quickgelu_laion400m_e32": {
+                                "default": false,
+                                "description": "Use ViTB32quickgelu_laion400m_e32 model",
+                                "title": "Vitb32Quickgelu Laion400M E32",
+                                "type": "boolean",
+                                "x-order": 20
+                            },
+                            "ViTL14": {
+                                "default": false,
+                                "description": "Use ViTB14 model",
+                                "title": "Vitl14",
+                                "type": "boolean",
+                                "x-order": 8
+                            },
+                            "ViTL14_336": {
+                                "default": false,
+                                "description": "Use ViTL14_336 model",
+                                "title": "Vitl14 336",
+                                "type": "boolean",
+                                "x-order": 9
+                            },
                             "clip_guidance_scale": {
                                 "default": 5000,
                                 "description": "CLIP Guidance Scale",
                                 "title": "Clip Guidance Scale",
                                 "type": "integer",
-                                "x-order": 7
+                                "x-order": 30
                             },
                             "cutn_batches": {
                                 "default": 4,
                                 "description": "Cut Batches",
                                 "title": "Cutn Batches",
                                 "type": "integer",
-                                "x-order": 11
+                                "x-order": 34
                             },
                             "diffusion_model": {
                                 "allOf": [
@@ -2353,10 +2514,10 @@
                                 "description": "Steps between outputs, lower numbers may slow down generation.",
                                 "title": "Display Rate",
                                 "type": "integer",
-                                "x-order": 18
+                                "x-order": 41
                             },
                             "height": {
-                                "default": 384,
+                                "default": 768,
                                 "description": "Height of the output image, higher numbers will take longer",
                                 "title": "Height",
                                 "type": "integer",
@@ -2367,35 +2528,35 @@
                                 "format": "uri",
                                 "title": "Init Image",
                                 "type": "string",
-                                "x-order": 13
+                                "x-order": 36
                             },
                             "init_scale": {
                                 "default": 1000,
                                 "description": "Initial Scale",
                                 "title": "Init Scale",
                                 "type": "integer",
-                                "x-order": 15
+                                "x-order": 38
                             },
                             "prompt": {
                                 "default": "A beautiful painting of a singular lighthouse, shining its light across a tumultuous sea of blood by greg rutkowski and thomas kinkade, Trending on artstation.",
                                 "description": "Text Prompt",
                                 "title": "Prompt",
                                 "type": "string",
-                                "x-order": 0
+                                "x-order": 1
                             },
                             "range_scale": {
                                 "default": 150,
                                 "description": "Range Scale",
                                 "title": "Range Scale",
                                 "type": "integer",
-                                "x-order": 9
+                                "x-order": 32
                             },
                             "sat_scale": {
                                 "default": 0,
                                 "description": "Saturation Scale",
                                 "title": "Sat Scale",
                                 "type": "integer",
-                                "x-order": 10
+                                "x-order": 33
                             },
                             "seed": {
                                 "description": "Seed (leave empty to use a random seed)",
@@ -2403,59 +2564,61 @@
                                 "minimum": 0,
                                 "title": "Seed",
                                 "type": "integer",
-                                "x-order": 19
+                                "x-order": 42
                             },
                             "skip_augs": {
                                 "default": false,
                                 "description": "Skip Augmentations",
                                 "title": "Skip Augs",
                                 "type": "boolean",
-                                "x-order": 12
+                                "x-order": 35
                             },
                             "skip_steps": {
                                 "default": 10,
                                 "description": "Skip Steps",
                                 "title": "Skip Steps",
                                 "type": "integer",
-                                "x-order": 17
+                                "x-order": 40
                             },
                             "steps": {
                                 "default": 100,
                                 "description": "Number of steps, higher numbers will give more refined output but will take longer",
+                                "maximum": 1000,
+                                "minimum": 1,
                                 "title": "Steps",
                                 "type": "integer",
-                                "x-order": 1
+                                "x-order": 0
                             },
                             "target_image": {
                                 "description": "Target image to generate towards, similarly to the text prompt",
                                 "format": "uri",
                                 "title": "Target Image",
                                 "type": "string",
-                                "x-order": 14
+                                "x-order": 37
                             },
                             "target_scale": {
                                 "default": 20000,
                                 "description": "Target Scale",
                                 "title": "Target Scale",
                                 "type": "integer",
-                                "x-order": 16
+                                "x-order": 39
                             },
                             "tv_scale": {
                                 "default": 0,
                                 "description": "TV Scale",
                                 "title": "Tv Scale",
                                 "type": "integer",
-                                "x-order": 8
+                                "x-order": 31
                             },
                             "use_secondary_model": {
                                 "default": true,
                                 "description": "Use secondary model",
                                 "title": "Use Secondary Model",
                                 "type": "boolean",
-                                "x-order": 6
+                                "x-order": 29
                             },
                             "width": {
-                                "default": 640,
+                                "default": 1280,
                                 "description": "Width of the output image, higher numbers will take longer",
                                 "title": "Width",
                                 "type": "integer",
@@ -2646,18 +2809,8 @@
             }
         },
         "meta": {
-            "featured": true,
-            "url": "pollinations/disco-diffusion",
-            "key": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/disco-diffusion",
-            "name": "Disco Diffusion",
-            "id2pop": "1 Disco Diffusion",
-            "path": "discodiffusion",
-            "category": "0 Featured",
-            "credits": "Credits: [@gandamu](https://twitter.com/gandamu_ml)x, [@somnai_dreams](https://twitter.com/somnai_dreams), [Katherine Crowson](https://twitter.com/RiversHaveWings), [Adam Letts](https://twitter.com/gandamu_ml)",
-            "description": "![A Wonderful landscape of pollinations in a beautiful flower fields, in a mystical flower field Ultra detailed, hyper realistic 4k by Albert Bierstadt and Greg rutkowski](https://i.imgur.com/H1F0gTN.png)\n\n\n\n*A Wonderful landscape of pollinations in a beautiful flower fields, in a mystical flower field Ultra detailed, hyper realistic 4k by Albert Bierstadt and Greg rutkowski*\n\n\n\nThis is the  current go-to model for turning text into images. It might take a few minutes, but it is very artistic\n\n\n\n---\n\nTutorial Video *by Greg Bechtel* :\n\n\n\n<iframe \n\n    src=\"https://www.youtube.com/embed/-aUNQO5pXe0\"     \n\n    frameborder=\"0\"\n\n    allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\"\n\n    allowfullscreen> </iframe>\n\n\n\nCredits: [@gandamu](https://twitter.com/gandamu_ml)x, [@somnai_dreams](https://twitter.com/somnai_dreams), [Katherine Crowson](https://twitter.com/RiversHaveWings), [Adam Letts](https://twitter.com/gandamu_ml)",
-            "img": "https://i.imgur.com/H1F0gTN.png",
             "pollinator_group": [
-                "v100"
+                "T4"
             ]
         }
     },
