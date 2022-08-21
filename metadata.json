@@ -3533,5 +3533,237 @@
                 "cpu"
             ]
         }
+    },
+    "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/swinir": {
+        "hash": "sha256:fa3bd8275217a05a161a94841ce9d3b7a5d47be91f40fc23b6bb1fc1519aec7d",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/swinir@sha256:fa3bd8275217a05a161a94841ce9d3b7a5d47be91f40fc23b6bb1fc1519aec7d",
+        "openapi": {
+            "components": {
+                "schemas": {
+                    "HTTPValidationError": {
+                        "properties": {
+                            "detail": {
+                                "items": {
+                                    "$ref": "#/components/schemas/ValidationError"
+                                },
+                                "title": "Detail",
+                                "type": "array"
+                            }
+                        },
+                        "title": "HTTPValidationError",
+                        "type": "object"
+                    },
+                    "Input": {
+                        "properties": {
+                            "image": {
+                                "description": "input image",
+                                "format": "uri",
+                                "title": "Image",
+                                "type": "string",
+                                "x-order": 0
+                            },
+                            "jpeg": {
+                                "default": 40,
+                                "description": "scale factor, activated for JPEG Compression Artifact Reduction. ",
+                                "title": "Jpeg",
+                                "type": "integer",
+                                "x-order": 2
+                            },
+                            "noise": {
+                                "default": 15,
+                                "description": "noise level, activated for Grayscale Image Denoising and Color Image Denoising.",
+                                "title": "Noise",
+                                "type": "integer",
+                                "x-order": 3
+                            },
+                            "task_type": {
+                                "allOf": [
+                                    {
+                                        "$ref": "#/components/schemas/task_type"
+                                    }
+                                ],
+                                "default": "Real-World Image Super-Resolution",
+                                "description": "image restoration task type",
+                                "x-order": 1
+                            }
+                        },
+                        "required": [
+                            "image"
+                        ],
+                        "title": "Input",
+                        "type": "object"
+                    },
+                    "Output": {
+                        "format": "uri",
+                        "title": "Output",
+                        "type": "string"
+                    },
+                    "Request": {
+                        "description": "The request body for a prediction",
+                        "properties": {
+                            "input": {
+                                "$ref": "#/components/schemas/Input"
+                            },
+                            "output_file_prefix": {
+                                "title": "Output File Prefix",
+                                "type": "string"
+                            }
+                        },
+                        "title": "Request",
+                        "type": "object"
+                    },
+                    "Response": {
+                        "description": "The response body for a prediction",
+                        "properties": {
+                            "error": {
+                                "title": "Error",
+                                "type": "string"
+                            },
+                            "output": {
+                                "$ref": "#/components/schemas/Output"
+                            },
+                            "status": {
+                                "$ref": "#/components/schemas/Status"
+                            }
+                        },
+                        "required": [
+                            "status"
+                        ],
+                        "title": "Response",
+                        "type": "object"
+                    },
+                    "Status": {
+                        "description": "An enumeration.",
+                        "enum": [
+                            "processing",
+                            "succeeded",
+                            "failed"
+                        ],
+                        "title": "Status",
+                        "type": "string"
+                    },
+                    "ValidationError": {
+                        "properties": {
+                            "loc": {
+                                "items": {
+                                    "anyOf": [
+                                        {
+                                            "type": "string"
+                                        },
+                                        {
+                                            "type": "integer"
+                                        }
+                                    ]
+                                },
+                                "title": "Location",
+                                "type": "array"
+                            },
+                            "msg": {
+                                "title": "Message",
+                                "type": "string"
+                            },
+                            "type": {
+                                "title": "Error Type",
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "loc",
+                            "msg",
+                            "type"
+                        ],
+                        "title": "ValidationError",
+                        "type": "object"
+                    },
+                    "task_type": {
+                        "description": "An enumeration.",
+                        "enum": [
+                            "Real-World Image Super-Resolution",
+                            "Grayscale Image Denoising",
+                            "Color Image Denoising",
+                            "JPEG Compression Artifact Reduction"
+                        ],
+                        "title": "task_type",
+                        "type": "string"
+                    }
+                }
+            },
+            "info": {
+                "title": "Cog",
+                "version": "0.1.0"
+            },
+            "openapi": "3.0.2",
+            "paths": {
+                "/": {
+                    "get": {
+                        "operationId": "root__get",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {}
+                                    }
+                                },
+                                "description": "Successful Response"
+                            }
+                        },
+                        "summary": "Root"
+                    }
+                },
+                "/predictions": {
+                    "post": {
+                        "description": "Run a single prediction on the model",
+                        "operationId": "predict_predictions_post",
+                        "requestBody": {
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "$ref": "#/components/schemas/Request"
+                                    }
+                                }
+                            }
+                        },
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/Response"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            },
+                            "422": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/HTTPValidationError"
+                                        }
+                                    }
+                                },
+                                "description": "Validation Error"
+                            }
+                        },
+                        "summary": "Predict"
+                    }
+                }
+            }
+        },
+        "meta": {
+            "featured": true,
+            "url": "pollinations/swinir",
+            "key": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/swinir",
+            "name": "Swinir",
+            "img": "https://i.imgur.com/a9hByt4.png",
+            "id2pop": "2 SwinIR Super-Resolution",
+            "path": "swinir",
+            "category": "0 Featured",
+            "credits": "[Jingyun Liang](https://github.com/JingyunLiang)",
+            "description": "<img src=\"https://i.imgur.com/BKvDhnf.png\" width=\"300\" height=\"300\" />\n\n\n\nUses [SwinIR](https://github.com/JingyunLiang/SwinIR) to perform 4x neural super-resolution (creates HD images from low resolution)\n\n\n\n---\n\nCredits: [Jingyun Liang]((https://github.com/JingyunLiang)\n\nLicense: MIT",
+            "pollinator_group": [
+                "T4"
+            ]
+        }
     }
 }
