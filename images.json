@@ -7,7 +7,7 @@
     "pollinations/majesty-diffusion-cog": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/majesty-diffusion-cog",
     "pollinations/avatarclip": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/avatarclip",
     "pollinations/adampi": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/adampi",
-    "pollinations/disco-diffusion": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/disco-diffusion",
+    "replicate/disco-diffusion": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/disco-diffusion",
     "pollinations/dreamfields-torch": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/dreamfields-torch",
     "pollinations/no-gpu-test-image": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/no-gpu-test-image",
     "pollinations/swinir": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/swinir"
