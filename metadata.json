@@ -3832,8 +3832,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private": {
-        "hash": "sha256:4aef17403c4e942c80adffcc683141c9173b29f4f7b2a79b8483478dc6410ef1",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private@sha256:4aef17403c4e942c80adffcc683141c9173b29f4f7b2a79b8483478dc6410ef1",
+        "hash": "sha256:500236dbae68418c5db0f281733edafa0111bb873af958b73f94ca8d3ee1b442",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private@sha256:500236dbae68418c5db0f281733edafa0111bb873af958b73f94ca8d3ee1b442",
         "openapi": {
             "components": {
                 "schemas": {
@@ -4032,8 +4032,8 @@
         },
         "meta": {
             "featured": true,
-            "url": "pollinations/stable-diffusion",
-            "key": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion",
+            "url": "pollinations/stable-diffusion-private",
+            "key": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private",
             "name": "Stable Diffusion - Animation",
             "img": "https://s4.gifyu.com/images/ezgif.com-gif-maker4faa2b37cd286f60.gif",
             "id2pop": "1 Disco Diffusion",
