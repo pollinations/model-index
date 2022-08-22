@@ -1,0 +1,15 @@
+{
+    "featured": true,
+    "url": "pollinations/stable-diffusion",
+    "key": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion",
+    "name": "Stable Diffusion - Animation",
+    "img": "https://s4.gifyu.com/images/ezgif.com-gif-maker4faa2b37cd286f60.gif",
+    "id2pop": "1 Disco Diffusion",
+    "path": "stablediffusion",
+    "category": "0 Featured",
+    "credits": "[Stability.AI](https://stability.ai/)",
+    "description": "<img src=\"https://s4.gifyu.com/images/ezgif.com-gif-maker4faa2b37cd286f60.gif\" width=\"300\" height=\"300\" />\n\n\n\nThe new kid in town. Stable Diffusion Animation. Moves from one prompt to the next over time.",
+    "pollinator_group": [
+        "T4"
+    ]
+}
