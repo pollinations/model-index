@@ -14,8 +14,12 @@ os.system("rm /tmp/fetch.log")
 os.system("touch /tmp/fetch.log")
 
 def log(msg):
+    print(msg)
     with open("/tmp/fetch.log", "a") as f:
         f.write(f"{msg}\n")
+
+import datetime as dt
+log(dt.datetime.now().strftime("%Y-%m-%dT%H:%M:%S"))
 
 def sudo(cmd):
     system(f"sudo {cmd}")
@@ -35,8 +39,7 @@ with open(f"{home_dir}/pull_updates_and_restart.sh", "r") as f:
     content = f.read()
     dev_or_main = "dev" if "pollinator:dev" in content else "main"
 
-sudo("echo 1 >> /tmp/log")
-sudo(f"echo  gpu_flag={gpu_flag} dev_or_main={dev_or_main} home_dir={home_dir}>> /tmp/log")
+log(f"gpu_flag={gpu_flag} dev_or_main={dev_or_main} home_dir={home_dir}")
 
 
 sudo(f"chmod a+w {home_dir}/pull_updates_and_restart.sh")
@@ -131,4 +134,4 @@ if not os.path.exists("/tmp/docker_is_pulling"):
         pass
     finally:
         system("rm /tmp/docker_is_pulling")
-        
+
