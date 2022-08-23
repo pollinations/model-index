@@ -21,8 +21,6 @@ def sudo(cmd):
 
 
 def system(cmd):
-    if "docker pull" in cmd:
-        breakpoint()
     log("-"*80)
     log(cmd)
     result = os.popen(cmd).read()
