@@ -14,37 +14,40 @@ def log(msg):
     with open("/tmp/fetch.log", "a") as f:
         f.write(f"{msg}\n")
 
+def sudo(cmd):
+    system(f"sudo {cmd}")
+
+
 def system(cmd):
     log("-"*80)
     log(cmd)
-    result = os.popen(f"sudo {cmd}").read()
+    result = os.popen(cmd).read()
     log(result)
     log("-"*80)
 
-
     
-gpu_flag = "--gpus all" if system("nvidia-smi  > /dev/null 2>&1") == 0 else ""
+gpu_flag = "--gpus all" if sudo("nvidia-smi  > /dev/null 2>&1") == 0 else ""
 
 with open(f"{home_dir}/pull_updates_and_restart.sh", "r") as f:
     content = f.read()
     dev_or_main = "dev" if "pollinator:dev" in content else "main"
 
-system("echo 1 >> /tmp/log")
-system(f"echo  gpu_flag={gpu_flag} dev_or_main={dev_or_main} home_dir={home_dir}>> /tmp/log")
+sudo("echo 1 >> /tmp/log")
+sudo(f"echo  gpu_flag={gpu_flag} dev_or_main={dev_or_main} home_dir={home_dir}>> /tmp/log")
 
 
-system(f"chmod a+w {home_dir}/pull_updates_and_restart.sh")
+sudo(f"chmod a+w {home_dir}/pull_updates_and_restart.sh")
 
-system("crontab -r  ")
-system("crontab -l > fetch_updates")
-system(f'echo "*/5 * * * * /bin/bash {home_dir}/pull_updates_and_restart.sh" >> fetch_updates')
-system(f'echo "*/5 * * * * docker system prune -f &>> /tmp/prune.log" >> fetch_updates')
-system(f'echo "* * * * * sh {home_dir}/fetch_models.sh" >> fetch_updates')
-system("crontab fetch_updates")
-system("rm fetch_updates")
-system("chmod -R a+w /tmp  ")
+sudo("crontab -r  ")
+sudo("crontab -l > fetch_updates")
+sudo(f'echo "*/5 * * * * /bin/bash {home_dir}/pull_updates_and_restart.sh" >> fetch_updates')
+sudo(f'echo "*/5 * * * * docker system prune -f &>> /tmp/prune.log" >> fetch_updates')
+sudo(f'echo "* * * * * sh {home_dir}/fetch_models.sh" >> fetch_updates')
+sudo("crontab fetch_updates")
+sudo("rm fetch_updates")
+sudo("chmod -R a+w /tmp  ")
 
-system(f"chmod a+w {home_dir}/fetch_models.sh")
+sudo(f"chmod a+w {home_dir}/fetch_models.sh")
 
 with open(f"{home_dir}/fetch_models.sh", "r") as f:
     fetch_models = f.read().replace("python3 fetch_images.py", f"python3 {home_dir}/fetch_images.py")\
@@ -55,7 +58,7 @@ time.sleep(3)
 with open(f"{home_dir}/fetch_models.sh", "w") as f:
     f.write(fetch_models)
 
-system("echo 2 >> /tmp/log")
+sudo("echo 2 >> /tmp/log")
 update_pollinator = f"""#!/bin/bash
 if [[ $(< /tmp/ipfs/output/done) == "true" ]]; then
     aws ecr get-login-password \\
@@ -79,7 +82,7 @@ docker run {gpu_flag} -d --rm \\
 with open(f"{home_dir}/pull_updates_and_restart.sh", "w") as f:
     f.writelines(update_pollinator)
 
-system("curl -o images.json https://raw.githubusercontent.com/pollinations/model-index/main/images.json")
+sudo("curl -o images.json https://raw.githubusercontent.com/pollinations/model-index/main/images.json")
 with open("images.json", "r") as f:
     images = json.load(f)
 
@@ -97,6 +100,16 @@ with open(f"{home_dir}/.env", "r") as f:
 
 log(f"# Pollinator group: {pollinator_group}")  
 
+
+pull = """
+aws ecr get-login-password \
+    --region us-east-1 \
+| docker login \
+    --username AWS \
+    --password-stdin 614871946825.dkr.ecr.us-east-1.amazonaws.com
+docker pull {}
+""".format
+
 if not "docker pull" in os.popen("ps -ax").read():
     for _, image in images.items():
         try:
@@ -104,6 +117,6 @@ if not "docker pull" in os.popen("ps -ax").read():
         except (AssertionError, KeyError):
             log(f"# Ignore {image}")
             continue
-        system(f"docker pull {image}")
+        system(pull(image))
         if "@" in image:
-            system(f"docker tag {image} {image.split('@')[0]}")
+            sudo(f"docker tag {image} {image.split('@')[0]}")

@@ -46,7 +46,8 @@ while not ok:
 try:
     with open(f"{image_name}/meta.json", "r") as f:
         meta = json.load(f)
-except:
+except Exception as e:
+    print(e)
     meta = {}
 
 
