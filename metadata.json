@@ -3600,8 +3600,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/swinir": {
-        "hash": "sha256:b41707c5f8cb6b6c3c316a7b6a4e4475a891372c2397aa5f3f15d20d2a134276",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/swinir@sha256:b41707c5f8cb6b6c3c316a7b6a4e4475a891372c2397aa5f3f15d20d2a134276",
+        "hash": "sha256:0e3c634cdc0323d1b9208629d66c25fe9ccea8aa222a623499d23e236090f87f",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/swinir@sha256:0e3c634cdc0323d1b9208629d66c25fe9ccea8aa222a623499d23e236090f87f",
         "openapi": {
             "components": {
                 "schemas": {
