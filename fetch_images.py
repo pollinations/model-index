@@ -10,6 +10,8 @@ if not os.path.exists(home_dir):
 if not os.path.exists(home_dir):
     home_dir = "/home/ubuntu"
 
+os.system("rm /tmp/fetch.log")
+
 def log(msg):
     with open("/tmp/fetch.log", "a") as f:
         f.write(f"{msg}\n")
@@ -19,6 +21,8 @@ def sudo(cmd):
 
 
 def system(cmd):
+    if "docker pull" in cmd:
+        breakpoint()
     log("-"*80)
     log(cmd)
     result = os.popen(cmd).read()
