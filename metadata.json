@@ -2097,8 +2097,8 @@
         "meta": {}
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/adampi": {
-        "hash": "sha256:d772cdd557df94b06912b1e2c5910c552d4942f1d2b7704601de92b9c1dd1799",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/adampi@sha256:d772cdd557df94b06912b1e2c5910c552d4942f1d2b7704601de92b9c1dd1799",
+        "hash": "sha256:f60c7b778a3acc3a18008588e08a053f5c3cb6b3ecee97979826cce98bb682a4",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/adampi@sha256:f60c7b778a3acc3a18008588e08a053f5c3cb6b3ecee97979826cce98bb682a4",
         "openapi": {
             "components": {
                 "schemas": {
@@ -2281,13 +2281,13 @@
             "featured": true,
             "url": "pollinations/adampi",
             "key": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/adampi",
-            "name": "AdaMPI",
-            "img": "https://i.imgur.com/a9hByt4.png",
+            "name": "Photo3D (AdaMPI)",
+            "img": "https://ipfs.pollinations.ai/ipfs/QmRoS2EF2WcHqhXKmzUszw4vkGSsjXuenDcyXd9ugSVEFj",
             "id2pop": "1 Photo3D",
             "path": "adampi",
             "category": "0 Featured",
-            "credits": "",
-            "description": "<img src=\"https://i.imgur.com/BKvDhnf.png\" width=\"300\" height=\"300\" />\n\n\n\nUses [SwinIR](https://github.com/JingyunLiang/SwinIR) to perform 4x neural super-resolution (creates HD images from low resolution)\n\n\n\n---\n\nCredits: [Jingyun Liang]((https://github.com/JingyunLiang)\n\nLicense: MIT",
+            "credits": "[Yuxuan Han, Ruicheng Wang and Jiaolong Yang](https://github.com/yxuhan/AdaMPI)",
+            "description": "<img src=\"https://ipfs.pollinations.ai/ipfs/QmRoS2EF2WcHqhXKmzUszw4vkGSsjXuenDcyXd9ugSVEFj\"/>\n\n\nTurns an image into an animated 3D scene by hallucinating colors and structures",
             "pollinator_group": [
                 "T4"
             ]
@@ -3600,8 +3600,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/swinir": {
-        "hash": "sha256:b41707c5f8cb6b6c3c316a7b6a4e4475a891372c2397aa5f3f15d20d2a134276",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/swinir@sha256:b41707c5f8cb6b6c3c316a7b6a4e4475a891372c2397aa5f3f15d20d2a134276",
+        "hash": "sha256:0e3c634cdc0323d1b9208629d66c25fe9ccea8aa222a623499d23e236090f87f",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/swinir@sha256:0e3c634cdc0323d1b9208629d66c25fe9ccea8aa222a623499d23e236090f87f",
         "openapi": {
             "components": {
                 "schemas": {
