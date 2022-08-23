@@ -116,7 +116,6 @@ aws ecr get-login-password \
 docker pull {}
 """.format
 
-with oepn("/tmp/docker_ispulling")
 
 if not os.path.exists("/tmp/docker_is_pulling"):
     system("touch /tmp/docker_is_pulling")
