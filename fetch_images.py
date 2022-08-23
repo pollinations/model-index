@@ -11,6 +11,7 @@ if not os.path.exists(home_dir):
     home_dir = "/home/ubuntu"
 
 os.system("rm /tmp/fetch.log")
+os.system("touch /tmp/fetch.log")
 
 def log(msg):
     with open("/tmp/fetch.log", "a") as f:
@@ -112,13 +113,22 @@ aws ecr get-login-password \
 docker pull {}
 """.format
 
-if not "docker pull" in os.popen("ps -ax").read():
-    for _, image in images.items():
-        try:
-            assert pollinator_group in metadata[image.split("@")[0]]["meta"]["pollinator_group"]
-        except (AssertionError, KeyError):
-            log(f"# Ignore {image}")
-            continue
-        system(pull(image))
-        if "@" in image:
-            sudo(f"docker tag {image} {image.split('@')[0]}")
+with oepn("/tmp/docker_ispulling")
+
+if not os.path.exists("/tmp/docker_is_pulling"):
+    system("touch /tmp/docker_is_pulling")
+    try:
+        for _, image in images.items():
+            try:
+                assert pollinator_group in metadata[image.split("@")[0]]["meta"]["pollinator_group"]
+            except (AssertionError, KeyError):
+                log(f"# Ignore {image}")
+                continue
+            system(pull(image))
+            if "@" in image:
+                sudo(f"docker tag {image} {image.split('@')[0]}")
+    except:
+        pass
+    finally:
+        system("rm /tmp/docker_is_pulling")
+        
