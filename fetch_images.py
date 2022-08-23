@@ -30,7 +30,7 @@ def system(cmd):
     log("-"*80)
 
     
-gpu_flag = "--gpus all" if sudo("nvidia-smi  > /dev/null 2>&1") == 0 else ""
+gpu_flag = "--gpus all" if os.system("nvidia-smi  > /dev/null 2>&1") == 0 else ""
 
 with open(f"{home_dir}/pull_updates_and_restart.sh", "r") as f:
     content = f.read()
