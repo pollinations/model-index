@@ -2663,8 +2663,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/dreamfields-torch": {
-        "hash": "sha256:804344735f28140d2d72c240cfa98c3a34db140bb75b72de7c1461602dd45097",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/dreamfields-torch@sha256:804344735f28140d2d72c240cfa98c3a34db140bb75b72de7c1461602dd45097",
+        "hash": "sha256:6e05d24ad6888229f68b7244ab2eb101d7da409ca73a52b4e3ef62c0d0eaf879",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/dreamfields-torch@sha256:6e05d24ad6888229f68b7244ab2eb101d7da409ca73a52b4e3ef62c0d0eaf879",
         "openapi": {
             "components": {
                 "schemas": {
