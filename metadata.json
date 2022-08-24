@@ -3680,8 +3680,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private": {
-        "hash": "sha256:9af708e91d3c257d63eb4951b2371f0ef8a42c97de68400eb9634617faa70e81",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private@sha256:9af708e91d3c257d63eb4951b2371f0ef8a42c97de68400eb9634617faa70e81",
+        "hash": "sha256:a67f140e1b1506aa7cd02f68042a43a188f01f45cfac975d5b587a6bfa2020aa",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private@sha256:a67f140e1b1506aa7cd02f68042a43a188f01f45cfac975d5b587a6bfa2020aa",
         "openapi": {
             "components": {
                 "schemas": {
@@ -3890,7 +3890,6 @@
             "credits": "[Stability.AI](https://stability.ai/)",
             "description": "<img src=\"https://s4.gifyu.com/images/ezgif.com-gif-maker4faa2b37cd286f60.gif\" width=\"300\" height=\"300\" />\n\n\n\nThe new kid in town. Stable Diffusion Animation. Moves from one prompt to the next over time.",
             "pollinator_group": [
-                "T4",
                 "T4-stable-diffusion",
                 "A10"
             ]
