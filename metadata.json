@@ -3680,8 +3680,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private": {
-        "hash": "sha256:dd2f5ed806f5a334c3c478e6dd1c0964dd85b4334021a68f224afd74359d674b",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private@sha256:dd2f5ed806f5a334c3c478e6dd1c0964dd85b4334021a68f224afd74359d674b",
+        "hash": "sha256:9af708e91d3c257d63eb4951b2371f0ef8a42c97de68400eb9634617faa70e81",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private@sha256:9af708e91d3c257d63eb4951b2371f0ef8a42c97de68400eb9634617faa70e81",
         "openapi": {
             "components": {
                 "schemas": {
@@ -3701,7 +3701,7 @@
                     "Input": {
                         "properties": {
                             "num_frames_per_prompt": {
-                                "default": 5,
+                                "default": 10,
                                 "description": "Number of frames to generate per prompt.",
                                 "title": "Num Frames Per Prompt",
                                 "type": "integer",
