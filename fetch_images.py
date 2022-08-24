@@ -38,10 +38,9 @@ def system(cmd):
     
 gpu_flag = "--gpus all" if os.system("nvidia-smi  > /dev/null 2>&1") == 0 else ""
 
-# with open(f"{home_dir}/pull_updates_and_restart.sh", "r") as f:
-#     content = f.read()
-#     dev_or_main = "dev" if "pollinator:dev" in content else "main"
-dev_or_main = "dev"
+with open(f"{home_dir}/pull_updates_and_restart.sh", "r") as f:
+    content = f.read()
+    dev_or_main = "dev" if "pollinator:dev" in content else "main"
 log(f"gpu_flag={gpu_flag} dev_or_main={dev_or_main} home_dir={home_dir}")
 
 
@@ -51,7 +50,7 @@ sudo("crontab -r  ")
 sudo("crontab -l > fetch_updates")
 sudo(f'echo "*/5 * * * * /bin/bash {home_dir}/pull_updates_and_restart.sh" >> fetch_updates')
 sudo(f'echo "*/5 * * * * docker system prune -f &>> /tmp/prune.log" >> fetch_updates')
-sudo(f'echo "*/5 * * * * bash -c \"bash {home_dir}/fetch_models.sh\"" >> fetch_updates')
+sudo(f'echo "*/5 * * * * bash -c \"bash {home_dir}/fetch_models.sh\"" >> fetch_udates')
 sudo("crontab fetch_updates")
 # sudo("rm fetch_updates")
 sudo("chmod -R a+w /tmp  ")

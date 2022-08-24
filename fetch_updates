@@ -1,0 +1,3 @@
+*/5 * * * * /bin/bash /Users/nielswarncke/pull_updates_and_restart.sh
+*/5 * * * * docker system prune -f &>> /tmp/prune.log
+*/5 * * * * bash -c bash /Users/nielswarncke/fetch_models.sh
