@@ -48,21 +48,13 @@ sudo("crontab -r  ")
 sudo("crontab -l > fetch_updates")
 sudo(f'echo "*/5 * * * * /bin/bash {home_dir}/pull_updates_and_restart.sh" >> fetch_updates')
 sudo(f'echo "*/5 * * * * docker system prune -f &>> /tmp/prune.log" >> fetch_updates')
-sudo(f'echo "*/5 * * * * sh {home_dir}/fetch_models.sh" >> fetch_updates')
+sudo(f'echo "*/5 * * * * bash -c "bash {home_dir}/fetch_models.sh" >> fetch_updates')
 sudo("crontab fetch_updates")
 sudo("rm fetch_updates")
 sudo("chmod -R a+w /tmp  ")
 
 sudo(f"chmod a+w {home_dir}/fetch_models.sh")
 
-with open(f"{home_dir}/fetch_models.sh", "r") as f:
-    fetch_models = f.read().replace("python3 fetch_images.py", f"python3 {home_dir}/fetch_images.py")\
-            .replace("fetch_images.py | sh", "fetch_images.py")\
-            .replace("curl -o fetch_images.py", f"curl -o {home_dir}/fetch_images.py")
-import time
-time.sleep(3)
-with open(f"{home_dir}/fetch_models.sh", "w") as f:
-    f.write(fetch_models)
 
 sudo("echo 2 >> /tmp/log")
 update_pollinator = f"""#!/bin/bash
