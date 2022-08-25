@@ -451,8 +451,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/latent-diffusion-400m": {
-        "hash": "sha256:161df71d0186fe37ef231990d425528c775cacae3d9fface18eddfdcbf8ede17",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/latent-diffusion-400m@sha256:161df71d0186fe37ef231990d425528c775cacae3d9fface18eddfdcbf8ede17",
+        "hash": "sha256:d5c64f51308293ee5ca564c800d9c3d7b55159bcf4795ad5540db7051f134241",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/latent-diffusion-400m@sha256:d5c64f51308293ee5ca564c800d9c3d7b55159bcf4795ad5540db7051f134241",
         "openapi": {
             "components": {
                 "schemas": {
@@ -477,7 +477,7 @@
                                         "$ref": "#/components/schemas/database_name"
                                     }
                                 ],
-                                "default": "laion-aesthetic",
+                                "default": "none",
                                 "description": "Which database to use for the semantic search. Different databases have different capabilities.",
                                 "x-order": 1
                             },
@@ -625,20 +625,7 @@
                         "description": "An enumeration.",
                         "enum": [
                             "none",
-                            "prompt-engineer",
-                            "cars",
-                            "openimages",
-                            "faces",
-                            "simulacra",
-                            "coco",
-                            "pixelart",
-                            "food",
-                            "country211",
-                            "laion-aesthetic",
-                            "vaporwave",
-                            "pets",
-                            "emotes",
-                            "pokemon"
+                            "laion-aesthetic"
                         ],
                         "title": "database_name",
                         "type": "string"
