@@ -1,4 +1,14 @@
 {
+    "featured": false,
+    "url": "voodoohop/dalle-playground",
+    "key": "614871946825.dkr.ecr.us-east-1.amazonaws.com/voodoohop/dalle-playground",
+    "name": "Swinir",
+    "img": "",
+    "id2pop": "",
+    "path": "swinir",
+    "category": "0 Featured",
+    "credits": "Boris Dayma",
+    "description": "Dalle playground",
     "pollinator_group": [
         "T4"
     ]

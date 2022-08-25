@@ -225,8 +225,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/voodoohop/dalle-playground": {
-        "hash": "sha256:42059abaa3be2a4c69dda2b672a6ee2564ca26552b4479559e54a90cc59071f7",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/voodoohop/dalle-playground@sha256:42059abaa3be2a4c69dda2b672a6ee2564ca26552b4479559e54a90cc59071f7",
+        "hash": "sha256:e7d2ab0508992937ce6da8e332df6c5d1b8fb33c49941d00452b5679ecfabece",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/voodoohop/dalle-playground@sha256:e7d2ab0508992937ce6da8e332df6c5d1b8fb33c49941d00452b5679ecfabece",
         "openapi": {
             "components": {
                 "schemas": {
@@ -435,6 +435,16 @@
             }
         },
         "meta": {
+            "featured": false,
+            "url": "voodoohop/dalle-playground",
+            "key": "614871946825.dkr.ecr.us-east-1.amazonaws.com/voodoohop/dalle-playground",
+            "name": "Swinir",
+            "img": "",
+            "id2pop": "",
+            "path": "swinir",
+            "category": "0 Featured",
+            "credits": "Boris Dayma",
+            "description": "Dalle playground",
             "pollinator_group": [
                 "T4"
             ]
