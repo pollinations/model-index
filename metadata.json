@@ -701,8 +701,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/min-dalle": {
-        "hash": "sha256:2b6cae3ec29ababbdee0a26a8ff69d8077e3bf7fd89c0b70a8eda6243582c500",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/min-dalle@sha256:2b6cae3ec29ababbdee0a26a8ff69d8077e3bf7fd89c0b70a8eda6243582c500",
+        "hash": "sha256:e6181b241bc216d46827da04e5719db1c11f7a4111d8e395a6f2b79249af328a",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/min-dalle@sha256:e6181b241bc216d46827da04e5719db1c11f7a4111d8e395a6f2b79249af328a",
         "openapi": {
             "components": {
                 "schemas": {
@@ -729,7 +729,7 @@
                                 "x-order": 0
                             },
                             "grid_size": {
-                                "default": 1,
+                                "default": 4,
                                 "description": "Size of the image grid.  4x4 takes about 15 seconds, 8x8 takes about 35 seconds",
                                 "maximum": 8,
                                 "minimum": 1,
@@ -738,7 +738,7 @@
                                 "x-order": 2
                             },
                             "intermediate_outputs": {
-                                "default": true,
+                                "default": false,
                                 "description": "Whether to show intermediate outputs while running.  This adds less than a second to the run time.",
                                 "title": "Intermediate Outputs",
                                 "type": "boolean",
