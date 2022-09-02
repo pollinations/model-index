@@ -3677,8 +3677,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private": {
-        "hash": "sha256:129cf326d5fffcd5afead4c2c58740a048d1c1783e960956f49d647a90977213",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private@sha256:129cf326d5fffcd5afead4c2c58740a048d1c1783e960956f49d647a90977213",
+        "hash": "sha256:f19babc9ca61768f5ba6d2cd63cf741c34776e5e46105a2c64fca73b13431c39",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private@sha256:f19babc9ca61768f5ba6d2cd63cf741c34776e5e46105a2c64fca73b13431c39",
         "openapi": {
             "components": {
                 "schemas": {
@@ -3712,7 +3712,7 @@
                                 "x-order": 1
                             },
                             "prompts": {
-                                "default": "Lust by magritte\nEnvy by magritte",
+                                "default": "Apple by magritte\nBanana by magritte",
                                 "description": "model will try to generate this text.",
                                 "title": "Prompts",
                                 "type": "string",
