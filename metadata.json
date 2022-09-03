@@ -3675,8 +3675,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private": {
-        "hash": "sha256:3e03d9a28ab210b8a894683dcd8d938f74a5b56b0db6adf0a3ae84b60080969b",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private@sha256:3e03d9a28ab210b8a894683dcd8d938f74a5b56b0db6adf0a3ae84b60080969b",
+        "hash": "sha256:61b94fbd9c26e529fb398efc9fcb2962a554b1d343d51b50543919416d396643",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private@sha256:61b94fbd9c26e529fb398efc9fcb2962a554b1d343d51b50543919416d396643",
         "openapi": {
             "components": {
                 "schemas": {
@@ -3703,8 +3703,8 @@
                                 "x-order": 5
                             },
                             "num_frames_per_prompt": {
-                                "default": 30,
-                                "description": "Number of frames to generate per prompt (limited to a maximum of 60 for now).",
+                                "default": 6,
+                                "description": "Number of frames to generate per prompt (limited to a maximum of 10 for now because we are experiencing heavy use).",
                                 "title": "Num Frames Per Prompt",
                                 "type": "integer",
                                 "x-order": 2
