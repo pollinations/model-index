@@ -3675,8 +3675,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private": {
-        "hash": "sha256:f91b2d56cb7f1cd9958d910a4c13dd21e423594494b5fe8f359b75693a9c2aaa",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private@sha256:f91b2d56cb7f1cd9958d910a4c13dd21e423594494b5fe8f359b75693a9c2aaa",
+        "hash": "sha256:3e03d9a28ab210b8a894683dcd8d938f74a5b56b0db6adf0a3ae84b60080969b",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private@sha256:3e03d9a28ab210b8a894683dcd8d938f74a5b56b0db6adf0a3ae84b60080969b",
         "openapi": {
             "components": {
                 "schemas": {
@@ -3695,9 +3695,16 @@
                     },
                     "Input": {
                         "properties": {
+                            "height": {
+                                "default": 512,
+                                "description": "Height of the generated image. The model was really only trained on 512x512 images. Other sizes tend to create less coherent images.",
+                                "title": "Height",
+                                "type": "integer",
+                                "x-order": 5
+                            },
                             "num_frames_per_prompt": {
                                 "default": 30,
-                                "description": "Number of frames to generate per prompt (limited to a maximum of 100 for now).",
+                                "description": "Number of frames to generate per prompt (limited to a maximum of 60 for now).",
                                 "title": "Num Frames Per Prompt",
                                 "type": "integer",
                                 "x-order": 2
@@ -3722,6 +3729,13 @@
                                 "title": "Random Seed",
                                 "type": "integer",
                                 "x-order": 3
+                            },
+                            "width": {
+                                "default": 512,
+                                "description": "Width of the generated image. The model was really only trained on 512x512 images. Other sizes tend to create less coherent images.",
+                                "title": "Width",
+                                "type": "integer",
+                                "x-order": 4
                             }
                         },
                         "title": "Input",
