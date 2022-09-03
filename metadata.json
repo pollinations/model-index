@@ -2292,8 +2292,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/disco-diffusion": {
-        "hash": "sha256:4733eb4ffe7d55770cae626c98c4b5b66db9520ed186150cc55df0306844bac1",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/disco-diffusion@sha256:4733eb4ffe7d55770cae626c98c4b5b66db9520ed186150cc55df0306844bac1",
+        "hash": "sha256:b5420096fa551ccc5ef2ad9ef1e34fb0670aed3c72e83fbc2f78154dd743404b",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/disco-diffusion@sha256:b5420096fa551ccc5ef2ad9ef1e34fb0670aed3c72e83fbc2f78154dd743404b",
         "openapi": {
             "components": {
                 "schemas": {
@@ -2654,9 +2654,7 @@
             "credits": "Credits: [@gandamu](https://twitter.com/gandamu_ml)x, [@somnai_dreams](https://twitter.com/somnai_dreams), [Katherine Crowson](https://twitter.com/RiversHaveWings), [Adam Letts](https://twitter.com/gandamu_ml)",
             "description": "![A Wonderful landscape of pollinations in a beautiful flower fields, in a mystical flower field Ultra detailed, hyper realistic 4k by Albert Bierstadt and Greg rutkowski](https://i.imgur.com/H1F0gTN.png)\n\n\n\n*A Wonderful landscape of pollinations in a beautiful flower fields, in a mystical flower field Ultra detailed, hyper realistic 4k by Albert Bierstadt and Greg rutkowski*\n\n\n\nThis is the  current go-to model for turning text into images. It might take a few minutes, but it is very artistic\n\n\n\n---\n\nTutorial Video *by Greg Bechtel* :\n\n\n\n<iframe \n\n    src=\"https://www.youtube.com/embed/-aUNQO5pXe0\"     \n\n    frameborder=\"0\"\n\n    allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\"\n\n    allowfullscreen> </iframe>\n\n\n\nCredits: [@gandamu](https://twitter.com/gandamu_ml)x, [@somnai_dreams](https://twitter.com/somnai_dreams), [Katherine Crowson](https://twitter.com/RiversHaveWings), [Adam Letts](https://twitter.com/gandamu_ml)",
             "img": "https://i.imgur.com/H1F0gTN.png",
-            "pollinator_group": [
-                "T4"
-            ]
+            "pollinator_group": []
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/dreamfields-torch": {
