@@ -1,19 +1,19 @@
 [
     {
-        "Id": "sha256:a2493b77c7e44d86374b8daf427dce13e3610092763e2dc5a8ff3ca7cbb4d756",
+        "Id": "sha256:ddb5053b5cfac53de64889a7322db25f1a4b1f22a9e499b18a4b974800fe07c8",
         "RepoTags": [
             "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/avatarclip:latest",
             "image:test"
         ],
         "RepoDigests": [
-            "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/avatarclip@sha256:923dae1657f53a072733f3e81264fc7357ad61db9ae967b51331176794c432ce"
+            "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/avatarclip@sha256:37fc1c1304f45ccd8b0685b1c001dadf72803c2b55428ba6e26ffc0be24bd77b"
         ],
-        "Parent": "sha256:d10c806a976c190e0f4802aebba6209f5b0068040bb34a544ffa351bd96ce0ab",
+        "Parent": "sha256:94cde8d134df098eddc372638a7bf883475da03da4a41eba7739df7b1bc21c3d",
         "Comment": "",
-        "Created": "2022-08-21T11:44:34.587328497Z",
-        "Container": "b8fe8ea2c5b6f06032b7dbff2efcc40fb702aabcae886a019268af340d9bcac6",
+        "Created": "2022-09-06T09:55:14.962465271Z",
+        "Container": "c4bd8dc9b1fcb23f76b4badc26e47bf574ef513e681eae97ac6b8d7c848c4408",
         "ContainerConfig": {
-            "Hostname": "b8fe8ea2c5b6",
+            "Hostname": "c4bd8dc9b1fc",
             "Domainname": "",
             "User": "",
             "AttachStdin": false,
@@ -72,10 +72,10 @@
                 "/bin/sh",
                 "-c",
                 "#(nop) ",
-                "LABEL run.cog.version=0.4.1"
+                "LABEL run.cog.version=0.4.2"
             ],
             "ArgsEscaped": true,
-            "Image": "sha256:d10c806a976c190e0f4802aebba6209f5b0068040bb34a544ffa351bd96ce0ab",
+            "Image": "sha256:94cde8d134df098eddc372638a7bf883475da03da4a41eba7739df7b1bc21c3d",
             "Volumes": null,
             "WorkingDir": "/src",
             "Entrypoint": null,
@@ -83,16 +83,16 @@
             "Labels": {
                 "com.nvidia.cudnn.version": "8.0.5.39",
                 "maintainer": "NVIDIA CORPORATION <cudatools@nvidia.com>",
-                "org.cogmodel.cog_version": "0.4.1",
+                "org.cogmodel.cog_version": "0.4.2",
                 "org.cogmodel.config": "{\"build\":{\"gpu\":true,\"python_version\":\"3.8\",\"python_packages\":[\"torch==1.10.1\",\"torchvision==0.11.2\",\"torchaudio==0.10.1\",\"trimesh==3.9.8\",\"numpy==1.21.0\",\"pyhocon==0.3.57\",\"icecream==2.1.0\",\"opencv_python==4.5.2.52\",\"tqdm==4.50.2\",\"scipy==1.7.0\",\"PyMCubes==0.1.2\",\"pymeshlab==2022.2.post2\"],\"run\":[\"pip install --upgrade pip\",\"pip install ftfy regex tqdm git+https://github.com/openai/CLIP.git smplx[all] chumpy dotmap PyYAML ninja tensorboard scikit-image\",\"pip install git+https://github.com/nghorbani/human_body_prior.git\",\"pip install git+https://github.com/nghorbani/body_visualizer.git\",\"pip install tensorboard scikit-image\",\"pip install gdown\",\"gdown --id 1krWnGpL1Pj6Q_0DzJZ0zFbxMc41U5K6_ \\u0026\\u0026 unzip smpl.zip \\u0026\\u0026 mv smpl smpl_data\",\"gdown --id 1ae-pnDhzOG3brxBfU1lBq8CyOKz4rnzd\",\"unzip /avatarclip_data.zip\",\"apt-get update\",\"apt-get -y install curl gnupg\",\"curl -sL https://deb.nodesource.com/setup_16.x  | bash -\",\"apt-get -y install nodejs\",\"npm install -g obj2gltf\"],\"system_packages\":[\"ffmpeg\",\"zip\"],\"cuda\":\"11.1.1\",\"cudnn\":\"8\"},\"predict\":\"predict.py:Predictor\"}",
                 "org.cogmodel.deprecated": "The org.cogmodel labels are deprecated. Use run.cog.",
                 "org.cogmodel.openapi_schema": "{\"components\":{\"schemas\":{\"HTTPValidationError\":{\"properties\":{\"detail\":{\"items\":{\"$ref\":\"#/components/schemas/ValidationError\"},\"title\":\"Detail\",\"type\":\"array\"}},\"title\":\"HTTPValidationError\",\"type\":\"object\"},\"Input\":{\"properties\":{\"fine\":{\"default\":true,\"description\":\"whether to generate a coarse avatar with no color (fast) or whether to add detail and texture (slow)\",\"title\":\"Fine\",\"type\":\"boolean\",\"x-order\":1},\"iterations\":{\"default\":10000,\"description\":\"number of iterations (for fine avatar)\",\"title\":\"Iterations\",\"type\":\"integer\",\"x-order\":2},\"text\":{\"default\":\"overweight sumo wrestler\",\"description\":\"prompt\",\"title\":\"Text\",\"type\":\"string\",\"x-order\":0}},\"title\":\"Input\",\"type\":\"object\"},\"Output\":{\"format\":\"uri\",\"title\":\"Output\",\"type\":\"string\"},\"Request\":{\"description\":\"The request body for a prediction\",\"properties\":{\"input\":{\"$ref\":\"#/components/schemas/Input\"},\"output_file_prefix\":{\"title\":\"Output File Prefix\",\"type\":\"string\"}},\"title\":\"Request\",\"type\":\"object\"},\"Response\":{\"description\":\"The response body for a prediction\",\"properties\":{\"error\":{\"title\":\"Error\",\"type\":\"string\"},\"output\":{\"$ref\":\"#/components/schemas/Output\"},\"status\":{\"$ref\":\"#/components/schemas/Status\"}},\"required\":[\"status\"],\"title\":\"Response\",\"type\":\"object\"},\"Status\":{\"description\":\"An enumeration.\",\"enum\":[\"processing\",\"succeeded\",\"failed\"],\"title\":\"Status\",\"type\":\"string\"},\"ValidationError\":{\"properties\":{\"loc\":{\"items\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"integer\"}]},\"title\":\"Location\",\"type\":\"array\"},\"msg\":{\"title\":\"Message\",\"type\":\"string\"},\"type\":{\"title\":\"Error Type\",\"type\":\"string\"}},\"required\":[\"loc\",\"msg\",\"type\"],\"title\":\"ValidationError\",\"type\":\"object\"}}},\"info\":{\"title\":\"Cog\",\"version\":\"0.1.0\"},\"openapi\":\"3.0.2\",\"paths\":{\"/\":{\"get\":{\"operationId\":\"root__get\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{}}},\"description\":\"Successful Response\"}},\"summary\":\"Root\"}},\"/predictions\":{\"post\":{\"description\":\"Run a single prediction on the model\",\"operationId\":\"predict_predictions_post\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Request\"}}}},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Response\"}}},\"description\":\"Successful Response\"},\"422\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/HTTPValidationError\"}}},\"description\":\"Validation Error\"}},\"summary\":\"Predict\"}}}}",
                 "run.cog.config": "{\"build\":{\"gpu\":true,\"python_version\":\"3.8\",\"python_packages\":[\"torch==1.10.1\",\"torchvision==0.11.2\",\"torchaudio==0.10.1\",\"trimesh==3.9.8\",\"numpy==1.21.0\",\"pyhocon==0.3.57\",\"icecream==2.1.0\",\"opencv_python==4.5.2.52\",\"tqdm==4.50.2\",\"scipy==1.7.0\",\"PyMCubes==0.1.2\",\"pymeshlab==2022.2.post2\"],\"run\":[\"pip install --upgrade pip\",\"pip install ftfy regex tqdm git+https://github.com/openai/CLIP.git smplx[all] chumpy dotmap PyYAML ninja tensorboard scikit-image\",\"pip install git+https://github.com/nghorbani/human_body_prior.git\",\"pip install git+https://github.com/nghorbani/body_visualizer.git\",\"pip install tensorboard scikit-image\",\"pip install gdown\",\"gdown --id 1krWnGpL1Pj6Q_0DzJZ0zFbxMc41U5K6_ \\u0026\\u0026 unzip smpl.zip \\u0026\\u0026 mv smpl smpl_data\",\"gdown --id 1ae-pnDhzOG3brxBfU1lBq8CyOKz4rnzd\",\"unzip /avatarclip_data.zip\",\"apt-get update\",\"apt-get -y install curl gnupg\",\"curl -sL https://deb.nodesource.com/setup_16.x  | bash -\",\"apt-get -y install nodejs\",\"npm install -g obj2gltf\"],\"system_packages\":[\"ffmpeg\",\"zip\"],\"cuda\":\"11.1.1\",\"cudnn\":\"8\"},\"predict\":\"predict.py:Predictor\"}",
                 "run.cog.openapi_schema": "{\"components\":{\"schemas\":{\"HTTPValidationError\":{\"properties\":{\"detail\":{\"items\":{\"$ref\":\"#/components/schemas/ValidationError\"},\"title\":\"Detail\",\"type\":\"array\"}},\"title\":\"HTTPValidationError\",\"type\":\"object\"},\"Input\":{\"properties\":{\"fine\":{\"default\":true,\"description\":\"whether to generate a coarse avatar with no color (fast) or whether to add detail and texture (slow)\",\"title\":\"Fine\",\"type\":\"boolean\",\"x-order\":1},\"iterations\":{\"default\":10000,\"description\":\"number of iterations (for fine avatar)\",\"title\":\"Iterations\",\"type\":\"integer\",\"x-order\":2},\"text\":{\"default\":\"overweight sumo wrestler\",\"description\":\"prompt\",\"title\":\"Text\",\"type\":\"string\",\"x-order\":0}},\"title\":\"Input\",\"type\":\"object\"},\"Output\":{\"format\":\"uri\",\"title\":\"Output\",\"type\":\"string\"},\"Request\":{\"description\":\"The request body for a prediction\",\"properties\":{\"input\":{\"$ref\":\"#/components/schemas/Input\"},\"output_file_prefix\":{\"title\":\"Output File Prefix\",\"type\":\"string\"}},\"title\":\"Request\",\"type\":\"object\"},\"Response\":{\"description\":\"The response body for a prediction\",\"properties\":{\"error\":{\"title\":\"Error\",\"type\":\"string\"},\"output\":{\"$ref\":\"#/components/schemas/Output\"},\"status\":{\"$ref\":\"#/components/schemas/Status\"}},\"required\":[\"status\"],\"title\":\"Response\",\"type\":\"object\"},\"Status\":{\"description\":\"An enumeration.\",\"enum\":[\"processing\",\"succeeded\",\"failed\"],\"title\":\"Status\",\"type\":\"string\"},\"ValidationError\":{\"properties\":{\"loc\":{\"items\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"integer\"}]},\"title\":\"Location\",\"type\":\"array\"},\"msg\":{\"title\":\"Message\",\"type\":\"string\"},\"type\":{\"title\":\"Error Type\",\"type\":\"string\"}},\"required\":[\"loc\",\"msg\",\"type\"],\"title\":\"ValidationError\",\"type\":\"object\"}}},\"info\":{\"title\":\"Cog\",\"version\":\"0.1.0\"},\"openapi\":\"3.0.2\",\"paths\":{\"/\":{\"get\":{\"operationId\":\"root__get\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{}}},\"description\":\"Successful Response\"}},\"summary\":\"Root\"}},\"/predictions\":{\"post\":{\"description\":\"Run a single prediction on the model\",\"operationId\":\"predict_predictions_post\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Request\"}}}},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Response\"}}},\"description\":\"Successful Response\"},\"422\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/HTTPValidationError\"}}},\"description\":\"Validation Error\"}},\"summary\":\"Predict\"}}}}",
-                "run.cog.version": "0.4.1"
+                "run.cog.version": "0.4.2"
             }
         },
-        "DockerVersion": "20.10.17+azure-1",
+        "DockerVersion": "20.10.17+azure-3",
         "Author": "",
         "Config": {
             "Hostname": "",
@@ -156,7 +156,7 @@
                 "cog.server.http"
             ],
             "ArgsEscaped": true,
-            "Image": "sha256:d10c806a976c190e0f4802aebba6209f5b0068040bb34a544ffa351bd96ce0ab",
+            "Image": "sha256:94cde8d134df098eddc372638a7bf883475da03da4a41eba7739df7b1bc21c3d",
             "Volumes": null,
             "WorkingDir": "/src",
             "Entrypoint": null,
@@ -164,25 +164,25 @@
             "Labels": {
                 "com.nvidia.cudnn.version": "8.0.5.39",
                 "maintainer": "NVIDIA CORPORATION <cudatools@nvidia.com>",
-                "org.cogmodel.cog_version": "0.4.1",
+                "org.cogmodel.cog_version": "0.4.2",
                 "org.cogmodel.config": "{\"build\":{\"gpu\":true,\"python_version\":\"3.8\",\"python_packages\":[\"torch==1.10.1\",\"torchvision==0.11.2\",\"torchaudio==0.10.1\",\"trimesh==3.9.8\",\"numpy==1.21.0\",\"pyhocon==0.3.57\",\"icecream==2.1.0\",\"opencv_python==4.5.2.52\",\"tqdm==4.50.2\",\"scipy==1.7.0\",\"PyMCubes==0.1.2\",\"pymeshlab==2022.2.post2\"],\"run\":[\"pip install --upgrade pip\",\"pip install ftfy regex tqdm git+https://github.com/openai/CLIP.git smplx[all] chumpy dotmap PyYAML ninja tensorboard scikit-image\",\"pip install git+https://github.com/nghorbani/human_body_prior.git\",\"pip install git+https://github.com/nghorbani/body_visualizer.git\",\"pip install tensorboard scikit-image\",\"pip install gdown\",\"gdown --id 1krWnGpL1Pj6Q_0DzJZ0zFbxMc41U5K6_ \\u0026\\u0026 unzip smpl.zip \\u0026\\u0026 mv smpl smpl_data\",\"gdown --id 1ae-pnDhzOG3brxBfU1lBq8CyOKz4rnzd\",\"unzip /avatarclip_data.zip\",\"apt-get update\",\"apt-get -y install curl gnupg\",\"curl -sL https://deb.nodesource.com/setup_16.x  | bash -\",\"apt-get -y install nodejs\",\"npm install -g obj2gltf\"],\"system_packages\":[\"ffmpeg\",\"zip\"],\"cuda\":\"11.1.1\",\"cudnn\":\"8\"},\"predict\":\"predict.py:Predictor\"}",
                 "org.cogmodel.deprecated": "The org.cogmodel labels are deprecated. Use run.cog.",
                 "org.cogmodel.openapi_schema": "{\"components\":{\"schemas\":{\"HTTPValidationError\":{\"properties\":{\"detail\":{\"items\":{\"$ref\":\"#/components/schemas/ValidationError\"},\"title\":\"Detail\",\"type\":\"array\"}},\"title\":\"HTTPValidationError\",\"type\":\"object\"},\"Input\":{\"properties\":{\"fine\":{\"default\":true,\"description\":\"whether to generate a coarse avatar with no color (fast) or whether to add detail and texture (slow)\",\"title\":\"Fine\",\"type\":\"boolean\",\"x-order\":1},\"iterations\":{\"default\":10000,\"description\":\"number of iterations (for fine avatar)\",\"title\":\"Iterations\",\"type\":\"integer\",\"x-order\":2},\"text\":{\"default\":\"overweight sumo wrestler\",\"description\":\"prompt\",\"title\":\"Text\",\"type\":\"string\",\"x-order\":0}},\"title\":\"Input\",\"type\":\"object\"},\"Output\":{\"format\":\"uri\",\"title\":\"Output\",\"type\":\"string\"},\"Request\":{\"description\":\"The request body for a prediction\",\"properties\":{\"input\":{\"$ref\":\"#/components/schemas/Input\"},\"output_file_prefix\":{\"title\":\"Output File Prefix\",\"type\":\"string\"}},\"title\":\"Request\",\"type\":\"object\"},\"Response\":{\"description\":\"The response body for a prediction\",\"properties\":{\"error\":{\"title\":\"Error\",\"type\":\"string\"},\"output\":{\"$ref\":\"#/components/schemas/Output\"},\"status\":{\"$ref\":\"#/components/schemas/Status\"}},\"required\":[\"status\"],\"title\":\"Response\",\"type\":\"object\"},\"Status\":{\"description\":\"An enumeration.\",\"enum\":[\"processing\",\"succeeded\",\"failed\"],\"title\":\"Status\",\"type\":\"string\"},\"ValidationError\":{\"properties\":{\"loc\":{\"items\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"integer\"}]},\"title\":\"Location\",\"type\":\"array\"},\"msg\":{\"title\":\"Message\",\"type\":\"string\"},\"type\":{\"title\":\"Error Type\",\"type\":\"string\"}},\"required\":[\"loc\",\"msg\",\"type\"],\"title\":\"ValidationError\",\"type\":\"object\"}}},\"info\":{\"title\":\"Cog\",\"version\":\"0.1.0\"},\"openapi\":\"3.0.2\",\"paths\":{\"/\":{\"get\":{\"operationId\":\"root__get\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{}}},\"description\":\"Successful Response\"}},\"summary\":\"Root\"}},\"/predictions\":{\"post\":{\"description\":\"Run a single prediction on the model\",\"operationId\":\"predict_predictions_post\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Request\"}}}},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Response\"}}},\"description\":\"Successful Response\"},\"422\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/HTTPValidationError\"}}},\"description\":\"Validation Error\"}},\"summary\":\"Predict\"}}}}",
                 "run.cog.config": "{\"build\":{\"gpu\":true,\"python_version\":\"3.8\",\"python_packages\":[\"torch==1.10.1\",\"torchvision==0.11.2\",\"torchaudio==0.10.1\",\"trimesh==3.9.8\",\"numpy==1.21.0\",\"pyhocon==0.3.57\",\"icecream==2.1.0\",\"opencv_python==4.5.2.52\",\"tqdm==4.50.2\",\"scipy==1.7.0\",\"PyMCubes==0.1.2\",\"pymeshlab==2022.2.post2\"],\"run\":[\"pip install --upgrade pip\",\"pip install ftfy regex tqdm git+https://github.com/openai/CLIP.git smplx[all] chumpy dotmap PyYAML ninja tensorboard scikit-image\",\"pip install git+https://github.com/nghorbani/human_body_prior.git\",\"pip install git+https://github.com/nghorbani/body_visualizer.git\",\"pip install tensorboard scikit-image\",\"pip install gdown\",\"gdown --id 1krWnGpL1Pj6Q_0DzJZ0zFbxMc41U5K6_ \\u0026\\u0026 unzip smpl.zip \\u0026\\u0026 mv smpl smpl_data\",\"gdown --id 1ae-pnDhzOG3brxBfU1lBq8CyOKz4rnzd\",\"unzip /avatarclip_data.zip\",\"apt-get update\",\"apt-get -y install curl gnupg\",\"curl -sL https://deb.nodesource.com/setup_16.x  | bash -\",\"apt-get -y install nodejs\",\"npm install -g obj2gltf\"],\"system_packages\":[\"ffmpeg\",\"zip\"],\"cuda\":\"11.1.1\",\"cudnn\":\"8\"},\"predict\":\"predict.py:Predictor\"}",
                 "run.cog.openapi_schema": "{\"components\":{\"schemas\":{\"HTTPValidationError\":{\"properties\":{\"detail\":{\"items\":{\"$ref\":\"#/components/schemas/ValidationError\"},\"title\":\"Detail\",\"type\":\"array\"}},\"title\":\"HTTPValidationError\",\"type\":\"object\"},\"Input\":{\"properties\":{\"fine\":{\"default\":true,\"description\":\"whether to generate a coarse avatar with no color (fast) or whether to add detail and texture (slow)\",\"title\":\"Fine\",\"type\":\"boolean\",\"x-order\":1},\"iterations\":{\"default\":10000,\"description\":\"number of iterations (for fine avatar)\",\"title\":\"Iterations\",\"type\":\"integer\",\"x-order\":2},\"text\":{\"default\":\"overweight sumo wrestler\",\"description\":\"prompt\",\"title\":\"Text\",\"type\":\"string\",\"x-order\":0}},\"title\":\"Input\",\"type\":\"object\"},\"Output\":{\"format\":\"uri\",\"title\":\"Output\",\"type\":\"string\"},\"Request\":{\"description\":\"The request body for a prediction\",\"properties\":{\"input\":{\"$ref\":\"#/components/schemas/Input\"},\"output_file_prefix\":{\"title\":\"Output File Prefix\",\"type\":\"string\"}},\"title\":\"Request\",\"type\":\"object\"},\"Response\":{\"description\":\"The response body for a prediction\",\"properties\":{\"error\":{\"title\":\"Error\",\"type\":\"string\"},\"output\":{\"$ref\":\"#/components/schemas/Output\"},\"status\":{\"$ref\":\"#/components/schemas/Status\"}},\"required\":[\"status\"],\"title\":\"Response\",\"type\":\"object\"},\"Status\":{\"description\":\"An enumeration.\",\"enum\":[\"processing\",\"succeeded\",\"failed\"],\"title\":\"Status\",\"type\":\"string\"},\"ValidationError\":{\"properties\":{\"loc\":{\"items\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"integer\"}]},\"title\":\"Location\",\"type\":\"array\"},\"msg\":{\"title\":\"Message\",\"type\":\"string\"},\"type\":{\"title\":\"Error Type\",\"type\":\"string\"}},\"required\":[\"loc\",\"msg\",\"type\"],\"title\":\"ValidationError\",\"type\":\"object\"}}},\"info\":{\"title\":\"Cog\",\"version\":\"0.1.0\"},\"openapi\":\"3.0.2\",\"paths\":{\"/\":{\"get\":{\"operationId\":\"root__get\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{}}},\"description\":\"Successful Response\"}},\"summary\":\"Root\"}},\"/predictions\":{\"post\":{\"description\":\"Run a single prediction on the model\",\"operationId\":\"predict_predictions_post\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Request\"}}}},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Response\"}}},\"description\":\"Successful Response\"},\"422\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/HTTPValidationError\"}}},\"description\":\"Validation Error\"}},\"summary\":\"Predict\"}}}}",
-                "run.cog.version": "0.4.1"
+                "run.cog.version": "0.4.2"
             }
         },
         "Architecture": "amd64",
         "Os": "linux",
-        "Size": 20068979220,
-        "VirtualSize": 20068979220,
+        "Size": 20076254690,
+        "VirtualSize": 20076254690,
         "GraphDriver": {
             "Data": {
-                "LowerDir": "/var/lib/docker/overlay2/loypnz60b42c7wqll0bsdmt4w/diff:/var/lib/docker/overlay2/spo741llq0mge583ozhoedwty/diff:/var/lib/docker/overlay2/icoyg1qutc999eh8irkfkqxnl/diff:/var/lib/docker/overlay2/g6sn5x3xyjo8gf53m73krwm59/diff:/var/lib/docker/overlay2/yvmp92qomg4y3g0mxcujv2a7t/diff:/var/lib/docker/overlay2/shc20ej0maznwnt288h3atfpi/diff:/var/lib/docker/overlay2/x4lelod1gxwd2hm4oeekjibrd/diff:/var/lib/docker/overlay2/ppj2gfmpfoow0z66vqgcrzg03/diff:/var/lib/docker/overlay2/4p17egyk1dbiers2hwdnxv3wk/diff:/var/lib/docker/overlay2/udss66cuavq9nvr9bfwy9suyt/diff:/var/lib/docker/overlay2/v0r4uqm88d4oobafbr9seqdao/diff:/var/lib/docker/overlay2/2m441qws3i5x7ty3942ke1zif/diff:/var/lib/docker/overlay2/ae66t1c41wadgta7xk9bkjhgu/diff:/var/lib/docker/overlay2/6es58kufw8aa87n6usoglcum2/diff:/var/lib/docker/overlay2/toiv47n88q9pzockio3fjv2fe/diff:/var/lib/docker/overlay2/ipi7kzwh5iyt3hudv1ifd4nto/diff:/var/lib/docker/overlay2/jvlo3g2o5lctbrxjsa2llug6p/diff:/var/lib/docker/overlay2/gb81dw0oe3v7mmnrqo42pcovm/diff:/var/lib/docker/overlay2/ljbpesccmzpa721yeyzcv0auv/diff:/var/lib/docker/overlay2/6vnypvu8fpjoz3sxhpacjwadl/diff:/var/lib/docker/overlay2/959mcu2wf70l2h8ahzsbvg216/diff:/var/lib/docker/overlay2/ndllls13zb0hxiqsgu3b7ro06/diff:/var/lib/docker/overlay2/6ac20e69d0033019498f5e9e46412f2ab98f1a9f12c8a93f3e92efee3003985b/diff:/var/lib/docker/overlay2/37a4c8ad3accc79d8f4afd775f8e2b2e20946dc91e9d82bc3f0d45168822c121/diff:/var/lib/docker/overlay2/18089d9eb295da89c07e52c7ce896fe23a15197e9ec22ef4379e7a0f732f4d42/diff:/var/lib/docker/overlay2/c900992bc373be7c9eb253cfa48edbf25732b5f98a08c7c91d32e0f9fc4dd268/diff:/var/lib/docker/overlay2/e8659faf7d16bcff91cd4c59c1bf54d6f288b317de4844e9c8a8b33bcedc251a/diff:/var/lib/docker/overlay2/6c0a890d3364b778ce4eacdd355ad9a0ecd79f67ddc22b265e7863ed9796f004/diff:/var/lib/docker/overlay2/483371f73265ed6bf78357a48d5bb017cd591352d16726af05f554e45ea43361/diff:/var/lib/docker/overlay2/ab6705d750859c0d46dca62af68ee190949cfd6c0c8a672432613832c6899251/diff:/var/lib/docker/overlay2/96e09d4d63aed7edab52a27d61feaa4b991d4b726e5b6031c5f489085501552f/diff:/var/lib/docker/overlay2/42234884ff7075cfdaf185d65bc8519b355193e6687c6f8f7e11c642ab2041a3/diff",
-                "MergedDir": "/var/lib/docker/overlay2/k15wssnknsspzr5kpivcspq8h/merged",
-                "UpperDir": "/var/lib/docker/overlay2/k15wssnknsspzr5kpivcspq8h/diff",
-                "WorkDir": "/var/lib/docker/overlay2/k15wssnknsspzr5kpivcspq8h/work"
+                "LowerDir": "/var/lib/docker/overlay2/jbmcenfhhbnhr7k64srqx0pfb/diff:/var/lib/docker/overlay2/ejs5tp5eesay8m27bzc8sbb67/diff:/var/lib/docker/overlay2/nkt8sjctcvf7yvhu0p3juy83o/diff:/var/lib/docker/overlay2/stq21v6ti300i3ytkiapad47m/diff:/var/lib/docker/overlay2/2dclilbyknwhuyy1y962pcy9x/diff:/var/lib/docker/overlay2/ootgez0sy30gfkyrak75c37hi/diff:/var/lib/docker/overlay2/y70vruxkdc2x99odk1gjnvn51/diff:/var/lib/docker/overlay2/jwabovewv3ob52fidb7whz8gd/diff:/var/lib/docker/overlay2/xdp5udn70jki7z9c5f6tco0t9/diff:/var/lib/docker/overlay2/uoewpyuk22nihg7911vx0iq24/diff:/var/lib/docker/overlay2/nydajarqu7qdrkuzn6kogqety/diff:/var/lib/docker/overlay2/sxopfxe3r9xn1g6r4g64wfrv1/diff:/var/lib/docker/overlay2/wmnp3pfwhun6nop9mwjqosexf/diff:/var/lib/docker/overlay2/e28g6f7ml18ept3a5s2dk4cqm/diff:/var/lib/docker/overlay2/gswow2p23rxvgy7ptyzteg65y/diff:/var/lib/docker/overlay2/qw37xkd5i8qhv5yh5so08llqd/diff:/var/lib/docker/overlay2/unfd166tgt6aslphcxdyjke9c/diff:/var/lib/docker/overlay2/r9pes7tarnabujxr2aeexnju9/diff:/var/lib/docker/overlay2/jyvhs589jshqehqzr2dciywkv/diff:/var/lib/docker/overlay2/qov6wev8j31argh50jitdujvw/diff:/var/lib/docker/overlay2/wya4sx4b2fxac6sxtrdwg7j1y/diff:/var/lib/docker/overlay2/jajnekhsl4c79wt7ik123sof1/diff:/var/lib/docker/overlay2/b6f50ae85f1b151334eacc5a936c2c0796dfeee6e850da36491da32a3aa5b2a7/diff:/var/lib/docker/overlay2/744da9c35a10a770b1ff0def3ca6a80e702ab9386cb5bbfa59ba8eafb0331da4/diff:/var/lib/docker/overlay2/40b173b29659df7c7c8903224bb03d380a0cda8169f3c898aab28df2c856a4ba/diff:/var/lib/docker/overlay2/4ab511ad55f9c25e84b8f75426d246f95848b1e78f5d0c26a83e82fc20be3e35/diff:/var/lib/docker/overlay2/031d9b31ff7583989c8e261ce6a987c1c063b11b470272d6faf9af22c4a75672/diff:/var/lib/docker/overlay2/6fefd04bc5f398b9788a2606101d652f9d12655ae4cb152d885aa4857d2b306d/diff:/var/lib/docker/overlay2/767804fdddb83aec4db5e5dec05f481520fb14628d8d5cceb011dc3ece34e580/diff:/var/lib/docker/overlay2/0959b974d2d76c5d05946adc6be281008038819739f847fa0b3960bdcfa28112/diff:/var/lib/docker/overlay2/ce6b368f21f95c24e34436b136c4d9dadae985d3771fc50f856d98be4de3d0e9/diff:/var/lib/docker/overlay2/4744225f15f4b75fbdfb6bd779d28a1ba6f3c2f9269b778e4f6aac027af4ca99/diff",
+                "MergedDir": "/var/lib/docker/overlay2/s4wictxe94m7k431n2ax076xu/merged",
+                "UpperDir": "/var/lib/docker/overlay2/s4wictxe94m7k431n2ax076xu/diff",
+                "WorkDir": "/var/lib/docker/overlay2/s4wictxe94m7k431n2ax076xu/work"
             },
             "Name": "overlay2"
         },
@@ -199,33 +199,33 @@
                 "sha256:93aef36879da9a284b68a3d2b4837a42ecc560e403a9a5a427b355799510bd87",
                 "sha256:b479b061e052e3c0695dfe715c2bae3bde3392a6ca6f8b8e0e68bf4b4cc219db",
                 "sha256:0c96bab417cc9038bf32b87660a3de08ac7c28723f77dd0cdf6304550e3534e0",
-                "sha256:ce67688719df30b25221bd407ab04af32d0ae47944164f26abceacde7a0f0f7a",
-                "sha256:79d3799b75a318f8106a836d1b4853d01d5db05d5491a93bfeb1bbfedcb6eadc",
-                "sha256:73fdaaa9a4ffb7b44e68eac908c6cf95703dc8fab1402b6084c2a153d2519383",
-                "sha256:9a64b523174d82642c51a0871e2baa3da5dba40b68088a77340f2f2fa0a2fa7f",
-                "sha256:46e068690031a35dc0aef64f28e464ed79740a55c094a06412889fb8cc9e4ca3",
-                "sha256:502ec9a35093c1a9931baad2e33cd4f5aaf82a1f09b206935d797af49e726596",
-                "sha256:0ee7e504f7bbd8d8550dd8f35e05ed654d0a4e324f3919a803a4956ae03520c8",
-                "sha256:7aa5df8449ac8e8aff5de1b254b14e6f28b785275fca0dcd4c4b4dae2d69bf03",
-                "sha256:245f39b2045c2512849a516d36d9c25e8f419f284d9c2bfd2b595fb1658e87bf",
-                "sha256:01caadb3830d2fbee0903c923baaa3bf52715dd4de964bfb0074e9c417fcf532",
-                "sha256:6bd7874e12192e197c9104a08492608f3bbf29a7b919b4d9f39fd3b22f8770a3",
+                "sha256:3c4f5c48cb89c9e37a963f50017e8fa4b7def3086dfe4f96d1ffcc36f63f38ac",
+                "sha256:d0bd13c805a922b37c7b2d1f567bbd597cd7d7cb9e9be1ae646e11f9f86adecc",
+                "sha256:26ae086a9e71a99f90fb66015c0e8294e72251c481a4486b747700dfa62ba666",
+                "sha256:7189df7dd4bcd9e785c2d9e1d2cc1f963566665c2764e935887d96042570be3b",
+                "sha256:76bdd07c6fcba77dc30946f3c7c2e169392e17e1767033a35d2766f048369f5b",
+                "sha256:ade9d690f04cf9f338136c964b2e62b30e218837cb7df0f6b3cd227209459d64",
+                "sha256:0b70d5e02f368e79d14b78f96fa9cea4afd33e0770c9cefea23b622f45daffb0",
+                "sha256:289ba19fac2f565a5701a8c53b7ca5cbf61f7a9f3058be96ce218d40a6a36a56",
+                "sha256:788e8ac324880c4d16ec281b5ab9aac35fba79d416567ca682900b3f9f97b69f",
+                "sha256:d73029ab0a446eaf6747ebd21bcd17ad9e6bba99166ac16229e16278109408f8",
+                "sha256:e0e092f1f6ab3b339cdc76fe0dbd158c2e7dd55aac1e1c9d48ad4606e9066bae",
                 "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
-                "sha256:9ceda3a18abdaa06eecadfb33032108a7c515f360562f58ce7f0df7283ee6996",
-                "sha256:0bc0628181a8be6d719dfe9766b197941c265a6d45315ef2751b63acbe65b638",
-                "sha256:dee95ac3c8c8d944039b8cde7b6da7fbe84703e58f3d8e0f14dc798b4f4c324f",
+                "sha256:7a1320e357395702ed4500be5cbed06ed76120cc6a1fdfc1a9176b71257b1372",
+                "sha256:febbcc9a8a9f91258b2bb3152843e02888f5f43900fa302be08b8e3e80d19f59",
+                "sha256:d42564e7cb3f63c01f185595afc69f7cad5b62c8e445e269a53b7069e53887eb",
                 "sha256:2ccc60c1f379485de14e3df8bdbb29b06d6b5d7d4bad069a506ab17a87af1f2d",
-                "sha256:1f55177d464b22c2ada12aa71268207a34467809ba7e8b5cbf6473fe4bceabaa",
-                "sha256:aeed63c3d52f35aa36dbb10c577a18dec86f25ee9e0dc1bdbfaeb94349433488",
-                "sha256:dba787873d9b46b0354b4900e7c42f92691d24f1e1dc9b2dc3fa1237380065ff",
-                "sha256:6b09f11bd0cec23cd485d9e7d7d7ad7ae384bbb67a1126b88313f7a02460359c",
-                "sha256:4825c3ed68403be81db4a4756ba50d36a6902db09083084002155e5ad46ba3fe",
-                "sha256:7fa1d683690c857e256d95a1396f16f3b2c4638276217ba868bc958b32fcc42c",
-                "sha256:3cc946c9f8470c63a0cbc1117522d55fd5b544878ef9f369e5192ecef37e5cab"
+                "sha256:a01e8f6db991d1dc34a6ba5c8d01c10a31a687f279484d117ce2f118afba855e",
+                "sha256:68be9391fac1caf1ca9ec0731870da388ebe5c897107de1eeef4939607c9bfc1",
+                "sha256:2288c4b475ad4563cb28b9556a082245e73af14e228195b61a5cc8218522e63d",
+                "sha256:a2842c92432104b363980afdb0f07e2b9f3f938ea9c6f81642c6c22ff5154f0c",
+                "sha256:cfea60fe6008b4f3b66fbd6a375a4d8ddad71ef4a93921c718bad807f3855f56",
+                "sha256:a2cdf99eb73b11d0977bad050ea08b772ee7d95e2366558f22e63c2bba1120a4",
+                "sha256:b2af90fca14d868e41d1c29b754d71b20daf41c644230129487db41f908462bc"
             ]
         },
         "Metadata": {
-            "LastTagTime": "2022-08-21T11:44:38.185823353Z"
+            "LastTagTime": "2022-09-06T09:55:20.308037393Z"
         }
     }
 ]
