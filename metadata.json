@@ -701,8 +701,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/min-dalle": {
-        "hash": "sha256:1a33e60fc7e908da1086ba5d530718b587a3e9e3a927bd42ee122cc81272ae2b",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/min-dalle@sha256:1a33e60fc7e908da1086ba5d530718b587a3e9e3a927bd42ee122cc81272ae2b",
+        "hash": "sha256:9f786803ca2aa113e72ef993eacc0607efa6cecbe1006d51554593b6520b0148",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/min-dalle@sha256:9f786803ca2aa113e72ef993eacc0607efa6cecbe1006d51554593b6520b0148",
         "openapi": {
             "components": {
                 "schemas": {
@@ -917,7 +917,7 @@
             "path": "dalle",
             "category": "0 Featured",
             "credits": "Boris Dayma, Suraj Patil, Pedro Cuenca, Khalid Saifullah, Tanishq Abraham, Ph\u00fac L\u00ea, Luke, Luke Melas, Ritobrata Ghosh.",
-            "description": "<img src=\"https://i.imgur.com/a9hByt4.png\" width=\"300\">\n\n\n\n*Sunset over a lake*\n\n\n\nThe new model everyone is excited about.\n",
+            "description": "<img src=\"https://i.imgur.com/a9hByt4.png\" width=\"300\">\n\n\n\n*Sunset over a lake*\n\n\n\nGood for making memes and everything humor-related, but also very experimental.\n",
             "pollinator_group": [
                 "T4"
             ]
