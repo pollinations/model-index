@@ -3673,8 +3673,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private": {
-        "hash": "sha256:16f294241f0b8736ece1c80913c8b5b6de49c89f6637c99e6902e536ace9e109",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private@sha256:16f294241f0b8736ece1c80913c8b5b6de49c89f6637c99e6902e536ace9e109",
+        "hash": "sha256:13bdf0afd4b7e4f966668118f4a0c34701749a1427958b87e987d83b7628c0b3",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private@sha256:13bdf0afd4b7e4f966668118f4a0c34701749a1427958b87e987d83b7628c0b3",
         "openapi": {
             "components": {
                 "schemas": {
@@ -3695,7 +3695,7 @@
                         "properties": {
                             "diffusion_steps": {
                                 "default": 15,
-                                "description": "Number of diffusion steps. Higher steps could produce better results but will take longer to generate. Maximum 25 (using K-Euler-Diffusion).",
+                                "description": "Number of diffusion steps. Higher steps could produce better results but will take longer to generate. Maximum 30 (using K-Euler-Diffusion).",
                                 "title": "Diffusion Steps",
                                 "type": "integer",
                                 "x-order": 4
