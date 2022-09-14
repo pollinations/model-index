@@ -6,7 +6,7 @@
     "img": "https://i.imgur.com/a9hByt4.png",
     "id2pop": "2 SwinIR Super-Resolution",
     "path": "swinir",
-    "category": "0 Featured",
+    "category": "6 Image-To-Image",
     "credits": "[Jingyun Liang](https://github.com/JingyunLiang)",
     "description": "<img src=\"https://i.imgur.com/BKvDhnf.png\" width=\"300\" height=\"300\" />\n\n\n\n Upload an image, turn it HD. With [SwinIR](https://github.com/JingyunLiang/SwinIR), this model performs 4X neural super-resolution.\n\n\n\n---\n\nCredits: [Jingyun Liang]((https://github.com/JingyunLiang)\n\nLicense: MIT",
     "pollinator_group": [
