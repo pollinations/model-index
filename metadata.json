@@ -2094,8 +2094,8 @@
         "meta": {}
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/adampi": {
-        "hash": "sha256:f60c7b778a3acc3a18008588e08a053f5c3cb6b3ecee97979826cce98bb682a4",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/adampi@sha256:f60c7b778a3acc3a18008588e08a053f5c3cb6b3ecee97979826cce98bb682a4",
+        "hash": "sha256:8dbfcc54d5b073dc9ea77fec10936077270581ecc4e654790e0ab08b7f7e8e31",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/adampi@sha256:8dbfcc54d5b073dc9ea77fec10936077270581ecc4e654790e0ab08b7f7e8e31",
         "openapi": {
             "components": {
                 "schemas": {
@@ -2282,7 +2282,7 @@
             "img": "https://ipfs.pollinations.ai/ipfs/QmRoS2EF2WcHqhXKmzUszw4vkGSsjXuenDcyXd9ugSVEFj",
             "id2pop": "1 Photo3D",
             "path": "adampi",
-            "category": "0 Featured",
+            "category": "9 Image-To-Video",
             "credits": "[Yuxuan Han, Ruicheng Wang and Jiaolong Yang](https://github.com/yxuhan/AdaMPI)",
             "description": "<img src=\"https://ipfs.pollinations.ai/ipfs/QmRoS2EF2WcHqhXKmzUszw4vkGSsjXuenDcyXd9ugSVEFj\"/>\n\n\nTurns an image into an animated 3D scene by hallucinating colors and structures",
             "pollinator_group": [
