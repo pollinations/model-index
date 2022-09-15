@@ -701,8 +701,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/min-dalle": {
-        "hash": "sha256:de1fd94c03dd6438a737cd00a828463577c217faf3eec16fb4d7d682a847d495",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/min-dalle@sha256:de1fd94c03dd6438a737cd00a828463577c217faf3eec16fb4d7d682a847d495",
+        "hash": "sha256:c1c136a9a1b7e507ef9f5b19f8066e413d856f11505afb4db000cd362f23ee4f",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/min-dalle@sha256:c1c136a9a1b7e507ef9f5b19f8066e413d856f11505afb4db000cd362f23ee4f",
         "openapi": {
             "components": {
                 "schemas": {
@@ -911,9 +911,9 @@
             "featured": true,
             "url": "pollinations/min-dalle",
             "key": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/min-dalle",
-            "name": "DallE Mini",
+            "name": "DALL-E Mini",
             "img": "https://i.imgur.com/a9hByt4.png",
-            "id2pop": "2 DALLE-Mega (Requires Colab Pro)",
+            "id2pop": "2 DALL-E Mega (Requires Colab Pro)",
             "path": "dalle",
             "category": "1 Text-To-Image",
             "credits": "Boris Dayma, Suraj Patil, Pedro Cuenca, Khalid Saifullah, Tanishq Abraham, Ph\u00fac L\u00ea, Luke, Luke Melas, Ritobrata Ghosh.",
