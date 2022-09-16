@@ -3925,8 +3925,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/clipmesh": {
-        "hash": "sha256:f8f28728fcfffb0ac9323bf9b3de6ba4f7845b44facc694c0077d8d8ffa09dda",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/clipmesh@sha256:f8f28728fcfffb0ac9323bf9b3de6ba4f7845b44facc694c0077d8d8ffa09dda",
+        "hash": "sha256:39aaaf8f282f44acd031f9321dc6751f2719a7df1b79a14fde9077cca3b8b15d",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/clipmesh@sha256:39aaaf8f282f44acd031f9321dc6751f2719a7df1b79a14fde9077cca3b8b15d",
         "openapi": {
             "components": {
                 "schemas": {
@@ -4164,7 +4164,9 @@
             "pollinator_group": [
                 "T4-stable-diffusion",
                 "A10",
-                "A10-2"
+                "A10-2",
+                "T4",
+                "A100"
             ]
         }
     }
