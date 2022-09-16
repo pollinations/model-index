@@ -1,0 +1,14 @@
+{
+    "featured": true,
+    "url": "pollinations/clipmesh",
+    "key": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/clipmesh",
+    "name": "CLIPMesh 3D Object generator",
+    "img": "https://github.com/pollinations/clipmesh/raw/master/assets/cow.gif",
+    "path": "clipmesh",
+    "category": "2 Text-To-3D",
+    "credits": "[CLIP-Mesh: Generating textured meshes from text using pretrained image-text models](https://www.nasir.lol/clipmesh)",
+    "description": "<img src=\"https://s4.gifyu.com/images/ezgif.com-gif-maker4faa2b37cd286f60.gif\" width=\"300\" height=\"300\" />\n\n\n\nMake animations with Stable Diffusion. It moves from one prompt to the text over time.",
+    "pollinator_group": [
+        "T4-stable-diffusion", "A10", "A10-2"
+    ]
+}
