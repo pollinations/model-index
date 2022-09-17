@@ -3925,8 +3925,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/clipmesh": {
-        "hash": "sha256:3d18508f648472ab9cddfd93b60dae4e8a4077ed8428e1afe4b75981552921a1",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/clipmesh@sha256:3d18508f648472ab9cddfd93b60dae4e8a4077ed8428e1afe4b75981552921a1",
+        "hash": "sha256:e5a86aad9dc57fb0e40015e846f6209db66a3da036252ea8643e7c80d011b9d8",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/clipmesh@sha256:e5a86aad9dc57fb0e40015e846f6209db66a3da036252ea8643e7c80d011b9d8",
         "openapi": {
             "components": {
                 "schemas": {
