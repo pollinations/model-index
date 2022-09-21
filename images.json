@@ -12,5 +12,6 @@
     "pollinations/no-gpu-test-image": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/no-gpu-test-image",
     "pollinations/swinir": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/swinir",
     "pollinations/stable-diffusion-private": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private",
-    "pollinations/clipmesh": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/clipmesh"
+    "pollinations/clipmesh": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/clipmesh",
+    "pollinations/sample-chain": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/sample-chain"
 }

@@ -1,0 +1,155 @@
+[
+    {
+        "Id": "sha256:fc589141002b2ae681dc0ee051fb1b69bacb4c17d035dd57772617b4d29973e7",
+        "RepoTags": [
+            "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/sample-chain:latest",
+            "image:test"
+        ],
+        "RepoDigests": [
+            "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/sample-chain@sha256:4a056f37bd208dc85d6a20b033026908b16a25eddf4c801227aeb3b8658e1601"
+        ],
+        "Parent": "sha256:845720538568196541172a55991db0551a2596d16b767c78e0808da66e3a2d87",
+        "Comment": "",
+        "Created": "2022-09-21T17:36:04.950542933Z",
+        "Container": "871f4352b88136bf7d87e6216451f3069eff677363d824145e419794625687bb",
+        "ContainerConfig": {
+            "Hostname": "871f4352b881",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "5000/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568",
+                "PYTHON_VERSION=3.8.14",
+                "PYTHON_PIP_VERSION=22.0.4",
+                "PYTHON_SETUPTOOLS_VERSION=57.5.0",
+                "PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/5eaac1050023df1f5c98b173b248c260023f2278/public/get-pip.py",
+                "PYTHON_GET_PIP_SHA256=5aefe6ade911d997af080b315ebcb7f882212d070465df544e1175ac2be519b4",
+                "DEBIAN_FRONTEND=noninteractive",
+                "PYTHONUNBUFFERED=1",
+                "LD_LIBRARY_PATH=:/usr/lib/x86_64-linux-gnu:/usr/local/nvidia/lib64:/usr/local/nvidia/bin"
+            ],
+            "Cmd": [
+                "/bin/sh",
+                "-c",
+                "#(nop) ",
+                "LABEL run.cog.version=0.4.3"
+            ],
+            "ArgsEscaped": true,
+            "Image": "sha256:845720538568196541172a55991db0551a2596d16b767c78e0808da66e3a2d87",
+            "Volumes": null,
+            "WorkingDir": "/src",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {
+                "org.cogmodel.cog_version": "0.4.3",
+                "org.cogmodel.config": "{\"build\":{\"python_version\":\"3.8\",\"python_packages\":[\"openai==0.23.0\",\"python-dotenv==0.21.0\"],\"run\":[\"curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \",\"apt-get install -y nodejs\",\"touch uncache\",\"pip install git+https://github.com/pollinations/pypollsdk.git\",\"git clone https://github.com/pollinations/pollinations-ipfs.git\",\"cd pollinations-ipfs \\u0026\\u0026 npm run install_backend\"],\"system_packages\":[\"curl\"]},\"predict\":\"predict.py:Predictor\"}",
+                "org.cogmodel.deprecated": "The org.cogmodel labels are deprecated. Use run.cog.",
+                "org.cogmodel.openapi_schema": "{\"components\":{\"schemas\":{\"HTTPValidationError\":{\"properties\":{\"detail\":{\"items\":{\"$ref\":\"#/components/schemas/ValidationError\"},\"title\":\"Detail\",\"type\":\"array\"}},\"title\":\"HTTPValidationError\",\"type\":\"object\"},\"Input\":{\"properties\":{\"story\":{\"title\":\"Story\",\"type\":\"string\",\"x-order\":0}},\"required\":[\"story\"],\"title\":\"Input\",\"type\":\"object\"},\"Output\":{\"format\":\"uri\",\"title\":\"Output\",\"type\":\"string\"},\"Request\":{\"description\":\"The request body for a prediction\",\"properties\":{\"input\":{\"$ref\":\"#/components/schemas/Input\"},\"output_file_prefix\":{\"title\":\"Output File Prefix\",\"type\":\"string\"}},\"title\":\"Request\",\"type\":\"object\"},\"Response\":{\"description\":\"The response body for a prediction\",\"properties\":{\"error\":{\"title\":\"Error\",\"type\":\"string\"},\"output\":{\"$ref\":\"#/components/schemas/Output\"},\"status\":{\"$ref\":\"#/components/schemas/Status\"}},\"required\":[\"status\"],\"title\":\"Response\",\"type\":\"object\"},\"Status\":{\"description\":\"An enumeration.\",\"enum\":[\"processing\",\"succeeded\",\"failed\"],\"title\":\"Status\",\"type\":\"string\"},\"ValidationError\":{\"properties\":{\"loc\":{\"items\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"integer\"}]},\"title\":\"Location\",\"type\":\"array\"},\"msg\":{\"title\":\"Message\",\"type\":\"string\"},\"type\":{\"title\":\"Error Type\",\"type\":\"string\"}},\"required\":[\"loc\",\"msg\",\"type\"],\"title\":\"ValidationError\",\"type\":\"object\"}}},\"info\":{\"title\":\"Cog\",\"version\":\"0.1.0\"},\"openapi\":\"3.0.2\",\"paths\":{\"/\":{\"get\":{\"operationId\":\"root__get\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{}}},\"description\":\"Successful Response\"}},\"summary\":\"Root\"}},\"/predictions\":{\"post\":{\"description\":\"Run a single prediction on the model\",\"operationId\":\"predict_predictions_post\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Request\"}}}},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Response\"}}},\"description\":\"Successful Response\"},\"422\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/HTTPValidationError\"}}},\"description\":\"Validation Error\"}},\"summary\":\"Predict\"}}}}",
+                "run.cog.config": "{\"build\":{\"python_version\":\"3.8\",\"python_packages\":[\"openai==0.23.0\",\"python-dotenv==0.21.0\"],\"run\":[\"curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \",\"apt-get install -y nodejs\",\"touch uncache\",\"pip install git+https://github.com/pollinations/pypollsdk.git\",\"git clone https://github.com/pollinations/pollinations-ipfs.git\",\"cd pollinations-ipfs \\u0026\\u0026 npm run install_backend\"],\"system_packages\":[\"curl\"]},\"predict\":\"predict.py:Predictor\"}",
+                "run.cog.openapi_schema": "{\"components\":{\"schemas\":{\"HTTPValidationError\":{\"properties\":{\"detail\":{\"items\":{\"$ref\":\"#/components/schemas/ValidationError\"},\"title\":\"Detail\",\"type\":\"array\"}},\"title\":\"HTTPValidationError\",\"type\":\"object\"},\"Input\":{\"properties\":{\"story\":{\"title\":\"Story\",\"type\":\"string\",\"x-order\":0}},\"required\":[\"story\"],\"title\":\"Input\",\"type\":\"object\"},\"Output\":{\"format\":\"uri\",\"title\":\"Output\",\"type\":\"string\"},\"Request\":{\"description\":\"The request body for a prediction\",\"properties\":{\"input\":{\"$ref\":\"#/components/schemas/Input\"},\"output_file_prefix\":{\"title\":\"Output File Prefix\",\"type\":\"string\"}},\"title\":\"Request\",\"type\":\"object\"},\"Response\":{\"description\":\"The response body for a prediction\",\"properties\":{\"error\":{\"title\":\"Error\",\"type\":\"string\"},\"output\":{\"$ref\":\"#/components/schemas/Output\"},\"status\":{\"$ref\":\"#/components/schemas/Status\"}},\"required\":[\"status\"],\"title\":\"Response\",\"type\":\"object\"},\"Status\":{\"description\":\"An enumeration.\",\"enum\":[\"processing\",\"succeeded\",\"failed\"],\"title\":\"Status\",\"type\":\"string\"},\"ValidationError\":{\"properties\":{\"loc\":{\"items\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"integer\"}]},\"title\":\"Location\",\"type\":\"array\"},\"msg\":{\"title\":\"Message\",\"type\":\"string\"},\"type\":{\"title\":\"Error Type\",\"type\":\"string\"}},\"required\":[\"loc\",\"msg\",\"type\"],\"title\":\"ValidationError\",\"type\":\"object\"}}},\"info\":{\"title\":\"Cog\",\"version\":\"0.1.0\"},\"openapi\":\"3.0.2\",\"paths\":{\"/\":{\"get\":{\"operationId\":\"root__get\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{}}},\"description\":\"Successful Response\"}},\"summary\":\"Root\"}},\"/predictions\":{\"post\":{\"description\":\"Run a single prediction on the model\",\"operationId\":\"predict_predictions_post\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Request\"}}}},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Response\"}}},\"description\":\"Successful Response\"},\"422\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/HTTPValidationError\"}}},\"description\":\"Validation Error\"}},\"summary\":\"Predict\"}}}}",
+                "run.cog.version": "0.4.3"
+            }
+        },
+        "DockerVersion": "20.10.17+azure-3",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "5000/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568",
+                "PYTHON_VERSION=3.8.14",
+                "PYTHON_PIP_VERSION=22.0.4",
+                "PYTHON_SETUPTOOLS_VERSION=57.5.0",
+                "PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/5eaac1050023df1f5c98b173b248c260023f2278/public/get-pip.py",
+                "PYTHON_GET_PIP_SHA256=5aefe6ade911d997af080b315ebcb7f882212d070465df544e1175ac2be519b4",
+                "DEBIAN_FRONTEND=noninteractive",
+                "PYTHONUNBUFFERED=1",
+                "LD_LIBRARY_PATH=:/usr/lib/x86_64-linux-gnu:/usr/local/nvidia/lib64:/usr/local/nvidia/bin"
+            ],
+            "Cmd": [
+                "python",
+                "-m",
+                "cog.server.http"
+            ],
+            "ArgsEscaped": true,
+            "Image": "sha256:845720538568196541172a55991db0551a2596d16b767c78e0808da66e3a2d87",
+            "Volumes": null,
+            "WorkingDir": "/src",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {
+                "org.cogmodel.cog_version": "0.4.3",
+                "org.cogmodel.config": "{\"build\":{\"python_version\":\"3.8\",\"python_packages\":[\"openai==0.23.0\",\"python-dotenv==0.21.0\"],\"run\":[\"curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \",\"apt-get install -y nodejs\",\"touch uncache\",\"pip install git+https://github.com/pollinations/pypollsdk.git\",\"git clone https://github.com/pollinations/pollinations-ipfs.git\",\"cd pollinations-ipfs \\u0026\\u0026 npm run install_backend\"],\"system_packages\":[\"curl\"]},\"predict\":\"predict.py:Predictor\"}",
+                "org.cogmodel.deprecated": "The org.cogmodel labels are deprecated. Use run.cog.",
+                "org.cogmodel.openapi_schema": "{\"components\":{\"schemas\":{\"HTTPValidationError\":{\"properties\":{\"detail\":{\"items\":{\"$ref\":\"#/components/schemas/ValidationError\"},\"title\":\"Detail\",\"type\":\"array\"}},\"title\":\"HTTPValidationError\",\"type\":\"object\"},\"Input\":{\"properties\":{\"story\":{\"title\":\"Story\",\"type\":\"string\",\"x-order\":0}},\"required\":[\"story\"],\"title\":\"Input\",\"type\":\"object\"},\"Output\":{\"format\":\"uri\",\"title\":\"Output\",\"type\":\"string\"},\"Request\":{\"description\":\"The request body for a prediction\",\"properties\":{\"input\":{\"$ref\":\"#/components/schemas/Input\"},\"output_file_prefix\":{\"title\":\"Output File Prefix\",\"type\":\"string\"}},\"title\":\"Request\",\"type\":\"object\"},\"Response\":{\"description\":\"The response body for a prediction\",\"properties\":{\"error\":{\"title\":\"Error\",\"type\":\"string\"},\"output\":{\"$ref\":\"#/components/schemas/Output\"},\"status\":{\"$ref\":\"#/components/schemas/Status\"}},\"required\":[\"status\"],\"title\":\"Response\",\"type\":\"object\"},\"Status\":{\"description\":\"An enumeration.\",\"enum\":[\"processing\",\"succeeded\",\"failed\"],\"title\":\"Status\",\"type\":\"string\"},\"ValidationError\":{\"properties\":{\"loc\":{\"items\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"integer\"}]},\"title\":\"Location\",\"type\":\"array\"},\"msg\":{\"title\":\"Message\",\"type\":\"string\"},\"type\":{\"title\":\"Error Type\",\"type\":\"string\"}},\"required\":[\"loc\",\"msg\",\"type\"],\"title\":\"ValidationError\",\"type\":\"object\"}}},\"info\":{\"title\":\"Cog\",\"version\":\"0.1.0\"},\"openapi\":\"3.0.2\",\"paths\":{\"/\":{\"get\":{\"operationId\":\"root__get\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{}}},\"description\":\"Successful Response\"}},\"summary\":\"Root\"}},\"/predictions\":{\"post\":{\"description\":\"Run a single prediction on the model\",\"operationId\":\"predict_predictions_post\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Request\"}}}},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Response\"}}},\"description\":\"Successful Response\"},\"422\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/HTTPValidationError\"}}},\"description\":\"Validation Error\"}},\"summary\":\"Predict\"}}}}",
+                "run.cog.config": "{\"build\":{\"python_version\":\"3.8\",\"python_packages\":[\"openai==0.23.0\",\"python-dotenv==0.21.0\"],\"run\":[\"curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \",\"apt-get install -y nodejs\",\"touch uncache\",\"pip install git+https://github.com/pollinations/pypollsdk.git\",\"git clone https://github.com/pollinations/pollinations-ipfs.git\",\"cd pollinations-ipfs \\u0026\\u0026 npm run install_backend\"],\"system_packages\":[\"curl\"]},\"predict\":\"predict.py:Predictor\"}",
+                "run.cog.openapi_schema": "{\"components\":{\"schemas\":{\"HTTPValidationError\":{\"properties\":{\"detail\":{\"items\":{\"$ref\":\"#/components/schemas/ValidationError\"},\"title\":\"Detail\",\"type\":\"array\"}},\"title\":\"HTTPValidationError\",\"type\":\"object\"},\"Input\":{\"properties\":{\"story\":{\"title\":\"Story\",\"type\":\"string\",\"x-order\":0}},\"required\":[\"story\"],\"title\":\"Input\",\"type\":\"object\"},\"Output\":{\"format\":\"uri\",\"title\":\"Output\",\"type\":\"string\"},\"Request\":{\"description\":\"The request body for a prediction\",\"properties\":{\"input\":{\"$ref\":\"#/components/schemas/Input\"},\"output_file_prefix\":{\"title\":\"Output File Prefix\",\"type\":\"string\"}},\"title\":\"Request\",\"type\":\"object\"},\"Response\":{\"description\":\"The response body for a prediction\",\"properties\":{\"error\":{\"title\":\"Error\",\"type\":\"string\"},\"output\":{\"$ref\":\"#/components/schemas/Output\"},\"status\":{\"$ref\":\"#/components/schemas/Status\"}},\"required\":[\"status\"],\"title\":\"Response\",\"type\":\"object\"},\"Status\":{\"description\":\"An enumeration.\",\"enum\":[\"processing\",\"succeeded\",\"failed\"],\"title\":\"Status\",\"type\":\"string\"},\"ValidationError\":{\"properties\":{\"loc\":{\"items\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"integer\"}]},\"title\":\"Location\",\"type\":\"array\"},\"msg\":{\"title\":\"Message\",\"type\":\"string\"},\"type\":{\"title\":\"Error Type\",\"type\":\"string\"}},\"required\":[\"loc\",\"msg\",\"type\"],\"title\":\"ValidationError\",\"type\":\"object\"}}},\"info\":{\"title\":\"Cog\",\"version\":\"0.1.0\"},\"openapi\":\"3.0.2\",\"paths\":{\"/\":{\"get\":{\"operationId\":\"root__get\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{}}},\"description\":\"Successful Response\"}},\"summary\":\"Root\"}},\"/predictions\":{\"post\":{\"description\":\"Run a single prediction on the model\",\"operationId\":\"predict_predictions_post\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Request\"}}}},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Response\"}}},\"description\":\"Successful Response\"},\"422\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/HTTPValidationError\"}}},\"description\":\"Validation Error\"}},\"summary\":\"Predict\"}}}}",
+                "run.cog.version": "0.4.3"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 1377896702,
+        "VirtualSize": 1377896702,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/swwrp6mn9zbcjbs4iez0lykzl/diff:/var/lib/docker/overlay2/zld8khb8cmfsfbil197nqjyhw/diff:/var/lib/docker/overlay2/apjk611dkoor8gq6zay62eocc/diff:/var/lib/docker/overlay2/g3km0znwqnolbm017wr8zoei5/diff:/var/lib/docker/overlay2/ic8bqixsvp208xbjthtsxnn7y/diff:/var/lib/docker/overlay2/n0uei6ojdlj3q5wpykpy2z1uf/diff:/var/lib/docker/overlay2/bdb9zqtc611j23btv77n1717s/diff:/var/lib/docker/overlay2/03jea7n5evi9gsht3e3xq8tqg/diff:/var/lib/docker/overlay2/mhfyofs0glywwg9r7w17jd2ol/diff:/var/lib/docker/overlay2/2rw8oaa4jep4bzyeecoxyk3kk/diff:/var/lib/docker/overlay2/7d8tcmlpn8cb790uc1wqfzkgr/diff:/var/lib/docker/overlay2/4e05fa2a6c18e9585cd7f57199892a8ff2a8912063b4178a12bd3d511bcc135f/diff:/var/lib/docker/overlay2/397c8e7de8ea648db73431dfd7d0f61dfb79e66e4a4a982f11073ee092e01c7c/diff:/var/lib/docker/overlay2/691ed242af876ba133893534b82cd2dd29ae9d007265eb1b56bc90915fa74787/diff:/var/lib/docker/overlay2/cc876e0431424555318a98ad7bcd54413583f2ec3e0c841f5839a64a5c23e401/diff:/var/lib/docker/overlay2/682e8f1414a440b13b57966e225fa6060c5338761780b13f1ca99015a8531e1c/diff:/var/lib/docker/overlay2/7bb7c168c652a994876016782c69e8145103ff1852d48f40e3271eac2e96b6a6/diff:/var/lib/docker/overlay2/7986199b640e5ab07a4f8c53a0beff30983d1cb0ba9db1fe77b395b0931da799/diff:/var/lib/docker/overlay2/e62a5adaaf1bccc49a0dd7efa040069c72642e4b1fef13e11049170af8f18e5c/diff:/var/lib/docker/overlay2/6035bec0fc017970f05f3b76fb70f22a44a174ec179644a13415e0c00d0b5673/diff",
+                "MergedDir": "/var/lib/docker/overlay2/xrjh8kw3vhu97so1uo2ql5g6x/merged",
+                "UpperDir": "/var/lib/docker/overlay2/xrjh8kw3vhu97so1uo2ql5g6x/diff",
+                "WorkDir": "/var/lib/docker/overlay2/xrjh8kw3vhu97so1uo2ql5g6x/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:b9fcb0f781e4bcde2c9f7f27cb93c549f6c6ecfdc7fdcc783813347e97faf19c",
+                "sha256:54b354c15c5a2fd95f78e697e7c857fe17984cd427715fceec2497f47c952b41",
+                "sha256:a24f9e96a54c5be9dbb04a4438aa9462f29387c9735c560a80f4df6ae2e7d7f0",
+                "sha256:bcc8223cbebfa8bedef4f74a0914f383e7bf1ab0db7c7f110e37084860e04e10",
+                "sha256:b78efdac8138b52393aa31987588596dd8da798710af1c7d1d975314e660b5fc",
+                "sha256:6966fb7c59efdd9e1a42720f9683d944366e844d0f4281ac3e6e5b882839f3b3",
+                "sha256:8f0223524d61c0154df4da503b44185c285548ffa430850000f999d1402fb0c6",
+                "sha256:c112daac83e58fd73c7a7e533ae75e5921bfb06ecde00f617565b9afa7d98b1e",
+                "sha256:71c735a569a2a0f9edbe48c3ecc03979250f65350c47d3d8587af16a60021021",
+                "sha256:8dff5026b37edbe32b7aa59c247e1a95fb15ee5298c43b53e8a00a36a129b0bf",
+                "sha256:eff1fb4e60e300bdadb76823a0fbd8d1973cb0f1e7a4cca2768bccaa1f6b63a5",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:ac742dcf26d74f7bdcb5b012caa94f7e392de8b2230f2461e60fd0b79a44d3f2",
+                "sha256:4f5143091f3722af93bebb3763258eba91b68d7a501fb051f2da8ba06b71a4c3",
+                "sha256:3b0819aa4a1f5838969476a0e3b69fa1b3ff56689a80ab2e121426bed0daa72a",
+                "sha256:74cb31e782634af2896473f23be6190b28c8ddaab072a69c3e765cf0b4773234",
+                "sha256:1f1af1692f420561216dd9c816e4c6e65098ac1b264e6ffb348bc2801165beba",
+                "sha256:c14842ae9bb4cae3bdcfec66f4512f49b0f8f02c35d4a55310af57a59d690d0c",
+                "sha256:ef2f0e335dac37c1fde49be2b78f5b576d1dda2ba6bffd59ef0006787f2db488",
+                "sha256:3913a72683515362bd8f4c5c5026cbdb3f025e9056660942947cdda1807a3009",
+                "sha256:d94fbfbde2fdbceaedce0fb3e93c20612eec845907f8960d7c9bd1779c0e71ff"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2022-09-21T17:36:11.440751389Z"
+        }
+    }
+]
