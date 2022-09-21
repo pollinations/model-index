@@ -701,8 +701,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/min-dalle": {
-        "hash": "sha256:a719545c1fa40822af65acc48176299c5dc242552f62217db9eb4e18f62aa424",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/min-dalle@sha256:a719545c1fa40822af65acc48176299c5dc242552f62217db9eb4e18f62aa424",
+        "hash": "sha256:d9f47891d7264c9e65db33744fd64bd0b5d8e9e7d110baf41da8e3fbcda16b28",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/min-dalle@sha256:d9f47891d7264c9e65db33744fd64bd0b5d8e9e7d110baf41da8e3fbcda16b28",
         "openapi": {
             "components": {
                 "schemas": {
@@ -917,7 +917,7 @@
             "path": "dalle",
             "category": "1 Text-To-Image",
             "credits": "Boris Dayma, Suraj Patil, Pedro Cuenca, Khalid Saifullah, Tanishq Abraham, Ph\u00fac L\u00ea, Luke, Luke Melas, Ritobrata Ghosh.",
-            "description": "<img src=\"https://i.imgur.com/wJM5dOb.png\" width=\"300\">\n\n\n\n*\"Queen Elizabeth II, Paddington Bear, and a Corgi having a tea party in Buckingham Palace, Pixar Style | Dramatic lighting\"*\n\n\n\nGood for making memes and everything humor-related, but also very experimental.\n",
+            "description": "<img src=\"https://i.imgur.com/wJM5dOb.png\" width=\"300\" height=\"300\">\n\n\n\n*\"Queen Elizabeth II, Paddington Bear, and a Corgi having a tea party in Buckingham Palace, Pixar Style | Dramatic lighting\"*\n\n\n\nGood for making memes and everything humor-related, but also very experimental.\n",
             "pollinator_group": [
                 "T4"
             ]
