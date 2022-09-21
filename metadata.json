@@ -3673,8 +3673,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private": {
-        "hash": "sha256:3bc287977f3017165fd474736e467529cf1432866c637bcfd3e2f6cf8407ce42",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private@sha256:3bc287977f3017165fd474736e467529cf1432866c637bcfd3e2f6cf8407ce42",
+        "hash": "sha256:65cc0515ec156487921d69439220bd819b16ea49cd6857ad3bddb71072611c9b",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private@sha256:65cc0515ec156487921d69439220bd819b16ea49cd6857ad3bddb71072611c9b",
         "openapi": {
             "components": {
                 "schemas": {
@@ -3916,7 +3916,7 @@
             "path": "stablediffusion",
             "category": "2 Text-To-Video",
             "credits": "[Stability.AI](https://stability.ai/)",
-            "description": "<img src=\"https://s4.gifyu.com/images/ezgif.com-gif-maker4faa2b37cd286f60.gif\" width=\"300\" height=\"300\" />\n\n\n\n*\"Orange Fruit, in style of digital painting. Man standing, in style of digital painting.\"*\n\n\n\nMake animations with Stable Diffusion. Create an animation interpolating from one prompt to the text over time.",
+            "description": "<img src=\"https://i.imgur.com/Vkk1o9n.gif\" width=\"300\" height=\"300\" />\n\n\n\n*\"Envy in the style of Magritte. Despair in the style of Magritte. Pleasure in the style of Dali. rRegret in the style of Munch\"*\n\n\n\nCreate an animation interpolating from one prompt to the next over time.",
             "pollinator_group": [
                 "T4-stable-diffusion",
                 "A10",
