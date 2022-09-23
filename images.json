@@ -1,9 +1,9 @@
 {
-    "pollinations/preset-envisioning": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/preset-envisioning",
+    "pollinations/preset-frontpage": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/preset-frontpage",
+    "pollinations/stable-diffusion-private": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private",
     "voodoohop/dalle-playground": "614871946825.dkr.ecr.us-east-1.amazonaws.com/voodoohop/dalle-playground",
     "pollinations/latent-diffusion-400m": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/latent-diffusion-400m",
     "pollinations/min-dalle": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/min-dalle",
-    "pollinations/preset-frontpage": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/preset-frontpage",
     "pollinations/majesty-diffusion-cog": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/majesty-diffusion-cog",
     "pollinations/avatarclip": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/avatarclip",
     "pollinations/adampi": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/adampi",
@@ -11,7 +11,7 @@
     "pollinations/dreamfields-torch": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/dreamfields-torch",
     "pollinations/no-gpu-test-image": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/no-gpu-test-image",
     "pollinations/swinir": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/swinir",
-    "pollinations/stable-diffusion-private": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private",
     "pollinations/clipmesh": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/clipmesh",
-    "pollinations/sample-chain": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/sample-chain"
+    "pollinations/sample-chain": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/sample-chain",
+    "pollinations/preset-envisioning": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/preset-envisioning"
 }
