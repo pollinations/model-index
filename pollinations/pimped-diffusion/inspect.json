@@ -1,0 +1,154 @@
+[
+    {
+        "Id": "sha256:99433eb44b72f1cce7ad344acd8d351369dbf289cd85d560dcd6cd0e54cb9a28",
+        "RepoTags": [
+            "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/pimped-diffusion:latest",
+            "image:test"
+        ],
+        "RepoDigests": [
+            "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/pimped-diffusion@sha256:c51774ec0a7406e45a529a663419efca0e1d8da0c152fc7330bb54ef771da674"
+        ],
+        "Parent": "sha256:d405d237f879551226e17f4a2360b1d00ff7a5a817dc7890e86b5e397a01a3bd",
+        "Comment": "",
+        "Created": "2022-09-24T14:33:57.002176979Z",
+        "Container": "9234b055c0ff6cdca2ce5643e0fadf4ada996966cc879c4534e7e00aa854c25e",
+        "ContainerConfig": {
+            "Hostname": "9234b055c0ff",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "5000/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568",
+                "PYTHON_VERSION=3.8.14",
+                "PYTHON_PIP_VERSION=22.0.4",
+                "PYTHON_SETUPTOOLS_VERSION=57.5.0",
+                "PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/5eaac1050023df1f5c98b173b248c260023f2278/public/get-pip.py",
+                "PYTHON_GET_PIP_SHA256=5aefe6ade911d997af080b315ebcb7f882212d070465df544e1175ac2be519b4",
+                "DEBIAN_FRONTEND=noninteractive",
+                "PYTHONUNBUFFERED=1",
+                "LD_LIBRARY_PATH=:/usr/lib/x86_64-linux-gnu:/usr/local/nvidia/lib64:/usr/local/nvidia/bin"
+            ],
+            "Cmd": [
+                "/bin/sh",
+                "-c",
+                "#(nop) ",
+                "LABEL run.cog.version=0.4.4"
+            ],
+            "ArgsEscaped": true,
+            "Image": "sha256:d405d237f879551226e17f4a2360b1d00ff7a5a817dc7890e86b5e397a01a3bd",
+            "Volumes": null,
+            "WorkingDir": "/src",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {
+                "org.cogmodel.cog_version": "0.4.4",
+                "org.cogmodel.config": "{\"build\":{\"python_version\":\"3.8\",\"python_packages\":[\"openai==0.23.0\",\"python-dotenv==0.21.0\"],\"run\":[\"curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \",\"apt-get install -y nodejs\",\"git clone https://github.com/pollinations/pollinations-ipfs.git\",\"cd pollinations-ipfs \\u0026\\u0026 npm run install_backend\",\"pip install git+https://github.com/pollinations/pypollsdk.git\"],\"system_packages\":[\"curl\"]},\"predict\":\"predict.py:Predictor\"}",
+                "org.cogmodel.deprecated": "The org.cogmodel labels are deprecated. Use run.cog.",
+                "org.cogmodel.openapi_schema": "{\"components\":{\"schemas\":{\"HTTPValidationError\":{\"properties\":{\"detail\":{\"items\":{\"$ref\":\"#/components/schemas/ValidationError\"},\"title\":\"Detail\",\"type\":\"array\"}},\"title\":\"HTTPValidationError\",\"type\":\"object\"},\"Input\":{\"properties\":{\"prompt\":{\"title\":\"Prompt\",\"type\":\"string\",\"x-order\":0}},\"required\":[\"prompt\"],\"title\":\"Input\",\"type\":\"object\"},\"Output\":{\"format\":\"uri\",\"title\":\"Output\",\"type\":\"string\"},\"Request\":{\"description\":\"The request body for a prediction\",\"properties\":{\"input\":{\"$ref\":\"#/components/schemas/Input\"},\"output_file_prefix\":{\"title\":\"Output File Prefix\",\"type\":\"string\"}},\"title\":\"Request\",\"type\":\"object\"},\"Response\":{\"description\":\"The response body for a prediction\",\"properties\":{\"error\":{\"title\":\"Error\",\"type\":\"string\"},\"output\":{\"$ref\":\"#/components/schemas/Output\"},\"status\":{\"$ref\":\"#/components/schemas/Status\"}},\"required\":[\"status\"],\"title\":\"Response\",\"type\":\"object\"},\"Status\":{\"description\":\"An enumeration.\",\"enum\":[\"processing\",\"succeeded\",\"failed\"],\"title\":\"Status\",\"type\":\"string\"},\"ValidationError\":{\"properties\":{\"loc\":{\"items\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"integer\"}]},\"title\":\"Location\",\"type\":\"array\"},\"msg\":{\"title\":\"Message\",\"type\":\"string\"},\"type\":{\"title\":\"Error Type\",\"type\":\"string\"}},\"required\":[\"loc\",\"msg\",\"type\"],\"title\":\"ValidationError\",\"type\":\"object\"}}},\"info\":{\"title\":\"Cog\",\"version\":\"0.1.0\"},\"openapi\":\"3.0.2\",\"paths\":{\"/\":{\"get\":{\"operationId\":\"root__get\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{}}},\"description\":\"Successful Response\"}},\"summary\":\"Root\"}},\"/predictions\":{\"post\":{\"description\":\"Run a single prediction on the model\",\"operationId\":\"predict_predictions_post\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Request\"}}}},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Response\"}}},\"description\":\"Successful Response\"},\"422\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/HTTPValidationError\"}}},\"description\":\"Validation Error\"}},\"summary\":\"Predict\"}}}}",
+                "run.cog.config": "{\"build\":{\"python_version\":\"3.8\",\"python_packages\":[\"openai==0.23.0\",\"python-dotenv==0.21.0\"],\"run\":[\"curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \",\"apt-get install -y nodejs\",\"git clone https://github.com/pollinations/pollinations-ipfs.git\",\"cd pollinations-ipfs \\u0026\\u0026 npm run install_backend\",\"pip install git+https://github.com/pollinations/pypollsdk.git\"],\"system_packages\":[\"curl\"]},\"predict\":\"predict.py:Predictor\"}",
+                "run.cog.openapi_schema": "{\"components\":{\"schemas\":{\"HTTPValidationError\":{\"properties\":{\"detail\":{\"items\":{\"$ref\":\"#/components/schemas/ValidationError\"},\"title\":\"Detail\",\"type\":\"array\"}},\"title\":\"HTTPValidationError\",\"type\":\"object\"},\"Input\":{\"properties\":{\"prompt\":{\"title\":\"Prompt\",\"type\":\"string\",\"x-order\":0}},\"required\":[\"prompt\"],\"title\":\"Input\",\"type\":\"object\"},\"Output\":{\"format\":\"uri\",\"title\":\"Output\",\"type\":\"string\"},\"Request\":{\"description\":\"The request body for a prediction\",\"properties\":{\"input\":{\"$ref\":\"#/components/schemas/Input\"},\"output_file_prefix\":{\"title\":\"Output File Prefix\",\"type\":\"string\"}},\"title\":\"Request\",\"type\":\"object\"},\"Response\":{\"description\":\"The response body for a prediction\",\"properties\":{\"error\":{\"title\":\"Error\",\"type\":\"string\"},\"output\":{\"$ref\":\"#/components/schemas/Output\"},\"status\":{\"$ref\":\"#/components/schemas/Status\"}},\"required\":[\"status\"],\"title\":\"Response\",\"type\":\"object\"},\"Status\":{\"description\":\"An enumeration.\",\"enum\":[\"processing\",\"succeeded\",\"failed\"],\"title\":\"Status\",\"type\":\"string\"},\"ValidationError\":{\"properties\":{\"loc\":{\"items\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"integer\"}]},\"title\":\"Location\",\"type\":\"array\"},\"msg\":{\"title\":\"Message\",\"type\":\"string\"},\"type\":{\"title\":\"Error Type\",\"type\":\"string\"}},\"required\":[\"loc\",\"msg\",\"type\"],\"title\":\"ValidationError\",\"type\":\"object\"}}},\"info\":{\"title\":\"Cog\",\"version\":\"0.1.0\"},\"openapi\":\"3.0.2\",\"paths\":{\"/\":{\"get\":{\"operationId\":\"root__get\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{}}},\"description\":\"Successful Response\"}},\"summary\":\"Root\"}},\"/predictions\":{\"post\":{\"description\":\"Run a single prediction on the model\",\"operationId\":\"predict_predictions_post\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Request\"}}}},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Response\"}}},\"description\":\"Successful Response\"},\"422\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/HTTPValidationError\"}}},\"description\":\"Validation Error\"}},\"summary\":\"Predict\"}}}}",
+                "run.cog.version": "0.4.4"
+            }
+        },
+        "DockerVersion": "20.10.17+azure-3",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "5000/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568",
+                "PYTHON_VERSION=3.8.14",
+                "PYTHON_PIP_VERSION=22.0.4",
+                "PYTHON_SETUPTOOLS_VERSION=57.5.0",
+                "PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/5eaac1050023df1f5c98b173b248c260023f2278/public/get-pip.py",
+                "PYTHON_GET_PIP_SHA256=5aefe6ade911d997af080b315ebcb7f882212d070465df544e1175ac2be519b4",
+                "DEBIAN_FRONTEND=noninteractive",
+                "PYTHONUNBUFFERED=1",
+                "LD_LIBRARY_PATH=:/usr/lib/x86_64-linux-gnu:/usr/local/nvidia/lib64:/usr/local/nvidia/bin"
+            ],
+            "Cmd": [
+                "python",
+                "-m",
+                "cog.server.http"
+            ],
+            "ArgsEscaped": true,
+            "Image": "sha256:d405d237f879551226e17f4a2360b1d00ff7a5a817dc7890e86b5e397a01a3bd",
+            "Volumes": null,
+            "WorkingDir": "/src",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {
+                "org.cogmodel.cog_version": "0.4.4",
+                "org.cogmodel.config": "{\"build\":{\"python_version\":\"3.8\",\"python_packages\":[\"openai==0.23.0\",\"python-dotenv==0.21.0\"],\"run\":[\"curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \",\"apt-get install -y nodejs\",\"git clone https://github.com/pollinations/pollinations-ipfs.git\",\"cd pollinations-ipfs \\u0026\\u0026 npm run install_backend\",\"pip install git+https://github.com/pollinations/pypollsdk.git\"],\"system_packages\":[\"curl\"]},\"predict\":\"predict.py:Predictor\"}",
+                "org.cogmodel.deprecated": "The org.cogmodel labels are deprecated. Use run.cog.",
+                "org.cogmodel.openapi_schema": "{\"components\":{\"schemas\":{\"HTTPValidationError\":{\"properties\":{\"detail\":{\"items\":{\"$ref\":\"#/components/schemas/ValidationError\"},\"title\":\"Detail\",\"type\":\"array\"}},\"title\":\"HTTPValidationError\",\"type\":\"object\"},\"Input\":{\"properties\":{\"prompt\":{\"title\":\"Prompt\",\"type\":\"string\",\"x-order\":0}},\"required\":[\"prompt\"],\"title\":\"Input\",\"type\":\"object\"},\"Output\":{\"format\":\"uri\",\"title\":\"Output\",\"type\":\"string\"},\"Request\":{\"description\":\"The request body for a prediction\",\"properties\":{\"input\":{\"$ref\":\"#/components/schemas/Input\"},\"output_file_prefix\":{\"title\":\"Output File Prefix\",\"type\":\"string\"}},\"title\":\"Request\",\"type\":\"object\"},\"Response\":{\"description\":\"The response body for a prediction\",\"properties\":{\"error\":{\"title\":\"Error\",\"type\":\"string\"},\"output\":{\"$ref\":\"#/components/schemas/Output\"},\"status\":{\"$ref\":\"#/components/schemas/Status\"}},\"required\":[\"status\"],\"title\":\"Response\",\"type\":\"object\"},\"Status\":{\"description\":\"An enumeration.\",\"enum\":[\"processing\",\"succeeded\",\"failed\"],\"title\":\"Status\",\"type\":\"string\"},\"ValidationError\":{\"properties\":{\"loc\":{\"items\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"integer\"}]},\"title\":\"Location\",\"type\":\"array\"},\"msg\":{\"title\":\"Message\",\"type\":\"string\"},\"type\":{\"title\":\"Error Type\",\"type\":\"string\"}},\"required\":[\"loc\",\"msg\",\"type\"],\"title\":\"ValidationError\",\"type\":\"object\"}}},\"info\":{\"title\":\"Cog\",\"version\":\"0.1.0\"},\"openapi\":\"3.0.2\",\"paths\":{\"/\":{\"get\":{\"operationId\":\"root__get\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{}}},\"description\":\"Successful Response\"}},\"summary\":\"Root\"}},\"/predictions\":{\"post\":{\"description\":\"Run a single prediction on the model\",\"operationId\":\"predict_predictions_post\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Request\"}}}},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Response\"}}},\"description\":\"Successful Response\"},\"422\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/HTTPValidationError\"}}},\"description\":\"Validation Error\"}},\"summary\":\"Predict\"}}}}",
+                "run.cog.config": "{\"build\":{\"python_version\":\"3.8\",\"python_packages\":[\"openai==0.23.0\",\"python-dotenv==0.21.0\"],\"run\":[\"curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \",\"apt-get install -y nodejs\",\"git clone https://github.com/pollinations/pollinations-ipfs.git\",\"cd pollinations-ipfs \\u0026\\u0026 npm run install_backend\",\"pip install git+https://github.com/pollinations/pypollsdk.git\"],\"system_packages\":[\"curl\"]},\"predict\":\"predict.py:Predictor\"}",
+                "run.cog.openapi_schema": "{\"components\":{\"schemas\":{\"HTTPValidationError\":{\"properties\":{\"detail\":{\"items\":{\"$ref\":\"#/components/schemas/ValidationError\"},\"title\":\"Detail\",\"type\":\"array\"}},\"title\":\"HTTPValidationError\",\"type\":\"object\"},\"Input\":{\"properties\":{\"prompt\":{\"title\":\"Prompt\",\"type\":\"string\",\"x-order\":0}},\"required\":[\"prompt\"],\"title\":\"Input\",\"type\":\"object\"},\"Output\":{\"format\":\"uri\",\"title\":\"Output\",\"type\":\"string\"},\"Request\":{\"description\":\"The request body for a prediction\",\"properties\":{\"input\":{\"$ref\":\"#/components/schemas/Input\"},\"output_file_prefix\":{\"title\":\"Output File Prefix\",\"type\":\"string\"}},\"title\":\"Request\",\"type\":\"object\"},\"Response\":{\"description\":\"The response body for a prediction\",\"properties\":{\"error\":{\"title\":\"Error\",\"type\":\"string\"},\"output\":{\"$ref\":\"#/components/schemas/Output\"},\"status\":{\"$ref\":\"#/components/schemas/Status\"}},\"required\":[\"status\"],\"title\":\"Response\",\"type\":\"object\"},\"Status\":{\"description\":\"An enumeration.\",\"enum\":[\"processing\",\"succeeded\",\"failed\"],\"title\":\"Status\",\"type\":\"string\"},\"ValidationError\":{\"properties\":{\"loc\":{\"items\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"integer\"}]},\"title\":\"Location\",\"type\":\"array\"},\"msg\":{\"title\":\"Message\",\"type\":\"string\"},\"type\":{\"title\":\"Error Type\",\"type\":\"string\"}},\"required\":[\"loc\",\"msg\",\"type\"],\"title\":\"ValidationError\",\"type\":\"object\"}}},\"info\":{\"title\":\"Cog\",\"version\":\"0.1.0\"},\"openapi\":\"3.0.2\",\"paths\":{\"/\":{\"get\":{\"operationId\":\"root__get\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{}}},\"description\":\"Successful Response\"}},\"summary\":\"Root\"}},\"/predictions\":{\"post\":{\"description\":\"Run a single prediction on the model\",\"operationId\":\"predict_predictions_post\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Request\"}}}},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Response\"}}},\"description\":\"Successful Response\"},\"422\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/HTTPValidationError\"}}},\"description\":\"Validation Error\"}},\"summary\":\"Predict\"}}}}",
+                "run.cog.version": "0.4.4"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 1378039995,
+        "VirtualSize": 1378039995,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/bxc1d8htr0ndvr9czwy6hz4ir/diff:/var/lib/docker/overlay2/s2ftlini7y2t4rrcybljhwecx/diff:/var/lib/docker/overlay2/i2pl9f6kdppodo71yn07x8ek4/diff:/var/lib/docker/overlay2/s7h4evhiz0h4c8jd4t1ymsmwp/diff:/var/lib/docker/overlay2/dpvosqjkxelikgmk6fc96h0n9/diff:/var/lib/docker/overlay2/f3t0bayhm4v4d5as839vnzc83/diff:/var/lib/docker/overlay2/5g29gu54jz14v39rbb721x3nk/diff:/var/lib/docker/overlay2/nz1ikkho4x49cyu1uz26sgrg6/diff:/var/lib/docker/overlay2/3g7f398iao44zqf3ej1p85qr6/diff:/var/lib/docker/overlay2/l5jxnj1bc9qe0xt6cdmdj29or/diff:/var/lib/docker/overlay2/1f56dce42656d0dab47f6ab63e7113f1d02a47f2d644ed9da9a6bc4d020e8d6a/diff:/var/lib/docker/overlay2/53613f7f2f2a262c8a0ac4bc372e049b5da4a0d9b2ca757128921994a55a246c/diff:/var/lib/docker/overlay2/327088fb9229e99098ffe249036abc624aa143c52ce804f6eaa02c39bc97f76c/diff:/var/lib/docker/overlay2/09e9bc2b97a9c48e43480c0a7daa61372472dffcd7788caab354b924c46ec815/diff:/var/lib/docker/overlay2/ec6fc1e9235ec44faf6f7716391120f2008c495234bfce6b7e06b9604f3ad98f/diff:/var/lib/docker/overlay2/640cd7badcfafe44edca85ed1e2a7780f9b3d7d96684c5d6ba715713fc4e86cf/diff:/var/lib/docker/overlay2/097f53c1f2906052a844cf72092f2cc890ce77af56584b20340012236ca7d453/diff:/var/lib/docker/overlay2/a8e3e24e7f90709fd2df1bcc799174298fc969895483913fe86d9fe2fd0cc710/diff:/var/lib/docker/overlay2/3c5debbd969d04135cc208b30ab312294b4710c314b580da1c61991c94486463/diff",
+                "MergedDir": "/var/lib/docker/overlay2/mlqq52j31jkjomoyeinli68fl/merged",
+                "UpperDir": "/var/lib/docker/overlay2/mlqq52j31jkjomoyeinli68fl/diff",
+                "WorkDir": "/var/lib/docker/overlay2/mlqq52j31jkjomoyeinli68fl/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:b9fcb0f781e4bcde2c9f7f27cb93c549f6c6ecfdc7fdcc783813347e97faf19c",
+                "sha256:54b354c15c5a2fd95f78e697e7c857fe17984cd427715fceec2497f47c952b41",
+                "sha256:a24f9e96a54c5be9dbb04a4438aa9462f29387c9735c560a80f4df6ae2e7d7f0",
+                "sha256:bcc8223cbebfa8bedef4f74a0914f383e7bf1ab0db7c7f110e37084860e04e10",
+                "sha256:b78efdac8138b52393aa31987588596dd8da798710af1c7d1d975314e660b5fc",
+                "sha256:6966fb7c59efdd9e1a42720f9683d944366e844d0f4281ac3e6e5b882839f3b3",
+                "sha256:8f0223524d61c0154df4da503b44185c285548ffa430850000f999d1402fb0c6",
+                "sha256:c112daac83e58fd73c7a7e533ae75e5921bfb06ecde00f617565b9afa7d98b1e",
+                "sha256:71c735a569a2a0f9edbe48c3ecc03979250f65350c47d3d8587af16a60021021",
+                "sha256:1c06efdd3337914c2b28dadc22565db185a5f6b8ac72bcefa5494914980e1197",
+                "sha256:18395e4290b67f75f7c93638f803bfb6defa303b490861adcd9ebaeb45c95753",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:168bd0a3364e6c5cb95f34e9b5820453b887bd1e9af75faab76b04e0b94a9caf",
+                "sha256:61a0bf2562a480e4f607e0e28688ee3c986b6b9db5fa7baf24a84b00b3ba9da8",
+                "sha256:667ec791cefdd3eff2deea952b405095600aff54461bfb700c79a0e76ded2ce0",
+                "sha256:c65be7a11c3025a117bc16fd6924ae1b87bdf984216c8ee7ecbf3f85ff34530f",
+                "sha256:13839300d2050be994125345972b9370ca1bed2f2cf44ec66d10279587fdedd3",
+                "sha256:3cf1922512312307f60487ddb936b3990f0d167a45fc4524e3f69fec571be541",
+                "sha256:b8ffec14d3f079bfc9034da901f700ebfc49e518d9b03dfe41e1c68442c781b4",
+                "sha256:bd20aa77b6fd3812e3f88f7d0ddfdd40587203259ed77b17e795088a65b196b1"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2022-09-24T14:34:00.954668832Z"
+        }
+    }
+]
