@@ -4366,8 +4366,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/pimped-diffusion": {
-        "hash": "sha256:45bb4b8343d1b88095db17883533fe45fc4b7f2e2fd338c585460f037bf7b3bc",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/pimped-diffusion@sha256:45bb4b8343d1b88095db17883533fe45fc4b7f2e2fd338c585460f037bf7b3bc",
+        "hash": "sha256:55e537fa1be872ee9a79c1c0cadc513c9e0df5589d4bc0fb677d85a7d30fcf24",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/pimped-diffusion@sha256:55e537fa1be872ee9a79c1c0cadc513c9e0df5589d4bc0fb677d85a7d30fcf24",
         "openapi": {
             "components": {
                 "schemas": {
@@ -4548,12 +4548,13 @@
             "featured": false,
             "url": "pollinations/pimped-diffusion",
             "key": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/pimped-diffusion",
-            "name": "Pimped Diffusion",
-            "img": "https://ipfs.pollinations.ai/ipfs/QmVDhv4XjHJgH8NoXgJi1hfY87VfWdiJUxnWt5zHbhkaGW?filename=00003.png",
-            "path": "pimpeddiffusion",
-            "category": "0 Featured",
-            "credits": "stability.ai, pollinations",
-            "description": "<img src=\"https://ipfs.pollinations.ai/ipfs/QmVDhv4XjHJgH8NoXgJi1hfY87VfWdiJUxnWt5zHbhkaGW?filename=00003.png\"/>\n\n\nPimps the prompt using GPT-3 and runs Stable Diffusion on the pimped prompts.",
+            "name": "gpt-to-stable-diffusion",
+            "img": "https://ipfs.pollinations.ai/ipfs/QmRoS2EF2WcHqhXKmzUszw4vkGSsjXuenDcyXd9ugSVEFj",
+            "id2pop": "10 Dreams",
+            "path": "sample-chain",
+            "category": "9 Image-To-Video",
+            "credits": "stability.ai",
+            "description": "<img src=\"https://ipfs.pollinations.ai/ipfs/QmRoS2EF2WcHqhXKmzUszw4vkGSsjXuenDcyXd9ugSVEFj\"/>\n\n\nGenerates scene descriptions and turns those into a video",
             "pollinator_group": [
                 "cpu"
             ]
