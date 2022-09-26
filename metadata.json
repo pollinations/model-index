@@ -4366,8 +4366,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/pimped-diffusion": {
-        "hash": "sha256:b8a923c05874365eed4b62c386f6e9cd0c206f25bc6043f1b1079722f3914d90",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/pimped-diffusion@sha256:b8a923c05874365eed4b62c386f6e9cd0c206f25bc6043f1b1079722f3914d90",
+        "hash": "sha256:6e305309a6cbb9d5bead7aeb3dde8123372580a491c59dd1d5c67fef3fab31c0",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/pimped-diffusion@sha256:6e305309a6cbb9d5bead7aeb3dde8123372580a491c59dd1d5c67fef3fab31c0",
         "openapi": {
             "components": {
                 "schemas": {
