@@ -4366,8 +4366,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/pimped-diffusion": {
-        "hash": "sha256:c020cda89c5bad9c2b813b720b50d8b7a77379bd4a8bde92f8c23ad8c7165f5a",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/pimped-diffusion@sha256:c020cda89c5bad9c2b813b720b50d8b7a77379bd4a8bde92f8c23ad8c7165f5a",
+        "hash": "sha256:18c162c559f7e088ee5803633fb4ba5af86a95ab0a2b6371c626f465c8fbf4b8",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/pimped-diffusion@sha256:18c162c559f7e088ee5803633fb4ba5af86a95ab0a2b6371c626f465c8fbf4b8",
         "openapi": {
             "components": {
                 "schemas": {
@@ -4551,7 +4551,7 @@
             "name": "Pimped Diffusion",
             "img": "https://ipfs.pollinations.ai/ipfs/QmVDhv4XjHJgH8NoXgJi1hfY87VfWdiJUxnWt5zHbhkaGW?filename=00003.png",
             "path": "pimpeddiffusion",
-            "category": "0 Featured",
+            "category": "1 Text-To-Image",
             "credits": "stability.ai, pollinations",
             "description": "<img src=\"https://ipfs.pollinations.ai/ipfs/QmVDhv4XjHJgH8NoXgJi1hfY87VfWdiJUxnWt5zHbhkaGW?filename=00003.png\"/>\n\n\nPimps the prompt using GPT-3 and runs Stable Diffusion on the pimped prompts.",
             "pollinator_group": [
