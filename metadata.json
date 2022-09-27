@@ -4365,8 +4365,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/pimped-diffusion": {
-        "hash": "sha256:8c32a593c5062062bb74ab2d8baafcbff9a92181c1936af7ca4612303a585e89",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/pimped-diffusion@sha256:8c32a593c5062062bb74ab2d8baafcbff9a92181c1936af7ca4612303a585e89",
+        "hash": "sha256:4c88406a4ae50f00f48735b4929c480752db1d6e98f154a4c5b2d470343bf4a5",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/pimped-diffusion@sha256:4c88406a4ae50f00f48735b4929c480752db1d6e98f154a4c5b2d470343bf4a5",
         "openapi": {
             "components": {
                 "schemas": {
@@ -4544,7 +4544,7 @@
             }
         },
         "meta": {
-            "featured": false,
+            "featured": true,
             "url": "pollinations/pimped-diffusion",
             "key": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/pimped-diffusion",
             "name": "Pimped Diffusion",
