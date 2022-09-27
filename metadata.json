@@ -2094,8 +2094,8 @@
         "meta": {}
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/adampi": {
-        "hash": "sha256:5ca02110847388ee9135f4c6c740e7ce9396db258d78b67f961db2fd1a53e511",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/adampi@sha256:5ca02110847388ee9135f4c6c740e7ce9396db258d78b67f961db2fd1a53e511",
+        "hash": "sha256:9cc90ee0b80612bfe500724e358c24ebaeaa2671ba23807b197a3d060e8b7384",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/adampi@sha256:9cc90ee0b80612bfe500724e358c24ebaeaa2671ba23807b197a3d060e8b7384",
         "openapi": {
             "components": {
                 "schemas": {
@@ -2129,9 +2129,8 @@
                         "type": "object"
                     },
                     "Output": {
-                        "format": "uri",
                         "title": "Output",
-                        "type": "string"
+                        "type": "null"
                     },
                     "Request": {
                         "description": "The request body for a prediction",
