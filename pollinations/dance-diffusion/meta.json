@@ -1,0 +1,14 @@
+{
+    "featured": true,
+    "url": "pollinations/dance-diffusion",
+    "key": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/pimped-diffusion",
+    "name": "Dance Diffusion",
+    "img": "https://images.squarespace-cdn.com/content/v1/62b318b33406753bcd6a17a5/ffa25141-8195-4916-8acf-7d5a44f08dfe/Transparent_Harmonai+Logo-02+%281%29.png?format=1500w",
+    "path": "dancediffusion",
+    "category": "8 Audio",
+    "credits": "[harmonai.org](https://harmonai.org)",
+    "description": "<img src=\"https://images.squarespace-cdn.com/content/v1/62b318b33406753bcd6a17a5/ffa25141-8195-4916-8acf-7d5a44f08dfe/Transparent_Harmonai+Logo-02+%281%29.png?format=1500w\"/>\n\n\nDance Diffusion is the first in a suite of generative audio tools for producers and musicians to be released by Harmonai. For more info or to get involved in the development of these tools, please visit https://harmonai.org and fill out the form on the front page..",
+    "pollinator_group": [
+        "a100"
+    ]
+}
