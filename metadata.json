@@ -4559,8 +4559,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/dance-diffusion": {
-        "hash": "sha256:dac99627f12c72c84689b0a7aa72b403a92cca92bb524f88ca890ac1870c7f41",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/dance-diffusion@sha256:dac99627f12c72c84689b0a7aa72b403a92cca92bb524f88ca890ac1870c7f41",
+        "hash": "sha256:404c99a760b0fa11bd0bf823d00e9e6c5695bd4f5772ba6285b26145316307e1",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/dance-diffusion@sha256:404c99a760b0fa11bd0bf823d00e9e6c5695bd4f5772ba6285b26145316307e1",
         "openapi": {
             "components": {
                 "schemas": {
@@ -4580,20 +4580,17 @@
                     "Input": {
                         "properties": {
                             "batch_size": {
-                                "default": 2,
+                                "default": 1,
                                 "description": "How many samples to generate",
                                 "title": "Batch Size",
                                 "type": "integer",
                                 "x-order": 2
                             },
                             "length": {
-                                "allOf": [
-                                    {
-                                        "$ref": "#/components/schemas/length"
-                                    }
-                                ],
-                                "default": "8",
+                                "default": 8,
                                 "description": "Number of seconds to generate",
+                                "title": "Length",
+                                "type": "number",
                                 "x-order": 1
                             },
                             "model_name": {
@@ -4602,7 +4599,7 @@
                                         "$ref": "#/components/schemas/model_name"
                                     }
                                 ],
-                                "default": "glitch-440k",
+                                "default": "maestro-150k",
                                 "description": "Model",
                                 "x-order": 0
                             },
@@ -4698,18 +4695,6 @@
                         ],
                         "title": "ValidationError",
                         "type": "object"
-                    },
-                    "length": {
-                        "description": "An enumeration.",
-                        "enum": [
-                            "2",
-                            "4",
-                            "8",
-                            "12",
-                            "16"
-                        ],
-                        "title": "length",
-                        "type": "string"
                     },
                     "model_name": {
                         "description": "An enumeration.",
