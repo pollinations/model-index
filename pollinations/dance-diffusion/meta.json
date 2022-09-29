@@ -1,7 +1,7 @@
 {
     "featured": true,
     "url": "pollinations/dance-diffusion",
-    "key": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/pimped-diffusion",
+    "key": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/dance-diffusion",
     "name": "Dance Diffusion",
     "img": "https://images.squarespace-cdn.com/content/v1/62b318b33406753bcd6a17a5/ffa25141-8195-4916-8acf-7d5a44f08dfe/Transparent_Harmonai+Logo-02+%281%29.png?format=1500w",
     "path": "dancediffusion",

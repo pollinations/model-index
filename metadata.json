@@ -4559,8 +4559,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/dance-diffusion": {
-        "hash": "sha256:61bfcecbfb41e91d7097aa151a3ef431a3981cde6051e962dac7004370dfff45",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/dance-diffusion@sha256:61bfcecbfb41e91d7097aa151a3ef431a3981cde6051e962dac7004370dfff45",
+        "hash": "sha256:82607c8a28f2cfe8b6d62fa541ae511e39cc524b198957b2a87115375dd8045c",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/dance-diffusion@sha256:82607c8a28f2cfe8b6d62fa541ae511e39cc524b198957b2a87115375dd8045c",
         "openapi": {
             "components": {
                 "schemas": {
@@ -4789,7 +4789,7 @@
         "meta": {
             "featured": true,
             "url": "pollinations/dance-diffusion",
-            "key": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/pimped-diffusion",
+            "key": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/dance-diffusion",
             "name": "Dance Diffusion",
             "img": "https://images.squarespace-cdn.com/content/v1/62b318b33406753bcd6a17a5/ffa25141-8195-4916-8acf-7d5a44f08dfe/Transparent_Harmonai+Logo-02+%281%29.png?format=1500w",
             "path": "dancediffusion",
