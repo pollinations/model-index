@@ -1,0 +1,15 @@
+{
+    "featured": false,
+    "url": "pollinations/clip-retrieval-encoder",
+    "key": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/clip-retrieval-encoder",
+    "name": "CLIP Retrieval Encoder",
+    "img": "https://ipfs.pollinations.ai/ipfs/QmRoS2EF2WcHqhXKmzUszw4vkGSsjXuenDcyXd9ugSVEFj",
+    "id2pop": "1 Photo3D",
+    "path": "clip-encode",
+    "category": "100 images-to-index",
+    "credits": "[Romain Beaumont](github.com/rom1504)",
+    "description": "",
+    "pollinator_group": [
+        "T4"
+    ]
+}
