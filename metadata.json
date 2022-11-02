@@ -4787,8 +4787,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/clip-retrieval-encoder": {
-        "hash": "sha256:e763c03bedac89a9f09b40d49ae0769793d613c2d964d89cd0e5f10dcd711eaa",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/clip-retrieval-encoder@sha256:e763c03bedac89a9f09b40d49ae0769793d613c2d964d89cd0e5f10dcd711eaa",
+        "hash": "sha256:41c19bd9580bf656dd24a10c809b150c7c5291035cead78891462294eb72d377",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/clip-retrieval-encoder@sha256:41c19bd9580bf656dd24a10c809b150c7c5291035cead78891462294eb72d377",
         "openapi": {
             "components": {
                 "schemas": {
@@ -4807,6 +4807,13 @@
                     },
                     "Input": {
                         "properties": {
+                            "debug": {
+                                "default": false,
+                                "description": "Debug mode",
+                                "title": "Debug",
+                                "type": "boolean",
+                                "x-order": 1
+                            },
                             "images_zip": {
                                 "description": "Images to index",
                                 "format": "uri",
