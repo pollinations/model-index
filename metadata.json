@@ -4787,8 +4787,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/clip-retrieval-encoder": {
-        "hash": "sha256:57616ff41265a9ac0be7516019c4e630f0297d4acfae54736f14caf3e4112f12",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/clip-retrieval-encoder@sha256:57616ff41265a9ac0be7516019c4e630f0297d4acfae54736f14caf3e4112f12",
+        "hash": "sha256:73bf79f384e87819b106b4203cab68797fa57747581a5df66f5e07053bf14cd1",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/clip-retrieval-encoder@sha256:73bf79f384e87819b106b4203cab68797fa57747581a5df66f5e07053bf14cd1",
         "openapi": {
             "components": {
                 "schemas": {
@@ -4807,19 +4807,19 @@
                     },
                     "Input": {
                         "properties": {
-                            "debug": {
-                                "default": false,
-                                "description": "Debug mode",
-                                "title": "Debug",
-                                "type": "boolean",
-                                "x-order": 1
-                            },
                             "images_zip": {
                                 "description": "Images to index",
                                 "format": "uri",
                                 "title": "Images Zip",
                                 "type": "string",
                                 "x-order": 0
+                            },
+                            "local_path": {
+                                "default": "/outputs/clip-index",
+                                "description": "local path where the output will be created. Must be the same as the local path from which it will be used",
+                                "title": "Local Path",
+                                "type": "string",
+                                "x-order": 1
                             }
                         },
                         "required": [
