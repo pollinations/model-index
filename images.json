@@ -16,5 +16,6 @@
     "pollinations/preset-envisioning": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/preset-envisioning",
     "pollinations/pimped-diffusion": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/pimped-diffusion",
     "pollinations/dance-diffusion": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/dance-diffusion",
-    "pollinations/clip-retrieval-encoder": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/clip-retrieval-encoder"
+    "pollinations/clip-retrieval-encoder": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/clip-retrieval-encoder",
+    "pollinations/wedatanation-pick-avatar": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/wedatanation-pick-avatar"
 }

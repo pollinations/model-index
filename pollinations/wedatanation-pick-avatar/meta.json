@@ -1,0 +1,15 @@
+{
+    "featured": false,
+    "url": "pollinations/wedatanation-pick-avatar",
+    "key": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/wedatanation-pick-avatar",
+    "name": "CLIP Retrieval Search",
+    "img": "https://ipfs.pollinations.ai/ipfs/QmRoS2EF2WcHqhXKmzUszw4vkGSsjXuenDcyXd9ugSVEFj",
+    "id2pop": "1 Photo3D",
+    "path": "wedatanation",
+    "category": "1 text-to-image",
+    "credits": "[Romain Beaumont](github.com/rom1504)",
+    "description": "",
+    "pollinator_group": [
+        "cpu"
+    ]
+}
