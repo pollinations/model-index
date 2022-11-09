@@ -4990,8 +4990,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/wedatanation-pick-avatar": {
-        "hash": "sha256:5c2f1965147bd094195ee30efd93c6ef4996fff391c6f5fd68faacd7220dd364",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/wedatanation-pick-avatar@sha256:5c2f1965147bd094195ee30efd93c6ef4996fff391c6f5fd68faacd7220dd364",
+        "hash": "sha256:175d0aec017af77fc61aada00e60d9e265d8763cf141f68d3427db95a787de98",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/wedatanation-pick-avatar@sha256:175d0aec017af77fc61aada00e60d9e265d8763cf141f68d3427db95a787de98",
         "openapi": {
             "components": {
                 "schemas": {
@@ -5017,7 +5017,7 @@
                                 "x-order": 0
                             },
                             "local_path": {
-                                "default": "/outputs/clip-index",
+                                "default": "/tmp/clip-index",
                                 "description": "local path where the output will be created. Must be the same as the local path from which it will be used",
                                 "title": "Local Path",
                                 "type": "string",
@@ -5065,8 +5065,11 @@
                         "type": "object"
                     },
                     "Output": {
+                        "items": {
+                            "type": "string"
+                        },
                         "title": "Output",
-                        "type": "boolean"
+                        "type": "array"
                     },
                     "Request": {
                         "description": "The request body for a prediction",
