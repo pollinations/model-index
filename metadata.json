@@ -4990,8 +4990,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/wedatanation-pick-avatar": {
-        "hash": "sha256:175d0aec017af77fc61aada00e60d9e265d8763cf141f68d3427db95a787de98",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/wedatanation-pick-avatar@sha256:175d0aec017af77fc61aada00e60d9e265d8763cf141f68d3427db95a787de98",
+        "hash": "sha256:5b7768b94d76126544ca8c7eacfff5dbd9e4b548f9f844a6ebffd33b727f0694",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/wedatanation-pick-avatar@sha256:5b7768b94d76126544ca8c7eacfff5dbd9e4b548f9f844a6ebffd33b727f0694",
         "openapi": {
             "components": {
                 "schemas": {
@@ -5037,7 +5037,7 @@
                                 "x-order": 1
                             },
                             "shall_mark_as_used": {
-                                "default": true,
+                                "default": false,
                                 "description": "Mark avatars as used when returned",
                                 "title": "Shall Mark As Used",
                                 "type": "boolean",
@@ -5065,11 +5065,8 @@
                         "type": "object"
                     },
                     "Output": {
-                        "items": {
-                            "type": "string"
-                        },
                         "title": "Output",
-                        "type": "array"
+                        "type": "boolean"
                     },
                     "Request": {
                         "description": "The request body for a prediction",
