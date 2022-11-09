@@ -4990,8 +4990,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/wedatanation-pick-avatar": {
-        "hash": "sha256:fe0aae2a1eb813c37759504aede8231e036049e7d59f4918cd4819e457d6818c",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/wedatanation-pick-avatar@sha256:fe0aae2a1eb813c37759504aede8231e036049e7d59f4918cd4819e457d6818c",
+        "hash": "sha256:a5fec985d8994d66a904b41b9d6a8de713a3d6b612e329999dd6e61bb04e8808",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/wedatanation-pick-avatar@sha256:a5fec985d8994d66a904b41b9d6a8de713a3d6b612e329999dd6e61bb04e8808",
         "openapi": {
             "components": {
                 "schemas": {
