@@ -4990,8 +4990,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/wedatanation-pick-avatar": {
-        "hash": "sha256:22a53023b499d398c66821af8005b06651d61b7f1a507208abc765277083f425",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/wedatanation-pick-avatar@sha256:22a53023b499d398c66821af8005b06651d61b7f1a507208abc765277083f425",
+        "hash": "sha256:b532e600ed045829c1ce386317b07dd9a64f2cc1210fecdfb4725b607626283b",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/wedatanation-pick-avatar@sha256:b532e600ed045829c1ce386317b07dd9a64f2cc1210fecdfb4725b607626283b",
         "openapi": {
             "components": {
                 "schemas": {
@@ -5221,7 +5221,7 @@
             "credits": "[Romain Beaumont](github.com/rom1504)",
             "description": "",
             "pollinator_group": [
-                "cpu"
+                "wedatanation"
             ]
         }
     }
