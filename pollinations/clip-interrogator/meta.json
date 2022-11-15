@@ -1,0 +1,10 @@
+{
+    "featured": false,
+    "url": "pollinations/clip-interrogator",
+    "key": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/clip-interrogator",
+    "name": "Lemonade Selfie Interrogator",
+    "path": "clipinterrogator",
+    "pollinator_group": [
+        "T4"
+    ]
+}
