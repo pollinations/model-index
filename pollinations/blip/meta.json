@@ -1,0 +1,14 @@
+{
+    "featured": true,
+    "url": "pollinations/blip",
+    "key": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/blip",
+    "name": "blip",
+    "img": "",
+    "path": "blip",
+    "category": "Image-To-Text",
+    "credits": "",
+    "description": "",
+    "pollinator_group": [
+        "T4"
+    ]
+}
