@@ -1,0 +1,14 @@
+{
+    "featured": true,
+    "url": "pollinations/modnet",
+    "key": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/modnet",
+    "name": "MODnet",
+    "img": "https://bucketeer-be99e627-94e7-4e5b-a292-54eeb40ac303.s3.amazonaws.com/public/models_models_cover_image/bb0ab3e4-5efa-446f-939a-23e78f2b82de/output.png",
+    "path": "modnet",
+    "category": "6 Image-To-Image",
+    "credits": "",
+    "description": "",
+    "pollinator_group": [
+        "T4"
+    ]
+}
