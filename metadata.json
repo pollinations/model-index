@@ -5665,8 +5665,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/blip": {
-        "hash": "sha256:8b5f19f0c107d00c21ee94f21c0c85d7e83c484a353c30dfbe4e8eaa1ba6039d",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/blip@sha256:8b5f19f0c107d00c21ee94f21c0c85d7e83c484a353c30dfbe4e8eaa1ba6039d",
+        "hash": "sha256:0cb27907463bf10abb32ba7285abeed8cbee476b1f07da4abf926139ef61792f",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/blip@sha256:0cb27907463bf10abb32ba7285abeed8cbee476b1f07da4abf926139ef61792f",
         "openapi": {
             "components": {
                 "schemas": {
