@@ -21,5 +21,6 @@
     "stable-diffusion-private": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private",
     "pollinations/clip-interrogator": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/clip-interrogator",
     "pollinations/modnet": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/modnet",
-    "pollinations/blip": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/blip"
+    "pollinations/blip": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/blip",
+    "pollinations/lemonade-preset": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset"
 }

@@ -1,0 +1,155 @@
+[
+    {
+        "Id": "sha256:8c024d4181cfd72e46890726573d08555ab0db075a9343e03f765808c91eeaa4",
+        "RepoTags": [
+            "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset:latest",
+            "image:test"
+        ],
+        "RepoDigests": [
+            "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset@sha256:05779207a26150fcfd8bd77abb7ba32314a83642d5706d1183bb131d54100e40"
+        ],
+        "Parent": "sha256:2e7024db0c7f17d1bee8bd52c1031f6ee3e0756c933ed0c0faa9b4aac4cec484",
+        "Comment": "",
+        "Created": "2022-11-20T09:32:46.281263871Z",
+        "Container": "541671f440d148f61d4ab7b251eb415c72821471bd6168262e7c13ff0d5dc407",
+        "ContainerConfig": {
+            "Hostname": "541671f440d1",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "5000/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568",
+                "PYTHON_VERSION=3.8.15",
+                "PYTHON_PIP_VERSION=22.0.4",
+                "PYTHON_SETUPTOOLS_VERSION=57.5.0",
+                "PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/66030fa03382b4914d4c4d0896961a0bdeeeb274/public/get-pip.py",
+                "PYTHON_GET_PIP_SHA256=1e501cf004eac1b7eb1f97266d28f995ae835d30250bec7f8850562703067dc6",
+                "DEBIAN_FRONTEND=noninteractive",
+                "PYTHONUNBUFFERED=1",
+                "LD_LIBRARY_PATH=:/usr/lib/x86_64-linux-gnu:/usr/local/nvidia/lib64:/usr/local/nvidia/bin"
+            ],
+            "Cmd": [
+                "/bin/sh",
+                "-c",
+                "#(nop) ",
+                "LABEL run.cog.version=0.4.4"
+            ],
+            "ArgsEscaped": true,
+            "Image": "sha256:2e7024db0c7f17d1bee8bd52c1031f6ee3e0756c933ed0c0faa9b4aac4cec484",
+            "Volumes": null,
+            "WorkingDir": "/src",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {
+                "org.cogmodel.cog_version": "0.4.4",
+                "org.cogmodel.config": "{\"build\":{\"python_version\":\"3.8\",\"python_packages\":[\"openai==0.23.0\",\"python-dotenv==0.21.0\",\"pytest==7.1.2\",\"googletrans==3.1.0a0\",\"opencv-python==4.6.0.66\",\"Pillow==9.3.0\"],\"run\":[\"curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \",\"apt-get install -y nodejs\",\"echo hey\",\"git clone https://github.com/pollinations/pollinations-ipfs.git\",\"cd pollinations-ipfs \\u0026\\u0026 npm run install_backend\",\"pip install git+https://github.com/pollinations/pypollsdk.git\"],\"system_packages\":[\"curl\",\"libgl1-mesa-glx\",\"libglib2.0-0\"]},\"predict\":\"predict.py:Predictor\"}",
+                "org.cogmodel.deprecated": "The org.cogmodel labels are deprecated. Use run.cog.",
+                "org.cogmodel.openapi_schema": "{\"components\":{\"schemas\":{\"HTTPValidationError\":{\"properties\":{\"detail\":{\"items\":{\"$ref\":\"#/components/schemas/ValidationError\"},\"title\":\"Detail\",\"type\":\"array\"}},\"title\":\"HTTPValidationError\",\"type\":\"object\"},\"Input\":{\"properties\":{\"image\":{\"description\":\"input image\",\"format\":\"uri\",\"title\":\"Image\",\"type\":\"string\",\"x-order\":0}},\"required\":[\"image\"],\"title\":\"Input\",\"type\":\"object\"},\"Output\":{\"format\":\"uri\",\"title\":\"Output\",\"type\":\"string\"},\"Request\":{\"description\":\"The request body for a prediction\",\"properties\":{\"input\":{\"$ref\":\"#/components/schemas/Input\"},\"output_file_prefix\":{\"title\":\"Output File Prefix\",\"type\":\"string\"}},\"title\":\"Request\",\"type\":\"object\"},\"Response\":{\"description\":\"The response body for a prediction\",\"properties\":{\"error\":{\"title\":\"Error\",\"type\":\"string\"},\"output\":{\"$ref\":\"#/components/schemas/Output\"},\"status\":{\"$ref\":\"#/components/schemas/Status\"}},\"required\":[\"status\"],\"title\":\"Response\",\"type\":\"object\"},\"Status\":{\"description\":\"An enumeration.\",\"enum\":[\"processing\",\"succeeded\",\"failed\"],\"title\":\"Status\",\"type\":\"string\"},\"ValidationError\":{\"properties\":{\"loc\":{\"items\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"integer\"}]},\"title\":\"Location\",\"type\":\"array\"},\"msg\":{\"title\":\"Message\",\"type\":\"string\"},\"type\":{\"title\":\"Error Type\",\"type\":\"string\"}},\"required\":[\"loc\",\"msg\",\"type\"],\"title\":\"ValidationError\",\"type\":\"object\"}}},\"info\":{\"title\":\"Cog\",\"version\":\"0.1.0\"},\"openapi\":\"3.0.2\",\"paths\":{\"/\":{\"get\":{\"operationId\":\"root__get\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{}}},\"description\":\"Successful Response\"}},\"summary\":\"Root\"}},\"/predictions\":{\"post\":{\"description\":\"Run a single prediction on the model\",\"operationId\":\"predict_predictions_post\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Request\"}}}},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Response\"}}},\"description\":\"Successful Response\"},\"422\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/HTTPValidationError\"}}},\"description\":\"Validation Error\"}},\"summary\":\"Predict\"}}}}",
+                "run.cog.config": "{\"build\":{\"python_version\":\"3.8\",\"python_packages\":[\"openai==0.23.0\",\"python-dotenv==0.21.0\",\"pytest==7.1.2\",\"googletrans==3.1.0a0\",\"opencv-python==4.6.0.66\",\"Pillow==9.3.0\"],\"run\":[\"curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \",\"apt-get install -y nodejs\",\"echo hey\",\"git clone https://github.com/pollinations/pollinations-ipfs.git\",\"cd pollinations-ipfs \\u0026\\u0026 npm run install_backend\",\"pip install git+https://github.com/pollinations/pypollsdk.git\"],\"system_packages\":[\"curl\",\"libgl1-mesa-glx\",\"libglib2.0-0\"]},\"predict\":\"predict.py:Predictor\"}",
+                "run.cog.openapi_schema": "{\"components\":{\"schemas\":{\"HTTPValidationError\":{\"properties\":{\"detail\":{\"items\":{\"$ref\":\"#/components/schemas/ValidationError\"},\"title\":\"Detail\",\"type\":\"array\"}},\"title\":\"HTTPValidationError\",\"type\":\"object\"},\"Input\":{\"properties\":{\"image\":{\"description\":\"input image\",\"format\":\"uri\",\"title\":\"Image\",\"type\":\"string\",\"x-order\":0}},\"required\":[\"image\"],\"title\":\"Input\",\"type\":\"object\"},\"Output\":{\"format\":\"uri\",\"title\":\"Output\",\"type\":\"string\"},\"Request\":{\"description\":\"The request body for a prediction\",\"properties\":{\"input\":{\"$ref\":\"#/components/schemas/Input\"},\"output_file_prefix\":{\"title\":\"Output File Prefix\",\"type\":\"string\"}},\"title\":\"Request\",\"type\":\"object\"},\"Response\":{\"description\":\"The response body for a prediction\",\"properties\":{\"error\":{\"title\":\"Error\",\"type\":\"string\"},\"output\":{\"$ref\":\"#/components/schemas/Output\"},\"status\":{\"$ref\":\"#/components/schemas/Status\"}},\"required\":[\"status\"],\"title\":\"Response\",\"type\":\"object\"},\"Status\":{\"description\":\"An enumeration.\",\"enum\":[\"processing\",\"succeeded\",\"failed\"],\"title\":\"Status\",\"type\":\"string\"},\"ValidationError\":{\"properties\":{\"loc\":{\"items\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"integer\"}]},\"title\":\"Location\",\"type\":\"array\"},\"msg\":{\"title\":\"Message\",\"type\":\"string\"},\"type\":{\"title\":\"Error Type\",\"type\":\"string\"}},\"required\":[\"loc\",\"msg\",\"type\"],\"title\":\"ValidationError\",\"type\":\"object\"}}},\"info\":{\"title\":\"Cog\",\"version\":\"0.1.0\"},\"openapi\":\"3.0.2\",\"paths\":{\"/\":{\"get\":{\"operationId\":\"root__get\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{}}},\"description\":\"Successful Response\"}},\"summary\":\"Root\"}},\"/predictions\":{\"post\":{\"description\":\"Run a single prediction on the model\",\"operationId\":\"predict_predictions_post\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Request\"}}}},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Response\"}}},\"description\":\"Successful Response\"},\"422\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/HTTPValidationError\"}}},\"description\":\"Validation Error\"}},\"summary\":\"Predict\"}}}}",
+                "run.cog.version": "0.4.4"
+            }
+        },
+        "DockerVersion": "20.10.20+azure-1",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "5000/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568",
+                "PYTHON_VERSION=3.8.15",
+                "PYTHON_PIP_VERSION=22.0.4",
+                "PYTHON_SETUPTOOLS_VERSION=57.5.0",
+                "PYTHON_GET_PIP_URL=https://github.com/pypa/get-pip/raw/66030fa03382b4914d4c4d0896961a0bdeeeb274/public/get-pip.py",
+                "PYTHON_GET_PIP_SHA256=1e501cf004eac1b7eb1f97266d28f995ae835d30250bec7f8850562703067dc6",
+                "DEBIAN_FRONTEND=noninteractive",
+                "PYTHONUNBUFFERED=1",
+                "LD_LIBRARY_PATH=:/usr/lib/x86_64-linux-gnu:/usr/local/nvidia/lib64:/usr/local/nvidia/bin"
+            ],
+            "Cmd": [
+                "python",
+                "-m",
+                "cog.server.http"
+            ],
+            "ArgsEscaped": true,
+            "Image": "sha256:2e7024db0c7f17d1bee8bd52c1031f6ee3e0756c933ed0c0faa9b4aac4cec484",
+            "Volumes": null,
+            "WorkingDir": "/src",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {
+                "org.cogmodel.cog_version": "0.4.4",
+                "org.cogmodel.config": "{\"build\":{\"python_version\":\"3.8\",\"python_packages\":[\"openai==0.23.0\",\"python-dotenv==0.21.0\",\"pytest==7.1.2\",\"googletrans==3.1.0a0\",\"opencv-python==4.6.0.66\",\"Pillow==9.3.0\"],\"run\":[\"curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \",\"apt-get install -y nodejs\",\"echo hey\",\"git clone https://github.com/pollinations/pollinations-ipfs.git\",\"cd pollinations-ipfs \\u0026\\u0026 npm run install_backend\",\"pip install git+https://github.com/pollinations/pypollsdk.git\"],\"system_packages\":[\"curl\",\"libgl1-mesa-glx\",\"libglib2.0-0\"]},\"predict\":\"predict.py:Predictor\"}",
+                "org.cogmodel.deprecated": "The org.cogmodel labels are deprecated. Use run.cog.",
+                "org.cogmodel.openapi_schema": "{\"components\":{\"schemas\":{\"HTTPValidationError\":{\"properties\":{\"detail\":{\"items\":{\"$ref\":\"#/components/schemas/ValidationError\"},\"title\":\"Detail\",\"type\":\"array\"}},\"title\":\"HTTPValidationError\",\"type\":\"object\"},\"Input\":{\"properties\":{\"image\":{\"description\":\"input image\",\"format\":\"uri\",\"title\":\"Image\",\"type\":\"string\",\"x-order\":0}},\"required\":[\"image\"],\"title\":\"Input\",\"type\":\"object\"},\"Output\":{\"format\":\"uri\",\"title\":\"Output\",\"type\":\"string\"},\"Request\":{\"description\":\"The request body for a prediction\",\"properties\":{\"input\":{\"$ref\":\"#/components/schemas/Input\"},\"output_file_prefix\":{\"title\":\"Output File Prefix\",\"type\":\"string\"}},\"title\":\"Request\",\"type\":\"object\"},\"Response\":{\"description\":\"The response body for a prediction\",\"properties\":{\"error\":{\"title\":\"Error\",\"type\":\"string\"},\"output\":{\"$ref\":\"#/components/schemas/Output\"},\"status\":{\"$ref\":\"#/components/schemas/Status\"}},\"required\":[\"status\"],\"title\":\"Response\",\"type\":\"object\"},\"Status\":{\"description\":\"An enumeration.\",\"enum\":[\"processing\",\"succeeded\",\"failed\"],\"title\":\"Status\",\"type\":\"string\"},\"ValidationError\":{\"properties\":{\"loc\":{\"items\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"integer\"}]},\"title\":\"Location\",\"type\":\"array\"},\"msg\":{\"title\":\"Message\",\"type\":\"string\"},\"type\":{\"title\":\"Error Type\",\"type\":\"string\"}},\"required\":[\"loc\",\"msg\",\"type\"],\"title\":\"ValidationError\",\"type\":\"object\"}}},\"info\":{\"title\":\"Cog\",\"version\":\"0.1.0\"},\"openapi\":\"3.0.2\",\"paths\":{\"/\":{\"get\":{\"operationId\":\"root__get\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{}}},\"description\":\"Successful Response\"}},\"summary\":\"Root\"}},\"/predictions\":{\"post\":{\"description\":\"Run a single prediction on the model\",\"operationId\":\"predict_predictions_post\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Request\"}}}},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Response\"}}},\"description\":\"Successful Response\"},\"422\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/HTTPValidationError\"}}},\"description\":\"Validation Error\"}},\"summary\":\"Predict\"}}}}",
+                "run.cog.config": "{\"build\":{\"python_version\":\"3.8\",\"python_packages\":[\"openai==0.23.0\",\"python-dotenv==0.21.0\",\"pytest==7.1.2\",\"googletrans==3.1.0a0\",\"opencv-python==4.6.0.66\",\"Pillow==9.3.0\"],\"run\":[\"curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \",\"apt-get install -y nodejs\",\"echo hey\",\"git clone https://github.com/pollinations/pollinations-ipfs.git\",\"cd pollinations-ipfs \\u0026\\u0026 npm run install_backend\",\"pip install git+https://github.com/pollinations/pypollsdk.git\"],\"system_packages\":[\"curl\",\"libgl1-mesa-glx\",\"libglib2.0-0\"]},\"predict\":\"predict.py:Predictor\"}",
+                "run.cog.openapi_schema": "{\"components\":{\"schemas\":{\"HTTPValidationError\":{\"properties\":{\"detail\":{\"items\":{\"$ref\":\"#/components/schemas/ValidationError\"},\"title\":\"Detail\",\"type\":\"array\"}},\"title\":\"HTTPValidationError\",\"type\":\"object\"},\"Input\":{\"properties\":{\"image\":{\"description\":\"input image\",\"format\":\"uri\",\"title\":\"Image\",\"type\":\"string\",\"x-order\":0}},\"required\":[\"image\"],\"title\":\"Input\",\"type\":\"object\"},\"Output\":{\"format\":\"uri\",\"title\":\"Output\",\"type\":\"string\"},\"Request\":{\"description\":\"The request body for a prediction\",\"properties\":{\"input\":{\"$ref\":\"#/components/schemas/Input\"},\"output_file_prefix\":{\"title\":\"Output File Prefix\",\"type\":\"string\"}},\"title\":\"Request\",\"type\":\"object\"},\"Response\":{\"description\":\"The response body for a prediction\",\"properties\":{\"error\":{\"title\":\"Error\",\"type\":\"string\"},\"output\":{\"$ref\":\"#/components/schemas/Output\"},\"status\":{\"$ref\":\"#/components/schemas/Status\"}},\"required\":[\"status\"],\"title\":\"Response\",\"type\":\"object\"},\"Status\":{\"description\":\"An enumeration.\",\"enum\":[\"processing\",\"succeeded\",\"failed\"],\"title\":\"Status\",\"type\":\"string\"},\"ValidationError\":{\"properties\":{\"loc\":{\"items\":{\"anyOf\":[{\"type\":\"string\"},{\"type\":\"integer\"}]},\"title\":\"Location\",\"type\":\"array\"},\"msg\":{\"title\":\"Message\",\"type\":\"string\"},\"type\":{\"title\":\"Error Type\",\"type\":\"string\"}},\"required\":[\"loc\",\"msg\",\"type\"],\"title\":\"ValidationError\",\"type\":\"object\"}}},\"info\":{\"title\":\"Cog\",\"version\":\"0.1.0\"},\"openapi\":\"3.0.2\",\"paths\":{\"/\":{\"get\":{\"operationId\":\"root__get\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{}}},\"description\":\"Successful Response\"}},\"summary\":\"Root\"}},\"/predictions\":{\"post\":{\"description\":\"Run a single prediction on the model\",\"operationId\":\"predict_predictions_post\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Request\"}}}},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/Response\"}}},\"description\":\"Successful Response\"},\"422\":{\"content\":{\"application/json\":{\"schema\":{\"$ref\":\"#/components/schemas/HTTPValidationError\"}}},\"description\":\"Validation Error\"}},\"summary\":\"Predict\"}}}}",
+                "run.cog.version": "0.4.4"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 1732983608,
+        "VirtualSize": 1732983608,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/86lvd0slvlurzmweeqq1dwo7l/diff:/var/lib/docker/overlay2/rbp7d768kj5tfix29rnhr59bd/diff:/var/lib/docker/overlay2/wyiiyb2wskauqtzm6eoj451rt/diff:/var/lib/docker/overlay2/bug5cmobv5gpmdwea4u6tgfu7/diff:/var/lib/docker/overlay2/xv91cc6fvdhcmtdyvixi3mulf/diff:/var/lib/docker/overlay2/os4si4fpt2nivstk65unyphpi/diff:/var/lib/docker/overlay2/sxghqy2dsh2a386ylwoydad8b/diff:/var/lib/docker/overlay2/qtkirtzv51yuva49rn8tqdapw/diff:/var/lib/docker/overlay2/8h12x471n6f6j39jqvr9tvh2n/diff:/var/lib/docker/overlay2/dq821kurtzu42ilhflf6zdaxs/diff:/var/lib/docker/overlay2/ywhr7r383g8a1wgzit0cdlx5z/diff:/var/lib/docker/overlay2/2240996aa1065faaa7979b61ab42a8c16252d1fd8f67a266edd40d8fd6a82ca7/diff:/var/lib/docker/overlay2/be62caa57ca7c542debc078b4e29c42c17d4b1d58994feaa86ec7d6609873342/diff:/var/lib/docker/overlay2/58755b928899f8937a08d7cb271dda42ecbc4f9252333f13e2cd1d69353976ed/diff:/var/lib/docker/overlay2/296834f2baa5c775446f536446cd581486e298a45cc1e2dea604e52b5eee9bbe/diff:/var/lib/docker/overlay2/2a3ce17ed3c8ba732b1dc5d29e7d342fb9a3204cce7c44f40c5bd2c4e02fe27e/diff:/var/lib/docker/overlay2/bd97bc4ad71444c11f1504e43e189ec34ec22320c8b2e3767c789d8f18af0172/diff:/var/lib/docker/overlay2/dfa0d72d2d523ce0def9b682b75ff08fc0d742b720d5b4435645a627c6c46634/diff:/var/lib/docker/overlay2/7d72bd7515240bb01f04f71832b42bd7b32101601e6b2d1b5a00418e3bd6dfaf/diff:/var/lib/docker/overlay2/a8df9e6c16202d1983cf9e95dbf64bed35fb18eafa6c4c257ba5e65c835d6e7e/diff",
+                "MergedDir": "/var/lib/docker/overlay2/xi9ecwxzlcxiu70hx8bh4qw5e/merged",
+                "UpperDir": "/var/lib/docker/overlay2/xi9ecwxzlcxiu70hx8bh4qw5e/diff",
+                "WorkDir": "/var/lib/docker/overlay2/xi9ecwxzlcxiu70hx8bh4qw5e/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:ccba29d6937047c719a6c048a7038d3907590fbb8556418d119469b2ad4f95bc",
+                "sha256:f1c1f22985847a54884b1448b7e41f2852c7f4fab4b71014ba38cc2990cdc9f1",
+                "sha256:80231db1194c4e9941e3c4e00c704f527889863ea2222b691ff7f8583b912aa0",
+                "sha256:89c3244a87b279c98478c9248c9cbfba18ca16866e38c54f0134b31bbfd3ab27",
+                "sha256:397a239a053b413598cddc58b15a61547b3b2c1c81242ce124287cb9c37f15ca",
+                "sha256:e6e9854ca9998c22dcdcdb1490276d022fa5da8759e1c6d0d7260ea8d638fe8e",
+                "sha256:159c88093839266126e5f4dc7cb57c677fd00bd72f20cfbf55e4d2ab90677b1e",
+                "sha256:2a83e40fce9c25568fd9b2f342a9aa5553a9afd82f66100d3e48c8b3c64e2eea",
+                "sha256:b45cdf575114f8951a0e3291df91920ba7a61ec9dc559131c9642e12c4160ee4",
+                "sha256:0cd346303cd19ca75d09544de94524f447794bbe939cfb9587acf00ea5d10ec8",
+                "sha256:ec66d0e8f5bcb197d9b03fcc2ab7838b8c0093ad0d263e8787a9933d56c6c236",
+                "sha256:a71808af0922152a0d19abc1e8912db6170185e37a73a3f742802cba6b64c752",
+                "sha256:d67d5c220d322f6f58b310662ec4fe5ecc019b7dfb9c9fd2e3df59c7d884aab9",
+                "sha256:0e8f5f737e816f94010c5d91c8ba9c11fcd01a3d830e924d325fb4736af83f9a",
+                "sha256:afa820142515c23182f30ace913e2900c1d5c063cd3cfe3a3c3345c8b6ed1190",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:ec6996675cc321c29ea7e481af332af506c5f5f1d511214918a01be09fd2b2e0",
+                "sha256:a8dcc7736281ba5171c4adab2f3f0284097c53d702cadd6232c69a0be2061b47",
+                "sha256:5168edd0c35ec2db607ac5bf238b46fc22f56ed8dc076467c7c9c96a0da10a36",
+                "sha256:b3d65a06dce43f83c0b9757260eadbfe00e496bf26f365e489212b1b1de865cd",
+                "sha256:9954b11be4ca5a9f24dde2a53c53cb265e5f34fe0e5e146b15ca9d459884b574"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2022-11-20T09:32:49.936210111Z"
+        }
+    }
+]
