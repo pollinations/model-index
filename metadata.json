@@ -5887,8 +5887,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset": {
-        "hash": "sha256:714f7459ffbda2141511f5ec2a77f903b7769577f769ca3a98d40cd44628fa5a",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset@sha256:714f7459ffbda2141511f5ec2a77f903b7769577f769ca3a98d40cd44628fa5a",
+        "hash": "sha256:038adfcb806a2f5104deaeb4884fced5addc11d3a96d4be2764baea1200a4868",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset@sha256:038adfcb806a2f5104deaeb4884fced5addc11d3a96d4be2764baea1200a4868",
         "openapi": {
             "components": {
                 "schemas": {
