@@ -5887,8 +5887,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset": {
-        "hash": "sha256:cd35f1c90f53e5cd74b704c7e046e56576b25e8e0544d58a35fff007b7b74d88",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset@sha256:cd35f1c90f53e5cd74b704c7e046e56576b25e8e0544d58a35fff007b7b74d88",
+        "hash": "sha256:714f7459ffbda2141511f5ec2a77f903b7769577f769ca3a98d40cd44628fa5a",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset@sha256:714f7459ffbda2141511f5ec2a77f903b7769577f769ca3a98d40cd44628fa5a",
         "openapi": {
             "components": {
                 "schemas": {
@@ -5913,6 +5913,27 @@
                                 "title": "Image",
                                 "type": "string",
                                 "x-order": 0
+                            },
+                            "seed": {
+                                "default": -1,
+                                "description": "random seed",
+                                "title": "Seed",
+                                "type": "integer",
+                                "x-order": 3
+                            },
+                            "strength": {
+                                "default": 0.5,
+                                "description": "transform strength",
+                                "title": "Strength",
+                                "type": "number",
+                                "x-order": 2
+                            },
+                            "styles": {
+                                "default": "archer,modern disney,arcane",
+                                "description": "styles. seperate by comma for multiple",
+                                "title": "Styles",
+                                "type": "string",
+                                "x-order": 1
                             }
                         },
                         "required": [
