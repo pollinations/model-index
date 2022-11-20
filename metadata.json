@@ -3679,8 +3679,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private": {
-        "hash": "sha256:870f651c838c98c5c01a474a53f4caaee28e6645ec6a46cae99dda8954f3904e",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private@sha256:870f651c838c98c5c01a474a53f4caaee28e6645ec6a46cae99dda8954f3904e",
+        "hash": "sha256:42280e71830438fed958ccfb0a5a50545ffc424bbdf98b4e36919fe7944de392",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private@sha256:42280e71830438fed958ccfb0a5a50545ffc424bbdf98b4e36919fe7944de392",
         "openapi": {
             "components": {
                 "schemas": {
@@ -3734,7 +3734,7 @@
                                     }
                                 ],
                                 "default": "vanilla",
-                                "description": "stable diffusion model. redshift was fine-tuned and is better at certain styles",
+                                "description": "stable diffusion model. nitrosocke was fine-tuned and is better at certain styles",
                                 "x-order": 1
                             },
                             "num_frames_per_prompt": {
@@ -3862,7 +3862,7 @@
                         "description": "An enumeration.",
                         "enum": [
                             "vanilla",
-                            "redshift"
+                            "nitrosocke"
                         ],
                         "title": "model",
                         "type": "string"
