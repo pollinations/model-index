@@ -1,0 +1,12 @@
+{
+    "featured": false,
+    "url": "pollinations/lemonade-preset",
+    "key": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset",
+    "name": "Lemonade Preset",
+    "path": "lemonade",
+    "credits": "stability.ai, pollinations, openAI",
+    "description": "",
+    "pollinator_group": [
+        "cpu"
+    ]
+}
