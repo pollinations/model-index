@@ -1,0 +1,13 @@
+{
+    "featured": true,
+    "url": "pollinations/stable-diffusion-lemonade",
+    "key": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-lemonade",
+    "name": "Stable Diffusion Lemonade",
+    "img": "https://s4.gifyu.com/images/ezgif.com-gif-maker4faa2b37cd286f60.gif",
+    "path": "stablediffusionlemonade",
+    "credits": "[Stability.AI](https://stability.ai/)",
+    "description": "<img src=\"https://i.imgur.com/Vkk1o9n.gif\" width=\"300\" height=\"300\" />\n\n\n\n*\"Envy in the style of Magritte. Despair in the style of Magritte. Pleasure in the style of Dali. Regret in the style of Munch.\"*\n\n\n\nCreate an animation interpolating from one prompt to the next over time.",    
+    "pollinator_group": [
+        "a10-lemonade"
+    ]
+}
