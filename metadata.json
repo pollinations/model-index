@@ -5887,8 +5887,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset": {
-        "hash": "sha256:de26f1e793ac1352caa32ba65dc4139d6b198c14db8f2005ca59fab311e8228f",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset@sha256:de26f1e793ac1352caa32ba65dc4139d6b198c14db8f2005ca59fab311e8228f",
+        "hash": "sha256:07c4c28f2adb1e9913c5bae8091409410f61b0fe16562f541e4308730c358cbb",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset@sha256:07c4c28f2adb1e9913c5bae8091409410f61b0fe16562f541e4308730c358cbb",
         "openapi": {
             "components": {
                 "schemas": {
@@ -5907,6 +5907,20 @@
                     },
                     "Input": {
                         "properties": {
+                            "ethnicity": {
+                                "default": "",
+                                "description": "ethnicity. leave empty to try to determine from the photo",
+                                "title": "Ethnicity",
+                                "type": "string",
+                                "x-order": 4
+                            },
+                            "gender": {
+                                "default": "",
+                                "description": "gender. leave empty to try to determine from the photo",
+                                "title": "Gender",
+                                "type": "string",
+                                "x-order": 5
+                            },
                             "image": {
                                 "description": "input image",
                                 "format": "uri",
