@@ -6115,8 +6115,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-lemonade": {
-        "hash": "sha256:2fb83cc6198d8b689ea5782fbcb17d94c21d0958e499c0766c1b96f2482081fe",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-lemonade@sha256:2fb83cc6198d8b689ea5782fbcb17d94c21d0958e499c0766c1b96f2482081fe",
+        "hash": "sha256:0f38c242b94105f8177c0aece8a325f62b5430fe7de54d11b10fca18e2764289",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-lemonade@sha256:0f38c242b94105f8177c0aece8a325f62b5430fe7de54d11b10fca18e2764289",
         "openapi": {
             "components": {
                 "schemas": {
