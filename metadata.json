@@ -5887,8 +5887,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset": {
-        "hash": "sha256:89a7688e1972e18dbb3ebbf97a79997add315b5dd20bd8d2a740b76392440248",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset@sha256:89a7688e1972e18dbb3ebbf97a79997add315b5dd20bd8d2a740b76392440248",
+        "hash": "sha256:ffc245e9fd156f479e6d6e1719251fe65fd548468342061865b9e1c57c906ba0",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset@sha256:ffc245e9fd156f479e6d6e1719251fe65fd548468342061865b9e1c57c906ba0",
         "openapi": {
             "components": {
                 "schemas": {
@@ -5912,14 +5912,14 @@
                                 "description": "ethnicity. leave empty to try to determine from the photo",
                                 "title": "Ethnicity",
                                 "type": "string",
-                                "x-order": 4
+                                "x-order": 5
                             },
                             "gender": {
                                 "default": "",
                                 "description": "gender. leave empty to try to determine from the photo",
                                 "title": "Gender",
                                 "type": "string",
-                                "x-order": 5
+                                "x-order": 6
                             },
                             "image": {
                                 "description": "input image",
@@ -5928,22 +5928,29 @@
                                 "type": "string",
                                 "x-order": 0
                             },
+                            "num_images_per_style": {
+                                "default": 1,
+                                "description": "number of images per style",
+                                "title": "Num Images Per Style",
+                                "type": "integer",
+                                "x-order": 2
+                            },
                             "seed": {
                                 "default": -1,
                                 "description": "random seed",
                                 "title": "Seed",
                                 "type": "integer",
-                                "x-order": 3
+                                "x-order": 4
                             },
                             "strength": {
                                 "default": 0.5,
                                 "description": "transform strength",
                                 "title": "Strength",
                                 "type": "number",
-                                "x-order": 2
+                                "x-order": 3
                             },
                             "styles": {
-                                "default": "archer,modern disney,arcane,sprite #pixelart",
+                                "default": "archer,modern disney",
                                 "description": "styles. seperate by comma for multiple",
                                 "title": "Styles",
                                 "type": "string",
@@ -5957,8 +5964,35 @@
                         "type": "object"
                     },
                     "Output": {
+                        "properties": {
+                            "answers": {
+                                "title": "Answers",
+                                "type": "string"
+                            },
+                            "avatars": {
+                                "items": {
+                                    "format": "uri",
+                                    "type": "string"
+                                },
+                                "title": "Avatars",
+                                "type": "array"
+                            },
+                            "prompt": {
+                                "title": "Prompt",
+                                "type": "string"
+                            },
+                            "removed_background": {
+                                "format": "uri",
+                                "title": "Removed Background",
+                                "type": "string"
+                            },
+                            "status": {
+                                "title": "Status",
+                                "type": "string"
+                            }
+                        },
                         "title": "Output",
-                        "type": "string"
+                        "type": "object"
                     },
                     "Request": {
                         "description": "The request body for a prediction",
