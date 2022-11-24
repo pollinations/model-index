@@ -6115,8 +6115,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-lemonade": {
-        "hash": "sha256:0f38c242b94105f8177c0aece8a325f62b5430fe7de54d11b10fca18e2764289",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-lemonade@sha256:0f38c242b94105f8177c0aece8a325f62b5430fe7de54d11b10fca18e2764289",
+        "hash": "sha256:e2ebcbad0eabe93a4a6339da77039e9b7d5e3d94ecf4a2a6bc53a1c22004029d",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-lemonade@sha256:e2ebcbad0eabe93a4a6339da77039e9b7d5e3d94ecf4a2a6bc53a1c22004029d",
         "openapi": {
             "components": {
                 "schemas": {
@@ -6157,7 +6157,7 @@
                                 "x-order": 7
                             },
                             "init_image_strength": {
-                                "default": 0.3,
+                                "default": 0.4,
                                 "description": "How strong to apply the input image. 0 means disregard the input image mostly and 1 copies the image exactly. Values in between are interesting.",
                                 "title": "Init Image Strength",
                                 "type": "number",
@@ -6178,7 +6178,7 @@
                                 "x-order": 1
                             },
                             "prompts": {
-                                "default": "Apple by magritte\nBanana by magritte",
+                                "default": "modern disney - bearded guy with a mohawk",
                                 "description": "model will try to generate this text. New! Write in any language.",
                                 "title": "Prompts",
                                 "type": "string",
