@@ -3679,8 +3679,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private": {
-        "hash": "sha256:a9c1de5d4dbb765e987084d9a1085b25307a99abc8aee53e35ae85fa51782357",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private@sha256:a9c1de5d4dbb765e987084d9a1085b25307a99abc8aee53e35ae85fa51782357",
+        "hash": "sha256:2fc55c9b1b57969f10bdabae0762a6c3dcd82a431b1ac72e07dbe360f7dea0a3",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-private@sha256:2fc55c9b1b57969f10bdabae0762a6c3dcd82a431b1ac72e07dbe360f7dea0a3",
         "openapi": {
             "components": {
                 "schemas": {
@@ -3704,52 +3704,42 @@
                                 "description": "Number of diffusion steps. Higher steps could produce better results but will take longer to generate. Maximum 30 (using K-Euler-Diffusion).",
                                 "title": "Diffusion Steps",
                                 "type": "integer",
-                                "x-order": 5
+                                "x-order": 4
                             },
                             "height": {
                                 "default": 512,
                                 "description": "Height of the generated image. The model was really only trained on 512x512 images. Other sizes tend to create less coherent images.",
                                 "title": "Height",
                                 "type": "integer",
-                                "x-order": 7
+                                "x-order": 6
                             },
                             "init_image": {
                                 "description": "input image",
                                 "format": "uri",
                                 "title": "Init Image",
                                 "type": "string",
-                                "x-order": 8
+                                "x-order": 7
                             },
                             "init_image_strength": {
                                 "default": 0.3,
                                 "description": "How strong to apply the input image. 0 means disregard the input image mostly and 1 copies the image exactly. Values in between are interesting.",
                                 "title": "Init Image Strength",
                                 "type": "number",
-                                "x-order": 9
-                            },
-                            "model": {
-                                "allOf": [
-                                    {
-                                        "$ref": "#/components/schemas/model"
-                                    }
-                                ],
-                                "default": "vanilla",
-                                "description": "stable diffusion model. nitrosocke was fine-tuned and is better at certain styles",
-                                "x-order": 1
+                                "x-order": 8
                             },
                             "num_frames_per_prompt": {
                                 "default": 8,
                                 "description": "Number of frames to generate per prompt (limited to a maximum of 15 for now because we are experiencing heavy use).",
                                 "title": "Num Frames Per Prompt",
                                 "type": "integer",
-                                "x-order": 3
+                                "x-order": 2
                             },
                             "prompt_scale": {
                                 "default": 15,
                                 "description": "Determines influence of your prompt on generation.",
                                 "title": "Prompt Scale",
                                 "type": "number",
-                                "x-order": 2
+                                "x-order": 1
                             },
                             "prompts": {
                                 "default": "Apple by magritte\nBanana by magritte",
@@ -3763,14 +3753,14 @@
                                 "description": "Each seed generates a different image",
                                 "title": "Random Seed",
                                 "type": "integer",
-                                "x-order": 4
+                                "x-order": 3
                             },
                             "width": {
                                 "default": 512,
                                 "description": "Width of the generated image. The model was really only trained on 512x512 images. Other sizes tend to create less coherent images.",
                                 "title": "Width",
                                 "type": "integer",
-                                "x-order": 6
+                                "x-order": 5
                             }
                         },
                         "title": "Input",
@@ -3857,15 +3847,6 @@
                         ],
                         "title": "ValidationError",
                         "type": "object"
-                    },
-                    "model": {
-                        "description": "An enumeration.",
-                        "enum": [
-                            "vanilla",
-                            "nitrosocke"
-                        ],
-                        "title": "model",
-                        "type": "string"
                     }
                 }
             },
