@@ -5887,8 +5887,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset": {
-        "hash": "sha256:a78083b98d59b53605ea11086d2d06f7cc4035a341aec16ee94440eef10c7ae8",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset@sha256:a78083b98d59b53605ea11086d2d06f7cc4035a341aec16ee94440eef10c7ae8",
+        "hash": "sha256:7ad9fed9e6cd45f0645d0d312f0df54a190d0659bcb98683d4361f8fab0fcbad",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset@sha256:7ad9fed9e6cd45f0645d0d312f0df54a190d0659bcb98683d4361f8fab0fcbad",
         "openapi": {
             "components": {
                 "schemas": {
@@ -5950,8 +5950,8 @@
                                 "x-order": 3
                             },
                             "styles": {
-                                "default": "archer,modern disney",
-                                "description": "styles. seperate by comma for multiple",
+                                "default": "archer arcane modern disney",
+                                "description": "styles. seperate by newline for multiple",
                                 "title": "Styles",
                                 "type": "string",
                                 "x-order": 1
