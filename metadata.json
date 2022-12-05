@@ -5868,8 +5868,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset": {
-        "hash": "sha256:21d5fa55360a620f11aad4d6f6784158ab6d4b0d5c671cd686c4b89fedaf827b",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset@sha256:21d5fa55360a620f11aad4d6f6784158ab6d4b0d5c671cd686c4b89fedaf827b",
+        "hash": "sha256:c4f10218bea5c7dacde2eb9cc8391645199943ccbb6ff3adb0925a83b83239fd",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset@sha256:c4f10218bea5c7dacde2eb9cc8391645199943ccbb6ff3adb0925a83b83239fd",
         "openapi": {
             "components": {
                 "schemas": {
@@ -5924,7 +5924,7 @@
                                 "x-order": 4
                             },
                             "strength": {
-                                "default": 0.6,
+                                "default": 0.5,
                                 "description": "transform strength",
                                 "title": "Strength",
                                 "type": "number",
