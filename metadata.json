@@ -5868,8 +5868,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset": {
-        "hash": "sha256:bc19ea7f8ff17e79d39620e18e9d96c774fc708df69204ae249bad269971f096",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset@sha256:bc19ea7f8ff17e79d39620e18e9d96c774fc708df69204ae249bad269971f096",
+        "hash": "sha256:21d5fa55360a620f11aad4d6f6784158ab6d4b0d5c671cd686c4b89fedaf827b",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset@sha256:21d5fa55360a620f11aad4d6f6784158ab6d4b0d5c671cd686c4b89fedaf827b",
         "openapi": {
             "components": {
                 "schemas": {
@@ -5924,7 +5924,7 @@
                                 "x-order": 4
                             },
                             "strength": {
-                                "default": 0.8,
+                                "default": 0.6,
                                 "description": "transform strength",
                                 "title": "Strength",
                                 "type": "number",
@@ -6014,7 +6014,8 @@
                         "enum": [
                             "processing",
                             "succeeded",
-                            "failed"
+                            "failed",
+                            "canceled"
                         ],
                         "title": "Status",
                         "type": "string"
