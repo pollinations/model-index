@@ -6379,8 +6379,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/animate": {
-        "hash": "sha256:6b47b5895460f2ace27614511380d69050e6ff6520ffd45cc6aa8df9f07f5fec",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/animate@sha256:6b47b5895460f2ace27614511380d69050e6ff6520ffd45cc6aa8df9f07f5fec",
+        "hash": "sha256:d6826b0625b222a30d3ef58b3422060271ed5c17e25be17e04a7382a81883aa0",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/animate@sha256:d6826b0625b222a30d3ef58b3422060271ed5c17e25be17e04a7382a81883aa0",
         "openapi": {
             "components": {
                 "schemas": {
@@ -6441,13 +6441,6 @@
                                 "description": "Height of output image",
                                 "x-order": 3
                             },
-                            "intermediate_output": {
-                                "default": false,
-                                "description": "Whether to display intermediate outputs during generation",
-                                "title": "Intermediate Output",
-                                "type": "boolean",
-                                "x-order": 13
-                            },
                             "num_animation_frames": {
                                 "default": 10,
                                 "description": "Number of frames to animate",
@@ -6483,7 +6476,7 @@
                                 ],
                                 "default": "gif",
                                 "description": "Output file format",
-                                "x-order": 15
+                                "x-order": 14
                             },
                             "prompt_end": {
                                 "description": "Prompt to end the animation with. You can include multiple prompts by separating the prompts with | (the 'pipe' character)",
@@ -6518,7 +6511,7 @@
                                 "description": "Random seed. Leave blank to randomize the seed",
                                 "title": "Seed",
                                 "type": "integer",
-                                "x-order": 14
+                                "x-order": 13
                             },
                             "width": {
                                 "allOf": [
@@ -6740,6 +6733,273 @@
             "id2pop": "1 Disco Diffusion",
             "path": "stablediffusion",
             "category": "2 Text-To-Video",
+            "credits": "[Stability.AI](https://stability.ai/)",
+            "description": "<img src=\"https://i.imgur.com/Vkk1o9n.gif\" width=\"300\" height=\"300\" />\n\n\n\n*\"Envy in the style of Magritte. Despair in the style of Magritte. Pleasure in the style of Dali. Regret in the style of Munch.\"*\n\n\n\nCreate an animation interpolating from one prompt to the next over time.",
+            "pollinator_group": [
+                "T4-stable-diffusion",
+                "A10",
+                "A10-2"
+            ]
+        }
+    },
+    "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-dreamachine": {
+        "hash": "sha256:ccbcfe4008b1e413a384be3cbc95dc43ff448d90b2be699b3bff5f1353f6a34a",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-dreamachine@sha256:ccbcfe4008b1e413a384be3cbc95dc43ff448d90b2be699b3bff5f1353f6a34a",
+        "openapi": {
+            "components": {
+                "schemas": {
+                    "HTTPValidationError": {
+                        "properties": {
+                            "detail": {
+                                "items": {
+                                    "$ref": "#/components/schemas/ValidationError"
+                                },
+                                "title": "Detail",
+                                "type": "array"
+                            }
+                        },
+                        "title": "HTTPValidationError",
+                        "type": "object"
+                    },
+                    "Input": {
+                        "properties": {
+                            "diffusion_steps": {
+                                "default": 25,
+                                "description": "Number of diffusion steps. Higher steps could produce better results but will take longer to generate. Maximum 30 (using K-Euler-Diffusion).",
+                                "title": "Diffusion Steps",
+                                "type": "integer",
+                                "x-order": 4
+                            },
+                            "height": {
+                                "default": 512,
+                                "description": "Height of the generated image. The model was really only trained on 512x512 images. Other sizes tend to create less coherent images.",
+                                "title": "Height",
+                                "type": "integer",
+                                "x-order": 6
+                            },
+                            "init_image": {
+                                "description": "input image",
+                                "format": "uri",
+                                "title": "Init Image",
+                                "type": "string",
+                                "x-order": 7
+                            },
+                            "init_image_strength": {
+                                "default": 0.4,
+                                "description": "How strong to apply the input image. 0 means disregard the input image mostly and 1 copies the image exactly. Values in between are interesting.",
+                                "title": "Init Image Strength",
+                                "type": "number",
+                                "x-order": 8
+                            },
+                            "num_frames_per_prompt": {
+                                "default": 1,
+                                "description": "Number of frames to generate per prompt (limited to a maximum of 15 for now because we are experiencing heavy use).",
+                                "title": "Num Frames Per Prompt",
+                                "type": "integer",
+                                "x-order": 2
+                            },
+                            "prompt_scale": {
+                                "default": 15,
+                                "description": "Determines influence of your prompt on generation.",
+                                "title": "Prompt Scale",
+                                "type": "number",
+                                "x-order": 1
+                            },
+                            "prompts": {
+                                "default": "modern disney - bearded guy with a mohawk",
+                                "description": "model will try to generate this text. New! Write in any language.",
+                                "title": "Prompts",
+                                "type": "string",
+                                "x-order": 0
+                            },
+                            "random_seed": {
+                                "default": 42,
+                                "description": "Each seed generates a different image",
+                                "title": "Random Seed",
+                                "type": "integer",
+                                "x-order": 3
+                            },
+                            "width": {
+                                "default": 512,
+                                "description": "Width of the generated image. The model was really only trained on 512x512 images. Other sizes tend to create less coherent images.",
+                                "title": "Width",
+                                "type": "integer",
+                                "x-order": 5
+                            }
+                        },
+                        "title": "Input",
+                        "type": "object"
+                    },
+                    "Output": {
+                        "properties": {
+                            "images": {
+                                "items": {
+                                    "format": "uri",
+                                    "type": "string"
+                                },
+                                "title": "Images",
+                                "type": "array"
+                            },
+                            "video": {
+                                "format": "uri",
+                                "title": "Video",
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "images"
+                        ],
+                        "title": "Output",
+                        "type": "object"
+                    },
+                    "Request": {
+                        "description": "The request body for a prediction",
+                        "properties": {
+                            "input": {
+                                "$ref": "#/components/schemas/Input"
+                            },
+                            "output_file_prefix": {
+                                "title": "Output File Prefix",
+                                "type": "string"
+                            }
+                        },
+                        "title": "Request",
+                        "type": "object"
+                    },
+                    "Response": {
+                        "description": "The response body for a prediction",
+                        "properties": {
+                            "error": {
+                                "title": "Error",
+                                "type": "string"
+                            },
+                            "output": {
+                                "$ref": "#/components/schemas/Output"
+                            },
+                            "status": {
+                                "$ref": "#/components/schemas/Status"
+                            }
+                        },
+                        "required": [
+                            "status"
+                        ],
+                        "title": "Response",
+                        "type": "object"
+                    },
+                    "Status": {
+                        "description": "An enumeration.",
+                        "enum": [
+                            "processing",
+                            "succeeded",
+                            "failed"
+                        ],
+                        "title": "Status",
+                        "type": "string"
+                    },
+                    "ValidationError": {
+                        "properties": {
+                            "loc": {
+                                "items": {
+                                    "anyOf": [
+                                        {
+                                            "type": "string"
+                                        },
+                                        {
+                                            "type": "integer"
+                                        }
+                                    ]
+                                },
+                                "title": "Location",
+                                "type": "array"
+                            },
+                            "msg": {
+                                "title": "Message",
+                                "type": "string"
+                            },
+                            "type": {
+                                "title": "Error Type",
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "loc",
+                            "msg",
+                            "type"
+                        ],
+                        "title": "ValidationError",
+                        "type": "object"
+                    }
+                }
+            },
+            "info": {
+                "title": "Cog",
+                "version": "0.1.0"
+            },
+            "openapi": "3.0.2",
+            "paths": {
+                "/": {
+                    "get": {
+                        "operationId": "root__get",
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {}
+                                    }
+                                },
+                                "description": "Successful Response"
+                            }
+                        },
+                        "summary": "Root"
+                    }
+                },
+                "/predictions": {
+                    "post": {
+                        "description": "Run a single prediction on the model",
+                        "operationId": "predict_predictions_post",
+                        "requestBody": {
+                            "content": {
+                                "application/json": {
+                                    "schema": {
+                                        "$ref": "#/components/schemas/Request"
+                                    }
+                                }
+                            }
+                        },
+                        "responses": {
+                            "200": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/Response"
+                                        }
+                                    }
+                                },
+                                "description": "Successful Response"
+                            },
+                            "422": {
+                                "content": {
+                                    "application/json": {
+                                        "schema": {
+                                            "$ref": "#/components/schemas/HTTPValidationError"
+                                        }
+                                    }
+                                },
+                                "description": "Validation Error"
+                            }
+                        },
+                        "summary": "Predict"
+                    }
+                }
+            }
+        },
+        "meta": {
+            "featured": true,
+            "url": "pollinations/stable-diffusion-dreamachine",
+            "key": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-dreamachine",
+            "name": "Dreamachine",
+            "img": "https://s4.gifyu.com/images/ezgif.com-gif-maker4faa2b37cd286f60.gif",
+            "path": "stablediffusiondreamachine",
             "credits": "[Stability.AI](https://stability.ai/)",
             "description": "<img src=\"https://i.imgur.com/Vkk1o9n.gif\" width=\"300\" height=\"300\" />\n\n\n\n*\"Envy in the style of Magritte. Despair in the style of Magritte. Pleasure in the style of Dali. Regret in the style of Munch.\"*\n\n\n\nCreate an animation interpolating from one prompt to the next over time.",
             "pollinator_group": [

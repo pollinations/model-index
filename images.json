@@ -23,5 +23,6 @@
     "pollinations/blip": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/blip",
     "pollinations/lemonade-preset": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset",
     "pollinations/stable-diffusion-lemonade": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-lemonade",
-    "pollinations/animate": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/animate"
+    "pollinations/animate": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/animate",
+    "pollinations/stable-diffusion-dreamachine": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/stable-diffusion-dreamachine"
 }
