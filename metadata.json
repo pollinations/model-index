@@ -6379,8 +6379,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/animate": {
-        "hash": "sha256:d6826b0625b222a30d3ef58b3422060271ed5c17e25be17e04a7382a81883aa0",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/animate@sha256:d6826b0625b222a30d3ef58b3422060271ed5c17e25be17e04a7382a81883aa0",
+        "hash": "sha256:b43024f68252b1a07bdb6facacdc56acbb8d40031c8057d20adb0f41150514bd",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/animate@sha256:b43024f68252b1a07bdb6facacdc56acbb8d40031c8057d20adb0f41150514bd",
         "openapi": {
             "components": {
                 "schemas": {
@@ -6404,7 +6404,7 @@
                                 "description": "Whether to use FILM for between-frame interpolation (film-net.github.io)",
                                 "title": "Film Interpolation",
                                 "type": "boolean",
-                                "x-order": 12
+                                "x-order": 10
                             },
                             "gif_frames_per_second": {
                                 "default": 10,
@@ -6413,14 +6413,7 @@
                                 "minimum": 1,
                                 "title": "Gif Frames Per Second",
                                 "type": "integer",
-                                "x-order": 10
-                            },
-                            "gif_ping_pong": {
-                                "default": false,
-                                "description": "Whether to reverse the animation and go back to the beginning before looping",
-                                "title": "Gif Ping Pong",
-                                "type": "boolean",
-                                "x-order": 11
+                                "x-order": 9
                             },
                             "guidance_scale": {
                                 "default": 7.5,
@@ -6429,7 +6422,7 @@
                                 "minimum": 1,
                                 "title": "Guidance Scale",
                                 "type": "number",
-                                "x-order": 9
+                                "x-order": 8
                             },
                             "height": {
                                 "allOf": [
@@ -6441,14 +6434,21 @@
                                 "description": "Height of output image",
                                 "x-order": 3
                             },
+                            "intermediate_output": {
+                                "default": false,
+                                "description": "Whether to display intermediate outputs during generation",
+                                "title": "Intermediate Output",
+                                "type": "boolean",
+                                "x-order": 11
+                            },
                             "num_animation_frames": {
-                                "default": 10,
+                                "default": 5,
                                 "description": "Number of frames to animate",
                                 "maximum": 50,
                                 "minimum": 2,
                                 "title": "Num Animation Frames",
                                 "type": "integer",
-                                "x-order": 7
+                                "x-order": 6
                             },
                             "num_inference_steps": {
                                 "default": 50,
@@ -6466,7 +6466,7 @@
                                 "minimum": 1,
                                 "title": "Num Interpolation Steps",
                                 "type": "integer",
-                                "x-order": 8
+                                "x-order": 7
                             },
                             "output_format": {
                                 "allOf": [
@@ -6474,9 +6474,9 @@
                                         "$ref": "#/components/schemas/output_format"
                                     }
                                 ],
-                                "default": "gif",
+                                "default": "mp4",
                                 "description": "Output file format",
-                                "x-order": 14
+                                "x-order": 13
                             },
                             "prompt_end": {
                                 "description": "Prompt to end the animation with. You can include multiple prompts by separating the prompts with | (the 'pipe' character)",
@@ -6489,13 +6489,6 @@
                                 "title": "Prompt Start",
                                 "type": "string",
                                 "x-order": 0
-                            },
-                            "prompt_strength": {
-                                "default": 0.8,
-                                "description": "Lower prompt strength generates more coherent gifs, higher respects prompts more but can be jumpy",
-                                "title": "Prompt Strength",
-                                "type": "number",
-                                "x-order": 6
                             },
                             "scheduler": {
                                 "allOf": [
@@ -6511,7 +6504,7 @@
                                 "description": "Random seed. Leave blank to randomize the seed",
                                 "title": "Seed",
                                 "type": "integer",
-                                "x-order": 13
+                                "x-order": 12
                             },
                             "width": {
                                 "allOf": [
@@ -6540,38 +6533,88 @@
                         "type": "array",
                         "x-cog-array-type": "iterator"
                     },
-                    "Request": {
-                        "description": "The request body for a prediction",
+                    "PredictionRequest": {
                         "properties": {
+                            "created_at": {
+                                "format": "date-time",
+                                "title": "Created At",
+                                "type": "string"
+                            },
+                            "id": {
+                                "title": "Id",
+                                "type": "string"
+                            },
                             "input": {
                                 "$ref": "#/components/schemas/Input"
                             },
                             "output_file_prefix": {
                                 "title": "Output File Prefix",
                                 "type": "string"
+                            },
+                            "webhook": {
+                                "format": "uri",
+                                "maxLength": 65536,
+                                "minLength": 1,
+                                "title": "Webhook",
+                                "type": "string"
+                            },
+                            "webhook_events_filter": {
+                                "default": [
+                                    "logs",
+                                    "start",
+                                    "completed",
+                                    "output"
+                                ],
+                                "items": {
+                                    "$ref": "#/components/schemas/WebhookEvent"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
                             }
                         },
-                        "title": "Request",
+                        "title": "PredictionRequest",
                         "type": "object"
                     },
-                    "Response": {
-                        "description": "The response body for a prediction",
+                    "PredictionResponse": {
                         "properties": {
+                            "completed_at": {
+                                "format": "date-time",
+                                "title": "Completed At",
+                                "type": "string"
+                            },
+                            "created_at": {
+                                "format": "date-time",
+                                "title": "Created At",
+                                "type": "string"
+                            },
                             "error": {
                                 "title": "Error",
+                                "type": "string"
+                            },
+                            "id": {
+                                "title": "Id",
+                                "type": "string"
+                            },
+                            "input": {
+                                "$ref": "#/components/schemas/Input"
+                            },
+                            "logs": {
+                                "title": "Logs",
                                 "type": "string"
                             },
                             "output": {
                                 "$ref": "#/components/schemas/Output"
                             },
+                            "started_at": {
+                                "format": "date-time",
+                                "title": "Started At",
+                                "type": "string"
+                            },
                             "status": {
                                 "$ref": "#/components/schemas/Status"
                             }
                         },
-                        "required": [
-                            "status"
-                        ],
-                        "title": "Response",
+                        "title": "PredictionResponse",
                         "type": "object"
                     },
                     "Status": {
@@ -6579,6 +6622,7 @@
                         "enum": [
                             "processing",
                             "succeeded",
+                            "canceled",
                             "failed"
                         ],
                         "title": "Status",
@@ -6616,6 +6660,17 @@
                         ],
                         "title": "ValidationError",
                         "type": "object"
+                    },
+                    "WebhookEvent": {
+                        "description": "An enumeration.",
+                        "enum": [
+                            "start",
+                            "output",
+                            "logs",
+                            "completed"
+                        ],
+                        "title": "WebhookEvent",
+                        "type": "string"
                     },
                     "height": {
                         "description": "An enumeration.",
@@ -6692,7 +6747,7 @@
                             "content": {
                                 "application/json": {
                                     "schema": {
-                                        "$ref": "#/components/schemas/Request"
+                                        "$ref": "#/components/schemas/PredictionRequest"
                                     }
                                 }
                             }
@@ -6702,7 +6757,7 @@
                                 "content": {
                                     "application/json": {
                                         "schema": {
-                                            "$ref": "#/components/schemas/Response"
+                                            "$ref": "#/components/schemas/PredictionResponse"
                                         }
                                     }
                                 },
