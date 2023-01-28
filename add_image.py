@@ -25,7 +25,7 @@ with open("metadata.json", "r") as f:
 
 ok = False
 while not ok:
-    try:
+    # try:
         with open(f"{image_name}/inspect.json", "r") as f:
             inspect = json.load(f)
             assert len(inspect) > 0
@@ -37,11 +37,11 @@ while not ok:
 
             hash = inspect[0]["Id"]
             ok = True
-    except:
-        os.system(f"docker pull {original_url}")
-        time.sleep(5)
-        os.system(f"docker inspect {original_url} > {image_name}/inspect.json")
-        time.sleep(5)
+    # except:
+    #     os.system(f"docker pull {original_url}")
+    #     time.sleep(5)
+    #     os.system(f"docker inspect {original_url} > {image_name}/inspect.json")
+    #     time.sleep(5)
 
 try:
     with open(f"{image_name}/meta.json", "r") as f:
