@@ -6505,8 +6505,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/animate": {
-        "hash": "sha256:b43024f68252b1a07bdb6facacdc56acbb8d40031c8057d20adb0f41150514bd",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/animate@sha256:b43024f68252b1a07bdb6facacdc56acbb8d40031c8057d20adb0f41150514bd",
+        "hash": "sha256:231ae56a267bfeb162510ab7ca8659a37130ab019b1dc4c77428d92af7dbf666",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/animate@sha256:231ae56a267bfeb162510ab7ca8659a37130ab019b1dc4c77428d92af7dbf666",
         "openapi": {
             "components": {
                 "schemas": {
@@ -6533,7 +6533,7 @@
                                 "x-order": 10
                             },
                             "gif_frames_per_second": {
-                                "default": 10,
+                                "default": 20,
                                 "description": "Frames/second in output GIF",
                                 "maximum": 50,
                                 "minimum": 1,
@@ -6577,7 +6577,7 @@
                                 "x-order": 6
                             },
                             "num_inference_steps": {
-                                "default": 50,
+                                "default": 30,
                                 "description": "Number of denoising steps",
                                 "maximum": 500,
                                 "minimum": 1,
@@ -6586,7 +6586,7 @@
                                 "x-order": 4
                             },
                             "num_interpolation_steps": {
-                                "default": 5,
+                                "default": 10,
                                 "description": "Number of steps to interpolate between animation frames",
                                 "maximum": 50,
                                 "minimum": 1,
@@ -6686,10 +6686,10 @@
                             },
                             "webhook_events_filter": {
                                 "default": [
-                                    "logs",
-                                    "start",
+                                    "output",
                                     "completed",
-                                    "output"
+                                    "start",
+                                    "logs"
                                 ],
                                 "items": {
                                     "$ref": "#/components/schemas/WebhookEvent"
@@ -6856,7 +6856,9 @@
                             "200": {
                                 "content": {
                                     "application/json": {
-                                        "schema": {}
+                                        "schema": {
+                                            "title": "Response Root  Get"
+                                        }
                                     }
                                 },
                                 "description": "Successful Response"
