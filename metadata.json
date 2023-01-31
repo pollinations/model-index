@@ -5060,8 +5060,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/wedatanation-pick-avatar": {
-        "hash": "sha256:b532e600ed045829c1ce386317b07dd9a64f2cc1210fecdfb4725b607626283b",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/wedatanation-pick-avatar@sha256:b532e600ed045829c1ce386317b07dd9a64f2cc1210fecdfb4725b607626283b",
+        "hash": "sha256:d2f1928e32d251e581812acd9b8fd180827db31127a0c596f1101cec341c3ff9",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/wedatanation-pick-avatar@sha256:d2f1928e32d251e581812acd9b8fd180827db31127a0c596f1101cec341c3ff9",
         "openapi": {
             "components": {
                 "schemas": {
@@ -5138,38 +5138,88 @@
                         "title": "Output",
                         "type": "boolean"
                     },
-                    "Request": {
-                        "description": "The request body for a prediction",
+                    "PredictionRequest": {
                         "properties": {
+                            "created_at": {
+                                "format": "date-time",
+                                "title": "Created At",
+                                "type": "string"
+                            },
+                            "id": {
+                                "title": "Id",
+                                "type": "string"
+                            },
                             "input": {
                                 "$ref": "#/components/schemas/Input"
                             },
                             "output_file_prefix": {
                                 "title": "Output File Prefix",
                                 "type": "string"
+                            },
+                            "webhook": {
+                                "format": "uri",
+                                "maxLength": 65536,
+                                "minLength": 1,
+                                "title": "Webhook",
+                                "type": "string"
+                            },
+                            "webhook_events_filter": {
+                                "default": [
+                                    "output",
+                                    "start",
+                                    "completed",
+                                    "logs"
+                                ],
+                                "items": {
+                                    "$ref": "#/components/schemas/WebhookEvent"
+                                },
+                                "type": "array",
+                                "uniqueItems": true
                             }
                         },
-                        "title": "Request",
+                        "title": "PredictionRequest",
                         "type": "object"
                     },
-                    "Response": {
-                        "description": "The response body for a prediction",
+                    "PredictionResponse": {
                         "properties": {
+                            "completed_at": {
+                                "format": "date-time",
+                                "title": "Completed At",
+                                "type": "string"
+                            },
+                            "created_at": {
+                                "format": "date-time",
+                                "title": "Created At",
+                                "type": "string"
+                            },
                             "error": {
                                 "title": "Error",
+                                "type": "string"
+                            },
+                            "id": {
+                                "title": "Id",
+                                "type": "string"
+                            },
+                            "input": {
+                                "$ref": "#/components/schemas/Input"
+                            },
+                            "logs": {
+                                "title": "Logs",
                                 "type": "string"
                             },
                             "output": {
                                 "$ref": "#/components/schemas/Output"
                             },
+                            "started_at": {
+                                "format": "date-time",
+                                "title": "Started At",
+                                "type": "string"
+                            },
                             "status": {
                                 "$ref": "#/components/schemas/Status"
                             }
                         },
-                        "required": [
-                            "status"
-                        ],
-                        "title": "Response",
+                        "title": "PredictionResponse",
                         "type": "object"
                     },
                     "Status": {
@@ -5177,6 +5227,7 @@
                         "enum": [
                             "processing",
                             "succeeded",
+                            "canceled",
                             "failed"
                         ],
                         "title": "Status",
@@ -5214,6 +5265,17 @@
                         ],
                         "title": "ValidationError",
                         "type": "object"
+                    },
+                    "WebhookEvent": {
+                        "description": "An enumeration.",
+                        "enum": [
+                            "start",
+                            "output",
+                            "logs",
+                            "completed"
+                        ],
+                        "title": "WebhookEvent",
+                        "type": "string"
                     }
                 }
             },
@@ -5230,7 +5292,9 @@
                             "200": {
                                 "content": {
                                     "application/json": {
-                                        "schema": {}
+                                        "schema": {
+                                            "title": "Response Root  Get"
+                                        }
                                     }
                                 },
                                 "description": "Successful Response"
@@ -5247,7 +5311,7 @@
                             "content": {
                                 "application/json": {
                                     "schema": {
-                                        "$ref": "#/components/schemas/Request"
+                                        "$ref": "#/components/schemas/PredictionRequest"
                                     }
                                 }
                             }
@@ -5257,7 +5321,7 @@
                                 "content": {
                                     "application/json": {
                                         "schema": {
-                                            "$ref": "#/components/schemas/Response"
+                                            "$ref": "#/components/schemas/PredictionResponse"
                                         }
                                     }
                                 },
