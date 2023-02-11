@@ -5060,8 +5060,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/wedatanation-pick-avatar": {
-        "hash": "sha256:ba864fceba7a3c3b752196af8bc13256323a09481e09fa304e6414667e355194",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/wedatanation-pick-avatar@sha256:ba864fceba7a3c3b752196af8bc13256323a09481e09fa304e6414667e355194",
+        "hash": "sha256:6c5e30aa223a3e169ca8ebf86d82cb5c880a1eaea4b9cc09be468af9bd62986c",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/wedatanation-pick-avatar@sha256:6c5e30aa223a3e169ca8ebf86d82cb5c880a1eaea4b9cc09be468af9bd62986c",
         "openapi": {
             "components": {
                 "schemas": {
@@ -5164,10 +5164,10 @@
                             },
                             "webhook_events_filter": {
                                 "default": [
-                                    "logs",
-                                    "completed",
                                     "start",
-                                    "output"
+                                    "completed",
+                                    "output",
+                                    "logs"
                                 ],
                                 "items": {
                                     "$ref": "#/components/schemas/WebhookEvent"
