@@ -6058,8 +6058,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset": {
-        "hash": "sha256:2008b7acc5bd420c4e266a31a61bdf4ef902a7732999c620b82c4e9329a70f9c",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset@sha256:2008b7acc5bd420c4e266a31a61bdf4ef902a7732999c620b82c4e9329a70f9c",
+        "hash": "sha256:9dceb642be4ad45ae9a8a8f566978b432c27e4ac510f0983aca25795fd3bb0a6",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset@sha256:9dceb642be4ad45ae9a8a8f566978b432c27e4ac510f0983aca25795fd3bb0a6",
         "openapi": {
             "components": {
                 "schemas": {
@@ -6135,35 +6135,12 @@
                         "type": "object"
                     },
                     "Output": {
-                        "properties": {
-                            "answers": {
-                                "title": "Answers",
-                                "type": "string"
-                            },
-                            "avatars": {
-                                "items": {
-                                    "format": "uri",
-                                    "type": "string"
-                                },
-                                "title": "Avatars",
-                                "type": "array"
-                            },
-                            "prompt": {
-                                "title": "Prompt",
-                                "type": "string"
-                            },
-                            "removed_background": {
-                                "format": "uri",
-                                "title": "Removed Background",
-                                "type": "string"
-                            },
-                            "status": {
-                                "title": "Status",
-                                "type": "string"
-                            }
+                        "items": {
+                            "$ref": "#/components/schemas/SimpleOutput"
                         },
                         "title": "Output",
-                        "type": "object"
+                        "type": "array",
+                        "x-cog-array-type": "iterator"
                     },
                     "PredictionRequest": {
                         "properties": {
@@ -6192,10 +6169,10 @@
                             },
                             "webhook_events_filter": {
                                 "default": [
-                                    "logs",
+                                    "output",
                                     "start",
                                     "completed",
-                                    "output"
+                                    "logs"
                                 ],
                                 "items": {
                                     "$ref": "#/components/schemas/WebhookEvent"
@@ -6247,6 +6224,21 @@
                             }
                         },
                         "title": "PredictionResponse",
+                        "type": "object"
+                    },
+                    "SimpleOutput": {
+                        "properties": {
+                            "avatar": {
+                                "format": "uri",
+                                "title": "Avatar",
+                                "type": "string"
+                            },
+                            "status": {
+                                "title": "Status",
+                                "type": "string"
+                            }
+                        },
+                        "title": "SimpleOutput",
                         "type": "object"
                     },
                     "Status": {
