@@ -6058,8 +6058,8 @@
         }
     },
     "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset": {
-        "hash": "sha256:9dceb642be4ad45ae9a8a8f566978b432c27e4ac510f0983aca25795fd3bb0a6",
-        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset@sha256:9dceb642be4ad45ae9a8a8f566978b432c27e4ac510f0983aca25795fd3bb0a6",
+        "hash": "sha256:f349c42454c4f48c768e3e709d6bd172ea27fac62b78395cadbc3640c3c22068",
+        "full_url": "614871946825.dkr.ecr.us-east-1.amazonaws.com/pollinations/lemonade-preset@sha256:f349c42454c4f48c768e3e709d6bd172ea27fac62b78395cadbc3640c3c22068",
         "openapi": {
             "components": {
                 "schemas": {
@@ -6169,8 +6169,8 @@
                             },
                             "webhook_events_filter": {
                                 "default": [
-                                    "output",
                                     "start",
+                                    "output",
                                     "completed",
                                     "logs"
                                 ],
@@ -6231,6 +6231,10 @@
                             "avatar": {
                                 "format": "uri",
                                 "title": "Avatar",
+                                "type": "string"
+                            },
+                            "avatar_base64": {
+                                "title": "Avatar Base64",
                                 "type": "string"
                             },
                             "status": {
